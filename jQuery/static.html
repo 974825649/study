@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>静态方法</title>
+</head>
+<body>
+		1.静态方法each<br/>
+		<pre> 				
+		$.each(obj, function(index, value){
+			console.log(index, value);
+		}); </pre>
+		jq的each方法能遍历对象，js不行<br/>
+		2.静态方法map<br/>
+		<pre>
+		$.map(obj, function(value, index){
+			console.log(index, value);
+		}); </pre>
+		jq的map方法能遍历对象，js不行<br/>
+
+		each方法的返回值是它本身的数组；
+		map方法的返回值默认是空数组，但它可以对
+		数组进行操作，返回新的数组。
+
+</body>
+</html>

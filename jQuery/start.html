@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+		1.jquery的入口函数写法 <br/>
+		$(document).ready(function() {}) 
+		== $(function() {})<br/>
+		2.释放$的使用权(释放之后改为使用jQuery)<br/>
+		jQuery.noconflict();<br/>
+		自定义访问符号 var j = jQuery.noconflict();<br/>
+		3.jQuery的核心函数<br/>
+		$();就代表调用jquery的核心函数<br>
+		3.1 接收函数 <br/>
+		3.2 接收选择器 3.3 接收代码片段 3.4 接收dom元素 
+		返回jq对象，对象里包含了接收的东西<br/>
+		4.jq的对象<br/>
+		jq的对象是类数组，有0 ~~ length-1的属性，还有length值<br/>
+		5.静态方法和实例方法<br/>
+		function Aclass(){};<br/>
+		Aclass.instanceMethod = function(){}; 静态方法直接用类名调用<br/>
+		Aclass.instanceMethod();<br/>
+		Aclass.prototype.instanceMethod = function(){}; 实例方法通过实例调用<br/>
+		var a = new Aclass();<br/>
+		a.instanceMethod();<br/>
+
+</body>
+</html>
