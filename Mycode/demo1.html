@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<ht<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - collada</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            background:#777;
+            padding:0;
+            margin:0;
+            overflow:hidden;
+        }
+
+        #info {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            color: #ffffff;
+            padding: 5px;
+            font-family:Monospace;
+            font-size:13px;
+            text-align:center;
+        }
+
+        a {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container"></div>
+<div id="info">
+    <a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> collada loader
+    | Elf Girl by <a href="https://sketchfab.com/yellow09" target="_blank" rel="noopener">halloween</a>
+    is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC Attribution</a>
+</div>
+
+<script src="js/jquery.js"></script>
+
+<script src="js/ColladaLoader.js"></script>
+<script src="js/WebGL.js"></script>
+<script src="js/Stats.js"></script>
+
+<script>
+
+    if ( WEBGL.isWebGLAvailable() === false ) {
+
+        document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+
+    }
+
+    var container, stats, clock;
+    var camera, scene, renderer, elf;
+
+    init();
+    animate();
+
+    function init() {
+
+        container = document.getElementById( 'container' );
+
+        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+        camera.position.set( 8, 10, 8 );
+        camera.lookAt( 0, 3, 0 );
+
+        scene = new THREE.Scene();
+
+        clock = new THREE.Clock();
+
+        // loading manager
+
+        var loadingManager = new THREE.LoadingManager( function () {
+
+            scene.add( elf );
+
+        } );
+
+        // collada
+
+        var loader = new THREE.ColladaLoader( loadingManager );
+        loader.load( './TestModel/34号楼社区用房.dae', function ( collada ) {
+
+            elf = collada.scene;
+
+        } );
+
+        //
+
+        var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+        scene.add( ambientLight );
+
+        var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
+        directionalLight.position.set( 1, 1, 0 ).normalize();
+        scene.add( directionalLight );
+
+        //
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        container.appendChild( renderer.domElement );
+
+        //
+
+        stats = new Stats();
+        container.appendChild( stats.dom );
+
+        //
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
+
+    function animate() {
+
+        requestAnimationFrame( animate );
+
+        render();
+        stats.update();
+
+    }
+
+    function render() {
+
+        var delta = clock.getDelta();
+
+        if ( elf !== undefined ) {
+
+            elf.rotation.z += delta * 0.5;
+
+        }
+
+        renderer.render( scene, camera );
+
+    }
+
+</script>
+</body>
+</html>
+
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <title>threejs中3D视野的缩放</title>
+
+        <style>
+
+            #canvas-frame {
+
+                width: 100%;
+
+                height: 600px;
+
+            }
+
+        </style>
+
+    </head>
+
+    <body onload="threeStart()">
+
+        <div id="canvas-frame" ></div>
+
+    </body>
+
+    <script type="text/javascript" src="js/three.js" ></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/OrbitControls.js"></script>
+    <script type="text/javascript" src="js/ColladaLoader.js"></script>
+
+    <script type="text/javascript">
+    		var $can = $('#canvas-frame');
+
+            var renderer, //渲染器
+
+                width = document.getElementById('canvas-frame').clientWidth, //画布宽
+
+                height = document.getElementById('canvas-frame').clientHeight; //画布高
+
+            //照相机配置
+
+            var fov = 45,//拍摄距离  视野角值越大，场景中的物体越小
+
+                near = 1,//最小范围
+
+                far = 1000;//最大范围
+
+            //DOM对象
+
+            var canvas = null;
+
+            //初始化DOM对象   
+
+            function initDOM(){
+
+                canvas = document.getElementById("canvas-frame");
+
+            }
+
+            //初始化渲染器
+
+            function initThree(){
+
+                renderer = new THREE.WebGLRenderer({
+
+                     antialias : true
+
+                     //canvas: document.getElementById('canvas-frame')
+
+                });
+
+                renderer.setSize(width, height);
+
+                renderer.setClearColor(0xFFFFFF, 1.0);
+
+                document.getElementById('canvas-frame').appendChild(renderer.domElement);
+
+                    renderer.setClearColor(0xFFFFFF, 1.0);
+
+            }
+
+            //初始化场景
+
+            var scene;
+
+            function initScene(){
+
+                scene = new THREE.Scene();
+
+            }
+
+            var camera;
+
+            function initCamera() {  //透视相机
+
+                camera = new THREE.PerspectiveCamera(fov,  width/height , near, far);
+
+                camera.position.x = 150;
+
+                camera.position.y = 150;
+
+                camera.position.z =250;
+
+                camera.up.x = 0;
+
+                camera.up.y = 1; //相机朝向--相机上方为y轴
+
+                camera.up.z = 0;
+
+                camera.lookAt(0,0,0);
+
+            }
+
+            function initLight(){
+
+                // light--这里使用环境光
+
+                var light = new THREE.DirectionalLight(0xffffff); /*方向性光源*/
+
+                light.position.set(600, 1000, 800);
+
+                var light = new THREE.AmbientLight(0xffffff); //模拟漫反射光源
+
+                light.position.set(600, 1000, 800); //使用Ambient Light时可以忽略方向和角度，只考虑光源的位置
+
+                scene.add(light);
+
+            }
+
+            function initObject(){  //初始化对象
+
+                //初始化地板
+
+                initFloor();
+
+            }
+
+            function initGrid(){ //辅助网格
+
+                var helper = new THREE.GridHelper( 1000, 50 );
+
+                scene.add( helper );
+
+            }
+
+            function initFloor(){
+
+                //创建一个立方体
+
+                var geometry = new THREE.BoxGeometry(80, 20, 80);
+
+                 for ( var i = 0; i < geometry.faces.length; i += 2 ) {
+
+                    var hex = Math.random() * 0xffffff;
+
+                    geometry.faces[ i ].color.setHex( hex );
+
+                    geometry.faces[ i + 1 ].color.setHex( hex );
+
+                }
+
+                var material = new THREE.MeshBasicMaterial( { vertexColors: THREE.FaceColors} );
+
+                //将material材料添加到几何体geometry
+
+                var mesh = new THREE.Mesh(geometry, material);
+
+                mesh.position = new THREE.Vector3(0,0,0);
+
+                scene.add(mesh);
+
+            }
+
+            //初始化页面加载
+
+            function threeStart(){
+
+                //初始化DOM对象
+
+                initDOM();
+
+                //初始化渲染器
+
+                initThree();
+
+                //初始化场景
+
+                initScene();
+
+                //初始透视化相机
+
+                initCamera();
+
+                //初始化光源
+
+                initLight();
+
+                //模型对象
+
+                initObject();
+
+                //初始化网格辅助线
+
+                initGrid();
+
+                //渲染
+
+                renderer.render(scene, camera);
+
+                //实时动画
+
+            //animation();
+
+            //监听鼠标滚动事件
+
+            canvas.addEventListener('mousewheel', mousewheel, false);
+
+            $('#canvas-frame').bind('mousedown', viewmovedown);
+            $('#canvas-frame').bind('mouuseup', viewmoveup);
+
+            }
+
+            // 动画循环
+            function animation(){
+
+                //相机围绕y轴旋转，并且保持场景中的物体一直再相机的视野中
+
+                //实时渲染成像
+
+                var timer = Date.now()*0.0001;
+
+                camera.position.x = Math.cos(timer)*100;
+
+                camera.position.z = Math.sin(timer)*100;
+
+                camera.lookAt(scene.position);
+
+                renderer.render(scene, camera);
+
+                requestAnimationFrame(animation);
+
+            }
+
+        //鼠标滑轮-鼠标上下滑轮实现放大缩小效果
+        var x,y;
+        function viewmovedown(e){
+        	x = e.pageX;
+        	y = e.pageY;
+        	console.log(x,y);
+        }
+        function viewmoveup(e){
+        	var xnow = e.pageX;
+        	var ynow = e.pageY;
+        	console.log(xnow-x,ynow-y);
+        }
+
+        function mousewheel(e) {
+        	var e = e || window.event;
+            e.preventDefault();
+
+            //e.stopPropagation();
+
+            	console.log(e.wheelDelta);
+            if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+
+
+                if (e.wheelDelta > 0) { //当滑轮向上滚动时
+
+                    fov -= (near < fov ? 1 : 0);
+
+                }
+
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时
+
+                    fov += (fov < far ? 1 : 0);
+
+                }
+
+            } else if (e.detail) {  //Firefox滑轮事件
+
+                if (e.detail > 0) { //当滑轮向上滚动时
+
+                    fov -= 1;
+
+                }
+
+                if (e.detail < 0) { //当滑轮向下滚动时
+
+                    fov += 1;
+
+                }
+
+            }
+
+            console.info('camera.fov:'+camera.fov);
+
+            console.info('camera.x:'+camera.position.x);
+
+            console.info('camera.y:'+camera.position.y);
+
+            console.info('camera.z:'+camera.position.z);
+
+            //改变fov值，并更新场景的渲染
+
+            camera.fov = fov;
+
+            camera.updateProjectionMatrix();
+
+            renderer.render(scene, camera);
+
+            //updateinfo();
+
+        }
+
+    </script>
+
+</html>
+<!-- loader.load( 'tree.obj', function ( object ) {
+
+            object.traverse( function ( child ) {
+
+                if ( child instanceof THREE.Mesh ) {
+
+                    child.material.map = texture;
+                    //将模型放大40倍
+                    var n=40;
+                    child.scale.x =n;
+                    child.scale.y =n;
+                    child.scale.z =n;
+                }
+
+            } );
+
+            pivot5.position.x = -100;
+            pivot5.position.z = 100;
+
+            object.position.x = 0;
+            object.position.z = 0;
+
+            object.position.y = 50;
+            //scene.add( object );
+            pivot5.add(object);
+
+        }, onProgress, onError ); -->

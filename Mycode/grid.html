@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>网格</title>
+        <script src="js/Three.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <style type="text/css">
+            div#canvas-frame {
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                height: 600px;
+                background-color: #EEEEEE;
+            }
+
+        </style>
+        <script>
+            var canvas = $('#canvas-frame');
+            var renderer;
+            function initThree() {
+                width = document.getElementById('canvas-frame').clientWidth;
+                height = document.getElementById('canvas-frame').clientHeight;
+                renderer = new THREE.WebGLRenderer({
+                    antialias : true
+                });
+                renderer.setSize(width, height);
+                document.getElementById('canvas-frame').appendChild(renderer.domElement);
+                // document.getElementsByTagName('canvas')[0].addEventListener('mousewheel', mousewheel, false);
+                renderer.setClearColor(0xFFFFFF, 1.0);
+            }
+
+
+            // function cli(){
+            //     canvas.on('click',function(){
+            //     console.log('2');
+            //     console.log(canvas);
+            //     });
+            // }
+
+            var camera;
+            var fov = 40;//拍摄距离
+            var near = 1;//最小范围
+            var far = 10000;//最大范围
+            function initCamera() {
+                camera = new THREE.PerspectiveCamera(fov, width / height, near, far);
+                camera.position.x = 600;
+                camera.position.y = -600;
+                camera.position.z = 600;
+                camera.up.x = 0;
+                camera.up.y = 0;
+                camera.up.z = 1;
+                camera.lookAt(0,0,0); //版本更新
+            }
+
+            var scene;
+            function initScene() {
+                scene = new THREE.Scene();
+            }
+
+            var light;
+            function initLight() {
+                light = new THREE.DirectionalLight(0xFF0000, 1.0, 0);
+                light.position.set(100, 100, 200);
+                scene.add(light);
+            }
+
+            var cube;
+            function initObject() {
+
+                var geometry = new THREE.Geometry(); //创建一个几何体
+                var material = new THREE.LineBasicMaterial( { color: '#ff4545',} );//定义线条的材质
+                var color1 = new THREE.Color( 0x444444 ), color2 = new THREE.Color( 0xFF0000 );//定义点颜色
+
+                // 线的材质可以由2点的颜色决定
+                var p1 = new THREE.Vector3( -500, 0, 0 ); //定义点位置
+                var p2 = new THREE.Vector3(  500, 0, 0 );
+                geometry.vertices.push(p1);
+                geometry.vertices.push(p2);
+                geometry.colors.push( color1, color2 );
+                for(var i = 0;i < 21;i++){
+
+	                var line = new THREE.Line( geometry, material, THREE.LineSegments );//创建出一条线 版本更新
+	                line.position.y = (i * 50) - 500;
+	                scene.add(line);
+
+	                var line = new THREE.Line( geometry, material, THREE.LineSegments );//创建出一条线 版本更新
+			        line.position.x = ( i * 50 ) - 500;
+			        line.rotation.z = 90 * Math.PI / 180; //顺时针旋转90
+	                scene.add(line);
+                }
+            }
+
+            // 鼠标滑轮
+            function mousewheel(event) {
+                event.preventDefault();
+                //event.stopPropagation();
+                if (event.deltaY) {  //判断浏览器IE，谷歌滑轮事件
+                    if (event.deltaY > 0) { //当滑轮向上滚动时
+                        fov -= (near < fov ? 1 : 0);
+                    }
+                    if (event.deltaY < 0) { //当滑轮向下滚动时
+                        fov += (fov < far ? 1 : 0);
+                    }
+                } else if (event.deltaY) {  //Firefox滑轮事件
+                    if (event.deltaY > 0) { //当滑轮向上滚动时
+                        fov -= 1;
+                    }
+                    if (event.deltaY < 0) { //当滑轮向下滚动时
+                        fov += 1;
+                    }
+                }
+                camera.fov = fov;
+                console.log(camera.fov + 'a');
+                camera.updateProjectionMatrix();
+            }
+            // console.log(camera.fov +'b');
+            console.log(camera);
+
+
+            function threeStart() {
+                initThree();
+                initCamera();
+                initScene();
+                initLight();
+                initObject();
+                document.getElementsByTagName('canvas')[0].addEventListener('mousewheel', mousewheel, false);
+                console.log(camera.fov +'c');
+                renderer.clear();
+                renderer.render(scene, camera);
+            }
+
+        </script>
+    </head>
+
+    <body onload="threeStart();">
+        <div id="canvas-frame"></div>
+    </body>
+</html>
