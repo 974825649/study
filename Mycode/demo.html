@@ -1,229 +1,245 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>threejs中3D视野的缩放</title>
-        <style>
-            #canvas-frame {
-                width: 100%;
-                height: 700px;
-            }
-            #choose {
-                position: absolute;
-                width: 120px;
-                height: 50px;
-                left: 50px;
-                top: 50px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>threejs中3D视野的缩放</title>
+    <style>
+        /*#choose {*/
+        /*    position: absolute;*/
+        /*    width: 120px;*/
+        /*    height: 50px;*/
+        /*    left: 50px;*/
+        /*    top: 50px;*/
+        /*}*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
 
-        </style>
-    </head>
+<body onload="threeStart()">
+<div id="canvas-frame" ></div>
+<!--        <select id="choose" >-->
+<!--            <option value="1" selected="selected">35号楼门卫</option>-->
+<!--            <option value="2">36号楼配电房</option>-->
+<!--            <option value="3">高层21</option>-->
+<!--            <option value="4">a34</option>-->
+<!--            <option value="5">叠拼0</option>-->
+<!--            <option value="6">叠拼1</option>-->
+<!--            <option value="6">高层21</option>-->
+<!--        </select>-->
+</body>
 
-    <body onload="threeStart()">
-        <div id="canvas-frame" ></div>
-        <select id="choose" >
-            <option value="1" selected="selected">35号楼门卫</option>
-            <option value="2">36号楼配电房</option>
-            <option value="3">高层21</option>
-            <option value="4">a34</option>
-            <option value="5">叠拼0</option>
-            <option value="6">叠拼1</option>
-            <option value="6">高层21</option>
-        </select>
-    </body>
+<script type="text/javascript" src="js/three.js" ></script>
+<script type="text/javascript" src="js/OrbitControls.js"></script>
+<script type="text/javascript" src="js/ColladaLoader.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
 
-    <script type="text/javascript" src="js/three.js" ></script>
-    <script type="text/javascript" src="js/OrbitControls.js"></script>
-    <script type="text/javascript" src="js/ColladaLoader.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript">
+    var scene,camera,light,renderer; //定义必须量
+    var controls,mesh,address,dae;         //自定义添加量
+    var raycaster,raynormal,mouse;                   //射线 射线法向量 鼠标位置
+    var modelgeometry,modelmesh,modelface;           //模型形状 模型
+    var triangle,triangleArea;                                    //三角形，三角形总面积
+    var canvas = null;//DOM对象
+    var $choose = $('#choose');
+    // var window.innerWidth = document.getElementById('canvas-frame').clientwindow.innerWidth;   //画布宽
+    // var window.innerHeight = document.getElementById('canvas-frame').clientwindow.innerHeight; //画布高
+    //初始化DOM对象
+    function initDOM(){
+        canvas = document.getElementById("canvas-frame");
+    }
+    //初始化渲染器
+    function initThree(){
+        renderer = new THREE.WebGLRenderer({
+            antialias : true
+            //canvas: document.getElementById('canvas-frame')
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xFFFFFF, 1.0);
+        document.getElementById('canvas-frame').appendChild(renderer.domElement);
+    }
+    //初始化场景
+    function initScene(){
+        scene = new THREE.Scene();
+    }
+    //初始化相机
+    function initCamera() {  //透视相机
+        camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
+        camera.position.set(500, 500, 500);
+        // camera.position.set(0, 400, 0);
+        camera.lookAt(scene.position);
+    }
 
-            var scene,camera,light,renderer; //定义必须量
-            var controls,mesh,address,dae;         //自定义添加量
-            var raycaster,mouse,modelcolor;
-            var canvas = null;//DOM对象
-            var $choose = $('#choose');
-            var width = document.getElementById('canvas-frame').clientWidth;   //画布宽
-            var height = document.getElementById('canvas-frame').clientHeight; //画布高
-            //初始化DOM对象
-            function initDOM(){
-                canvas = document.getElementById("canvas-frame");
+    // 环境光
+    function initLight(){
+        light = new THREE.DirectionalLight(0xffffff); /*方向性光源*/
+        light.position.set(600, 1000, 800);
+        light.castShadow = true;
+        scene.add(light);
+        // var pointLight = new THREE.PointLight( 0xff0000);
+        // pointLight.position.set( 900, 900, 900 );
+        // scene.add( pointLight );
+        light = new THREE.AmbientLight(0xff0000); //模拟漫反射光源
+        light.position.set(600, 1000, 800); //使用Ambient Light时可以忽略方向和角度，只考虑光源的位置
+        scene.add(light);
+    }
+    //初始化对象
+    function initObject(){
+        //初始化地板
+        // initFloor();
+    }
+    //辅助网格
+    function initGrid(){
+        var helper = new THREE.GridHelper( 1000, 50 );
+        scene.add( helper );
+    }
+    //自定义模型
+    /*    function initFloor(){
+            //创建一个正方体
+            var geometry = new THREE.BoxGeometry(150, 100, 50);
+            for ( var i = 0; i < geometry.faces.length; i += 2 ) {
+                var hex = Math.random() * 0xffffff;
+                geometry.faces[ i ].color.setHex( hex );
+                geometry.faces[ i + 1 ].color.setHex( hex );
             }
-            //初始化渲染器
-            function initThree(){
-                renderer = new THREE.WebGLRenderer({
-                     antialias : true
-                     //canvas: document.getElementById('canvas-frame')
-                });
-                renderer.setSize(width, height);
-                renderer.setClearColor(0xFFFFFF, 1.0);
-                document.getElementById('canvas-frame').appendChild(renderer.domElement);
-            }
-            //初始化场景
-            function initScene(){
-                scene = new THREE.Scene();
-            }
-            //初始化相机
-            function initCamera() {  //透视相机
-                camera = new THREE.PerspectiveCamera(45,  width/height , 1, 10000);
-                camera.position.set(500, 500, 500);
-                // camera.position.set(0, 400, 0);
-                camera.lookAt(scene.position);
-            }
-
-            function initLight(){
-                // light--这里使用环境光
-                light = new THREE.DirectionalLight(0xffffff); /*方向性光源*/
-                light.position.set(600, 1000, 800);
-                light.castShadow = true;
-                scene.add(light);
-                var light = new THREE.AmbientLight(0xff0000); //模拟漫反射光源
-                light.position.set(600, 1000, 800); //使用Ambient Light时可以忽略方向和角度，只考虑光源的位置
-                scene.add(light);
-            }
-            function initObject(){  //初始化对象
-                //初始化地板
-                initFloor();
-            }
-            function initGrid(){ //辅助网格
-                var helper = new THREE.GridHelper( 1000, 50 );
-                scene.add( helper );
-            }
-            function initFloor(){
-                //创建一个正方体
-                var geometry = new THREE.BoxGeometry(150, 100, 50);
-                 for ( var i = 0; i < geometry.faces.length; i += 2 ) {
-                    var hex = Math.random() * 0xffffff;
-                    geometry.faces[ i ].color.setHex( hex );
-                    geometry.faces[ i + 1 ].color.setHex( hex );
-                }
-                var material = new THREE.MeshBasicMaterial( { vertexColors: THREE.FaceColors} );
-                //将material材料添加到几何体geometry
-                mesh = new THREE.Mesh(geometry, material);
-                mesh.position = new THREE.Vector3(0,0,0);
-                scene.add(mesh);
-            }
-            address = './TestModel/35号楼门卫.dae';
-            function manload(){
-                // 创建坐标轴
-                // var axes = new THREE.AxisHelper(1000);
-                // scene.add(axes);
-                //引入模型
-                var loader = new THREE.ColladaLoader();
-                // loader.options.convertUpAxis = true;
-                loader.load(address, loadDae);
-                function loadDae(collada) {
-                    dae = collada.scene;
-                    // dae.scale.x = dae.scale.y = dae.scale.z = 1;
-                    // dae.receiveShadow(true);
-                    let scaleNum = 1;
-                    let box = new THREE.Box3().setFromObject(dae);
-                    // 定位
-                    // dae.position.set((-box.max.x - box.min.x) * scaleNum * 20, (-box.max.y - box.min.y) * scaleNum * 20, (-box.max.z - box.min.z) * scaleNum * 20);
-                    dae.position.set(0,0,0);
-                    // 缩放
-                    var n = 1;
-                    dae.scale.set(n, n, n);
-                    scene.add(dae);
-                }
-            }
-            //射线计算鼠标移动
-            raycaster = new THREE.Raycaster();
-            mouse = new THREE.Vector2();
-
-            function onMouseMove( event ) {
-                // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
-                mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-                mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-            }
-            function ray() {
-                //通过摄像机和鼠标位置更新射线
-                raycaster.setFromCamera( mouse, camera );
-                // 计算物体和射线的焦点
-                var intersects = raycaster.intersectObjects(scene.children,true);
-                console.log(dae);
-                    for (var i = 0; i < intersects.length; i++) {
-                        modelcolor = intersects[i].object;
-                        // console.log(modelcolor + 'inobj');
-                        intersects[i].object.material.color.set(0x0000ff);
+            var material = new THREE.MeshBasicMaterial( { vertexColors: THREE.FaceColors} );
+            //将material材料添加到几何体geometry
+            mesh = new THREE.Mesh(geometry, material);
+            mesh.position = new THREE.Vector3(0,0,0);
+            scene.add(mesh);
+        }*/
+    //引入模型
+    address = './TestModel/35号楼门卫.dae';
+    function manload(){
+        // axesHelper = new THREE.AxisHelper(1000);      // 创建坐标轴
+        // scene.add(axesHelper);
+        var loader = new THREE.ColladaLoader();
+        loader.load(address, loadDae);
+        function loadDae(collada) {
+            dae = collada.scene;
+            dae.position.set(0,0,0);
+            // 缩放
+            var n = 1;
+            dae.scale.set(n, n, n);
+            scene.add(dae);
+        }
+    }
+    //射线计算鼠标移动
+    raycaster = new THREE.Raycaster();
+    mouse = new THREE.Vector2();
+    function ray(event) {
+        // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        //通过摄像机和鼠标位置更新射线
+        raycaster.setFromCamera( mouse, camera );
+        // 计算物体和射线的焦点
+        var intersects = raycaster.intersectObjects([dae],true);
+        if (intersects.length) {
+            var rs = intersects[0];
+            if(rs.object.type == "Mesh"){
+                // var mate = new THREE.LineBasicMaterial( ); 更换材质
+                // rs.object.material = mate;
+                // rs.object.material.color = {r: 0.5, g: 0.5, b: 1}; //设置颜色
+                modelmesh = rs.object;
+                modelgeometry = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );
+                modelface = modelgeometry.faces;        //模型的面
+                raynormal = rs.face.normal;  //射线法向量
+                console.log(rs.face);
+                var aretriangleArea = 0;
+                for(var i = 0; i<modelface.length; i++){
+                    // 转化成字符串判断是否相等
+                    if(JSON.stringify(raynormal) === JSON.stringify(modelface[i].normal)){
+                        console.log(modelface[i]);
+                        var a1 = modelface[i].a;
+                        var b1 = modelface[i].b;
+                        var c1 = modelface[i].c;
+                        var a2 = modelgeometry.vertices[a1];
+                        var b2 = modelgeometry.vertices[b1];
+                        var c2 = modelgeometry.vertices[c1];
+                        triangle = new THREE.Triangle(a2,b2,c2);
+                        triangleArea += triangle.getArea();
+                        numface++;
                     }
-
-                // console.log(dae +'dae');
-                renderer.render(scene, camera);
-            }
-
-            //控件操作模块
-            function OrbitControls(camera, renderer) {
-                controls = new THREE.OrbitControls(camera, renderer.domElement);
-                controls.autoRotate = false; //是否自动旋转
-                controls.autoRotateSpeed = 0.5; //自动旋转速度，正比
-            }
-
-            // 动画循环
-            function animation(){
-                controls.update();
-                // ray();
-                // dae.position.x +=1;
-                renderer.render(scene, camera);
-                requestAnimationFrame(animation);
-            }
-            function select(){
-                // console.log(typeof parseInt($(this).val()));
-                switch (value) {
-                    case 1:
-                        address = './TestModel/35号楼门卫.dae';
-                        break;
-                    case 2:
-                        address = './TestModel/36号楼配电房.dae';
-                        break;
-                    case 3:
-                        address = './TestModel/高层21.dae';
-                        break;
-                    case 4:
-                        address = './TestModel/a34.dae';
-                        break;
-                    case 5:
-                        address = './TestModel/叠拼0.dae';
-                        break;
-                    case 6:
-                        address = './TestModel/叠拼1.dae';
-                        break;
-                    case 7:
-                        address = './TestModel/高层10.dae';
-                        break;
                 }
+                console.log(triangle.getArea());
+                // rs.object.material.color.set(0x0000ff);
             }
-            //初始化页面加载
-            function threeStart(){
-                //初始化DOM对象
-                initDOM();
-                //初始化渲染器
-                initThree();
-                //初始化场景
-                initScene();
-                //初始透视化相机
-                initCamera();
-                //初始化光源
-                initLight();
-                //模型对象
-                initObject();
-                //初始化网格辅助线
-                initGrid();
-                //控制视角函数
-                OrbitControls(camera, renderer);
-                //加载人物模型
-                manload();
-                //渲染
-                renderer.render(scene, camera);
-                //实时动画
-                animation();
-                ray();
-                $choose.bind('click',select);
-                window.addEventListener( 'mousemove', onMouseMove, false );
-                $('body').bind('click',ray);
-                // console.log(dae);
-            }
+        }
+        renderer.render(scene, camera);
+    }
 
-    </script>
+    //控件操作模块
+    function OrbitControls(camera, renderer) {
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.autoRotate = false; //是否自动旋转
+        controls.autoRotateSpeed = 0.5; //自动旋转速度，正比
+    }
+
+    // 动画循环
+    function animation(){
+        controls.update();
+        // ray();
+        // dae.position.x +=1;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animation);
+    }
+    /* function select(){
+         // console.log(typeof parseInt($(this).val()));
+         switch (value) {
+             case 1:
+                 address = './TestModel/35号楼门卫.dae';
+                 break;
+             case 2:
+                 address = './TestModel/36号楼配电房.dae';
+                 break;
+             case 3:
+                 address = './TestModel/高层21.dae';
+                 break;
+             case 4:
+                 address = './TestModel/a34.dae';
+                 break;
+             case 5:
+                 address = './TestModel/叠拼0.dae';
+                 break;
+             case 6:
+                 address = './TestModel/叠拼1.dae';
+                 break;
+             case 7:
+                 address = './TestModel/高层10.dae';
+                 break;
+         }
+     }*/
+    //初始化页面加载
+    function threeStart(){
+        //初始化DOM对象
+        initDOM();
+        //初始化渲染器
+        initThree();
+        //初始化场景
+        initScene();
+        //初始透视化相机
+        initCamera();
+        //初始化光源
+        initLight();
+        //模型对象
+        initObject();
+        //初始化网格辅助线
+        initGrid();
+        //控制视角函数
+        OrbitControls(camera, renderer);
+        //加载人物模型
+        manload();
+        //渲染
+        renderer.render(scene, camera);
+        //实时动画
+        animation();
+        // $choose.bind('click',select);
+        $('body').bind('click',ray);
+    }
+
+</script>
 </html>
 
