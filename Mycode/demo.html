@@ -139,7 +139,7 @@
         var intersects = raycaster.intersectObjects([dae],true);
         if (intersects.length) {
             var rs = intersects[0];
-            if(rs.object.type == "Mesh"){
+            if(rs.object.type === "Mesh"){
                 // var mate = new THREE.LineBasicMaterial( ); 更换材质
                 // rs.object.material = mate;
                 // rs.object.material.color = {r: 0.5, g: 0.5, b: 1}; //设置颜色
@@ -148,7 +148,7 @@
                 modelface = modelgeometry.faces;        //模型的面
                 raynormal = rs.face.normal;  //射线法向量
                 console.log(rs.face);
-                var aretriangleArea = 0;
+                aretriangleArea = 0;     //图形面积
                 for(var i = 0; i<modelface.length; i++){
                     // 转化成字符串判断是否相等
                     if(JSON.stringify(raynormal) === JSON.stringify(modelface[i].normal)){
@@ -161,7 +161,6 @@
                         var c2 = modelgeometry.vertices[c1];
                         triangle = new THREE.Triangle(a2,b2,c2);
                         triangleArea += triangle.getArea();
-                        numface++;
                     }
                 }
                 console.log(triangle.getArea());
