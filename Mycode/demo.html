@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>threejs中3D视野的缩放</title>
@@ -41,7 +41,7 @@
     var controls,mesh,address,dae;         //自定义添加量
     var raycaster,raynormal,mouse;                   //射线 射线法向量 鼠标位置
     var modelgeometry,modelmesh,modelface;           //模型形状 模型
-    var triangle,triangleArea;                                    //三角形，三角形总面积
+    var triangle,triangleArea;                       //三角形，三角形总面积
     var canvas = null;//DOM对象
     var $choose = $('#choose');
     // var window.innerWidth = document.getElementById('canvas-frame').clientwindow.innerWidth;   //画布宽
@@ -50,6 +50,7 @@
     function initDOM(){
         canvas = document.getElementById("canvas-frame");
     }
+
     //初始化渲染器
     function initThree(){
         renderer = new THREE.WebGLRenderer({
@@ -58,59 +59,67 @@
         });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0xFFFFFF, 1.0);
-        document.getElementById('canvas-frame').appendChild(renderer.domElement);
+        canvas.appendChild(renderer.domElement);
     }
+
     //初始化场景
     function initScene(){
         scene = new THREE.Scene();
     }
+
     //初始化相机
     function initCamera() {  //透视相机
         camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
         camera.position.set(500, 500, 500);
         // camera.position.set(0, 400, 0);
-        camera.lookAt(scene.position);
+        camera.lookAt(0,0,0);
     }
 
     // 环境光
     function initLight(){
-        light = new THREE.DirectionalLight(0xffffff); /*方向性光源*/
-        light.position.set(600, 1000, 800);
-        light.castShadow = true;
-        scene.add(light);
-        // var pointLight = new THREE.PointLight( 0xff0000);
-        // pointLight.position.set( 900, 900, 900 );
-        // scene.add( pointLight );
-        light = new THREE.AmbientLight(0xff0000); //模拟漫反射光源
-        light.position.set(600, 1000, 800); //使用Ambient Light时可以忽略方向和角度，只考虑光源的位置
+        // light = new THREE.DirectionalLight(0xffffff); /*方向性光源*/
+        // light.position.set(600, 1000, 800);
+        // light.castShadow = true;
+        // scene.add(light);
+        var pointLight1 = new THREE.PointLight( 0xccffcc);
+        pointLight1.position.set( 900, 900, 900 );
+        scene.add( pointLight1 );
+        var pointLight2 = new THREE.PointLight( 0xccffcc);
+        pointLight2.position.set( -900, -900, -900 );
+        scene.add( pointLight2 );
+        light = new THREE.AmbientLight(0x0c0c0c); //模拟漫反射光源
         scene.add(light);
     }
+
     //初始化对象
     function initObject(){
         //初始化地板
         // initFloor();
     }
+
     //辅助网格
     function initGrid(){
         var helper = new THREE.GridHelper( 1000, 50 );
         scene.add( helper );
     }
+
     //自定义模型
-    /*    function initFloor(){
-            //创建一个正方体
-            var geometry = new THREE.BoxGeometry(150, 100, 50);
-            for ( var i = 0; i < geometry.faces.length; i += 2 ) {
-                var hex = Math.random() * 0xffffff;
-                geometry.faces[ i ].color.setHex( hex );
-                geometry.faces[ i + 1 ].color.setHex( hex );
-            }
-            var material = new THREE.MeshBasicMaterial( { vertexColors: THREE.FaceColors} );
-            //将material材料添加到几何体geometry
-            mesh = new THREE.Mesh(geometry, material);
-            mesh.position = new THREE.Vector3(0,0,0);
-            scene.add(mesh);
-        }*/
-    //引入模型
+    //     function initFloor(){
+    //         //创建一个正方体
+    //         var geometry = new THREE.BoxGeometry(150, 100, 50);
+    //         for ( var i = 0; i < geometry.faces.length; i += 2 ) {
+    //             var hex = Math.random() * 0xffffff;
+    //             geometry.faces[ i ].color.setHex( hex );
+    //             geometry.faces[ i + 1 ].color.setHex( hex );
+    //         }
+    //         var material = new THREE.MeshBasicMaterial( { vertexColors: THREE.FaceColors} );
+    //         //将material材料添加到几何体geometry
+    //         mesh = new THREE.Mesh(geometry, material);
+    //         mesh.position = new THREE.Vector3(0,0,0);
+    //         scene.add(mesh);
+    //     }
+
+    // 引入模型
     address = './TestModel/35号楼门卫.dae';
     function manload(){
         // axesHelper = new THREE.AxisHelper(1000);      // 创建坐标轴
@@ -126,9 +135,18 @@
             scene.add(dae);
         }
     }
+    console.log(13);
+    console.log(dae);
     //射线计算鼠标移动
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
+    // dae.traverse( function ( child ) {
+    //     if (child.type === 'Mesh') {
+    //         // modelgeometry =  child.geometry;
+    //         // modelgeometry  = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );
+    //     }
+    //     console.log(modelgeometry);
+    // });
     function ray(event) {
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
         mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -137,6 +155,7 @@
         raycaster.setFromCamera( mouse, camera );
         // 计算物体和射线的焦点
         var intersects = raycaster.intersectObjects([dae],true);
+        console.log(intersects);
         if (intersects.length) {
             var rs = intersects[0];
             if(rs.object.type === "Mesh"){
@@ -144,14 +163,20 @@
                 // rs.object.material = mate;
                 // rs.object.material.color = {r: 0.5, g: 0.5, b: 1}; //设置颜色
                 modelmesh = rs.object;
-                modelgeometry = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );
+                if(modelmesh.geometry.type === "BufferGeometry"){
+                    modelmesh.geometry  = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );
+                }
+                modelgeometry = modelmesh.geometry;
                 modelface = modelgeometry.faces;        //模型的面
                 raynormal = rs.face.normal;  //射线法向量
-                console.log(rs.face);
                 aretriangleArea = 0;     //图形面积
                 for(var i = 0; i<modelface.length; i++){
                     // 转化成字符串判断是否相等
                     if(JSON.stringify(raynormal) === JSON.stringify(modelface[i].normal)){
+                        modelface[i].color.setHex( 0xFFC0CB );
+                        modelmesh.material = new THREE.MeshLambertMaterial( {
+                            vertexColors: THREE.FaceColors,
+                        } );
                         console.log(modelface[i]);
                         var a1 = modelface[i].a;
                         var b1 = modelface[i].b;
@@ -159,15 +184,18 @@
                         var a2 = modelgeometry.vertices[a1];
                         var b2 = modelgeometry.vertices[b1];
                         var c2 = modelgeometry.vertices[c1];
+                        // console.log(a1,b1,c1);
+                        // console.log(a2,b2,c2);
                         triangle = new THREE.Triangle(a2,b2,c2);
-                        triangleArea += triangle.getArea();
+                        // console.log(triangle);
+                        // triangleArea += triangle.getArea();
                     }
                 }
                 console.log(triangle.getArea());
-                // rs.object.material.color.set(0x0000ff);
             }
+            renderer.render(scene, camera);
+            rs.object.material.color.set(0xffffff);
         }
-        renderer.render(scene, camera);
     }
 
     //控件操作模块
