@@ -151,13 +151,6 @@
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
 
-    // dae.traverse( function ( child ) {
-    //     if (child.type === 'Mesh') {
-    //         // modelgeometry =  child.geometry;
-    //         // modelgeometry  = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );
-    //     }
-    //     console.log(modelgeometry);
-    // });
     function ray(event) {
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
         mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
@@ -199,7 +192,13 @@
                         var a2 = modelgeometry.vertices[a1];
                         var b2 = modelgeometry.vertices[b1];
                         var c2 = modelgeometry.vertices[c1];
-
+                        var a3 = modelmesh.localToWorld(a2);
+                        var b3 = modelmesh.localToWorld(b2);
+                        var c3 = modelmesh.localToWorld(c2);
+                        console.log(a2,b2,c2);
+                        console.log(a3,b3,c3);
+                        console.log('-------------------');
+                        // break;
                         //添加小球 使用PointsMaterial
                         var starsGeometry = new THREE.Geometry();
                         starsGeometry.vertices.push( a2,b2,c2 );
