@@ -13,6 +13,7 @@
                 var object = intersects[i].object;
                 var geo = object.geometry;
 
+                //转换几何类型
                 if (geo instanceof THREE.BufferGeometry) {
                     var geometry = new THREE.Geometry().fromBufferGeometry(geo);
                     var arr = geo.getAttribute("position").array;

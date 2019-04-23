@@ -159,100 +159,115 @@
         raycaster.setFromCamera( mouse, camera );
         // 计算物体和射线的焦点
         var intersects = raycaster.intersectObjects([dae],true);
-        console.log(intersects);
-        console.log('----------------');
-        deletpoint();   //清空所有点
-        if (intersects.length) {
-            var rs = intersects[0];
-            if(rs.object.type === "Mesh"){
-                // var mate = new THREE.LineBasicMaterial( ); 更换材质
-                // rs.object.material = mate;
-                // rs.object.material.color = {r: 0.5, g: 0.5, b: 1}; //设置颜色
-                modelmesh = rs.object;
-                if(modelmesh.geometry.type === "BufferGeometry"){
-                    modelgeometry  = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );//转换得出新对象
-                }
-                // console.log(modelgeometry);           //输出新模型的几何
-                modelface = modelgeometry.faces;        //模型的面
-                raynormal = rs.face.normal;  //射线法向量
-                triangleArea = 0;     //图形面积
-                // JSON.stringify(raynormal) === JSON.stringify(modelface[i].normal)
-                for(var i = 0; i<modelface.length; i++){
-                    // 通过法向量判断平行
-                    if(Math.round(raynormal.x) === Math.round(modelface[i].normal.x) &&
-                        Math.round(raynormal.y) === Math.round(modelface[i].normal.y) &&
-                        Math.round(raynormal.z) === Math.round(modelface[i].normal.z)){
-                        // 设置面的颜色
-                        // modelface[i].color.setHex( 0xFFC0CB );
-                        // modelmesh.material = new THREE.MeshLambertMaterial( {
-                        //     vertexColors: THREE.FaceColors,
-                        // } );
-                        var a2 = modelgeometry.vertices[modelface[i].a];  //三角面的点
-                        var b2 = modelgeometry.vertices[modelface[i].b];
-                        var c2 = modelgeometry.vertices[modelface[i].c];
-                        var newpointArr=[];                               //三角面的数组
-                        a2.applyMatrix4(modelmesh.matrixWorld);
-                        b2.applyMatrix4(modelmesh.matrixWorld);
-                        c2.applyMatrix4(modelmesh.matrixWorld);
-                        a2.toArray(newpointArr);
-                        b2.toArray(newpointArr,3);
-                        c2.toArray(newpointArr,6);
-
-                        //通过点相同判断共面
-                        var pointArr=[];                                  //相交面数组
-                        rsface = rs.face;                                 //相交面
-                        var a4 = modelgeometry.vertices[rsface.a];       //相交面的点
-                        var b4 = modelgeometry.vertices[rsface.b];
-                        var c4 = modelgeometry.vertices[rsface.c];
-                        // pointArr.push(a4,b4,c4);
-                        a4.toArray(pointArr);
-                        b4.toArray(pointArr,3);
-                        c4.toArray(pointArr,6);
-
-                        var alex = 0; //相同的坐标数
-                        var poi = 0;  //相同的点数
-                        console.log(rsface);
-                        console.log(a4);
-
-                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-                        // console.log(newpointArr);
-                        // console.log(pointArr);
-                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-                        faceCompare(pointArr,newpointArr);
-                        if(key){
-
-                            // faceCompare(faceCompare(pointArr,newpointArr),newpointArr);
-                            //添加小球 使用PointsMaterial
-                            var starsGeometry = new THREE.Geometry();
-                            starsGeometry.vertices.push(a2, b2, c2);
-                            var pointColor = Math.random() * 0xffffff;
-                            var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
-                            var starField = new THREE.Points(starsGeometry, starsMaterial);
-                            scene.add(starField);
-                            triangle = new THREE.Triangle(a2, b2, c2);
-                            triangleArea += triangle.getArea();
+        if (intersects.length > 0) {
+            for (var i = 0; i < intersects.length; i++) {
+                //获取点击的对象
+                var object = intersects[i].object;
+                var geo = object.geometry;
+                console.log(object);
+                if (geo instanceof THREE.BufferGeometry) {
+                    var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+                    var arr = geo.getAttribute("position").array;  //记录所有点的数组
+                    //获取索引
+                    var a = intersects[i].face.a;
+                    var b = intersects[i].face.b;
+                    var c = intersects[i].face.c;
+                    //计算面积是先取出三角形角a，角b,角c所对应的三维坐标点   并转化成现实的坐标点
+                    var newVec1 = new THREE.Vector3(arr[3 * a], arr[3 * a + 1], arr[3 * a + 2]);
+                    newVec1.applyMatrix4(object.matrixWorld);
+                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                    var newVec2 = new THREE.Vector3(arr[3 * b], arr[3 * b + 1], arr[3 * b + 2]);
+                    newVec2.applyMatrix4(object.matrixWorld);
+                    newVec2.set(newVec2.x.toFixed(2), newVec2.y.toFixed(2), newVec2.z.toFixed(2));
+                    var newVec3 = new THREE.Vector3(arr[3 * c], arr[3 * c + 1], arr[3 * c + 2]);
+                    newVec3.applyMatrix4(object.matrixWorld);
+                    newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
+                    var triangle = new THREE.Triangle(newVec1, newVec2, newVec3);
+                    //被点击的三角形的面积
+                    var allArea = triangle.getArea();  //计算三角形面积
+                    //点击的法向量
+                    var f = intersects[0].face;
+                    var clickNormal = f.normal;
+                    if (typeof clickNormal.x.toFixed !== 'function') break; // 错误处理
+                    clickNormal.set(clickNormal.x.toFixed(2), clickNormal.y.toFixed(2), clickNormal.z.toFixed(2));
+                    var newFaces =  [];
+                    //找出所有与点击法向量相同的三角形面
+                    for (var i = 0; i < geometry.faces.length; i++) {
+                        var ff = geometry.faces[i];
+                        var normal = ff.normal;
+                        normal.set(normal.x.toFixed(2), normal.y.toFixed(2), normal.z.toFixed(2));
+                        if (clickNormal.equals(normal)) {
+                            if (ff.a == a && ff.b == b && ff.c == c) ff.isCoplanar = true;
+                            else ff.isCoplanar = false;
+                            newFaces.push(ff);         //所有共面的三角形
                         }
+                    }
 
+                    //选中所选面的周边的面
+                    var parentFaces = new Array(f);       // 选中的面
+                    var pointsAry = []; //  本次选取的点
+                    while (parentFaces.length > 0) {
+                        var childrenFaces = new Array();
+                        for (var i = 0; i < newFaces.length; i++) {
+                            var fi = newFaces[i];       //所有共面的三角形
+                            //isCoplanar  是否是共面的三角形
+                            if (fi.isCoplanar) {
+                                var newVec1 = new THREE.Vector3(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2]);
+                                var newVec2 = new THREE.Vector3(arr[3 * fi.b], arr[3 * fi.b + 1], arr[3 * fi.b + 2]);
+                                var newVec3 = new THREE.Vector3(arr[3 * fi.c], arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
+                                for (var j = 0; j < newFaces.length; j++) {
+                                    var fj = newFaces[j];
+                                    var point1 = new THREE.Vector3(arr[3 * fj.a], arr[3 * fj.a + 1], arr[3 * fj.a + 2]);
+                                    var point2 = new THREE.Vector3(arr[3 * fj.b], arr[3 * fj.b + 1], arr[3 * fj.b + 2]);
+                                    var point3 = new THREE.Vector3(arr[3 * fj.c], arr[3 * fj.c + 1], arr[3 * fj.c + 2]);
+                                    //不是三角形本身且不是已经标记为共面的面
+                                    if (i != j && !fj.isCoplanar) {
+                                        //两个点相同，另一个不同的面
+                                        if (
+                                            !newVec1.equals(point1) && newVec2.equals(point2) && newVec3.equals(point3) ||
+                                            !newVec1.equals(point1) && newVec2.equals(point3) && newVec3.equals(point2) ||
+                                            !newVec1.equals(point2) && newVec2.equals(point1) && newVec3.equals(point3) ||
+                                            !newVec1.equals(point2) && newVec2.equals(point3) && newVec3.equals(point1) ||
+                                            !newVec1.equals(point3) && newVec2.equals(point1) && newVec3.equals(point2) ||
+                                            !newVec1.equals(point3) && newVec2.equals(point2) && newVec3.equals(point1) ||
+
+                                            !newVec2.equals(point1) && newVec1.equals(point2) && newVec3.equals(point3) ||
+                                            !newVec2.equals(point1) && newVec1.equals(point3) && newVec3.equals(point2) ||
+                                            !newVec2.equals(point2) && newVec1.equals(point1) && newVec3.equals(point3) ||
+                                            !newVec2.equals(point2) && newVec1.equals(point3) && newVec3.equals(point1) ||
+                                            !newVec2.equals(point3) && newVec1.equals(point1) && newVec3.equals(point2) ||
+                                            !newVec2.equals(point3) && newVec1.equals(point2) && newVec3.equals(point1) ||
+
+                                            !newVec3.equals(point1) && newVec1.equals(point2) && newVec2.equals(point3) ||
+                                            !newVec3.equals(point1) && newVec1.equals(point3) && newVec2.equals(point2) ||
+                                            !newVec3.equals(point2) && newVec1.equals(point1) && newVec2.equals(point3) ||
+                                            !newVec3.equals(point2) && newVec1.equals(point3) && newVec2.equals(point1) ||
+                                            !newVec3.equals(point3) && newVec1.equals(point1) && newVec2.equals(point2) ||
+                                            !newVec3.equals(point3) && newVec1.equals(point2) && newVec2.equals(point1)
+                                        ) {
+                                            point1.applyMatrix4(object.matrixWorld);
+                                            point1.set(point1.x.toFixed(2), point1.y.toFixed(2), point1.z.toFixed(2));
+                                            point2.applyMatrix4(object.matrixWorld);
+                                            point2.set(point2.x.toFixed(2), point2.y.toFixed(2), point2.z.toFixed(2));
+                                            point3.applyMatrix4(object.matrixWorld);
+                                            point3.set(point3.x.toFixed(2), point3.y.toFixed(2), point3.z.toFixed(2));
+                                            fj.isCoplanar = true;
+                                            var fjTriangle = new THREE.Triangle(point1, point2, point3);
+                                            pointsAry.push(point1, point2, point3);
+                                            allArea += parseFloat(fjTriangle.getArea());
+                                            console.log(allArea/1550);
+                                            childrenFaces.push(fj);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        parentFaces = childrenFaces;    //找出的面成为父面，继续遍历
+                        console.log(parentFaces);
                     }
                 }
-                console.log(Math.floor(triangleArea)/1550);
             }
-        }else {
-            // pointsArr = null; 数组方法删除
-            // scene.traverse(function (child) {
-            //     if(child && child.type === 'Points'){
-            //         pointsArr.push(child);
-            //     }
-            // });
-            // console.log(pointsArr);
-            // var pointslen = pointsArr.length;
-            // for(var i = 0; i< pointslen; i++){
-            //     pointsArr.shift();
-            // }
-            // console.log(pointsArr);
-
-            //若无选中目标
-            deletpoint();
+            console.log(allArea/1550);
         }
     }
     // 删除点
