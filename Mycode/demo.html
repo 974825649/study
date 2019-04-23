@@ -32,9 +32,6 @@
 </body>
 
 <script type="text/javascript" src="js/three.js" ></script>
-<script type="text/javascript" src="js/OrbitControls.js"></script>
-<script type="text/javascript" src="js/ColladaLoader.js"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 
     var scene,camera,light,renderer; //定义必须量
@@ -42,9 +39,10 @@
     var raycaster,raynormal,mouse;                   //射线 射线法向量 鼠标位置
     var modelgeometry,modelmesh,modelface;           //模型形状 模型
     var triangle,triangleArea;                       //三角形，三角形总面积
-    var canvas = null;//DOM对象
-    var pointsArr =[];
-    var $choose = $('#choose');
+    var canvas = null;                               //DOM对象
+    var pointsArr =[];                               //记录所有点的数组
+    var key;                                         //判断两面是否公点
+    // var $choose = $('#choose');
     // var window.innerWidth = document.getElementById('canvas-frame').clientwindow.innerWidth;   //画布宽
     // var window.innerHeight = document.getElementById('canvas-frame').clientwindow.innerHeight; //画布高
     //初始化DOM对象
@@ -179,73 +177,57 @@
                     // 通过法向量判断平行
                     if(Math.round(raynormal.x) === Math.round(modelface[i].normal.x) &&
                         Math.round(raynormal.y) === Math.round(modelface[i].normal.y) &&
-                            Math.round(raynormal.z) === Math.round(modelface[i].normal.z)){
+                        Math.round(raynormal.z) === Math.round(modelface[i].normal.z)){
                         // 设置面的颜色
                         // modelface[i].color.setHex( 0xFFC0CB );
                         // modelmesh.material = new THREE.MeshLambertMaterial( {
                         //     vertexColors: THREE.FaceColors,
                         // } );
-                        var a2 = modelgeometry.vertices[modelface[i].a];
+                        var a2 = modelgeometry.vertices[modelface[i].a];  //三角面的点
                         var b2 = modelgeometry.vertices[modelface[i].b];
                         var c2 = modelgeometry.vertices[modelface[i].c];
+                        var newpointArr=[];                               //三角面的数组
                         modelmesh.localToWorld(a2);
                         modelmesh.localToWorld(b2);
                         modelmesh.localToWorld(c2);
-                        
+                        a2.toArray(newpointArr);
+                        b2.toArray(newpointArr,3);
+                        c2.toArray(newpointArr,6);
+
                         //通过点相同判断共面
-                        rsface = rs.face;
-                        var a4 = modelgeometry.vertices[rsface.a];
+                        var pointArr=[];                                  //相交面数组
+                        rsface = rs.face;                                 //相交面
+                        var a4 = modelgeometry.vertices[rsface.a];       //相交面的点
                         var b4 = modelgeometry.vertices[rsface.b];
                         var c4 = modelgeometry.vertices[rsface.c];
-                        console.log(a2,b2,c2);
-                        console.log(a4,b4,c4);
-                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-                        var poi = 0;  //相同的点数
+                        // pointArr.push(a4,b4,c4);
+                        a4.toArray(pointArr);
+                        b4.toArray(pointArr,3);
+                        c4.toArray(pointArr,6);
+
                         var alex = 0; //相同的坐标数
-                        
-                        if(a4.x === a2.x){alex++;}
-                        if(a4.y === a2.y){alex++;}
-                        if(a4.z === a2.z){alex++;}
-                        if(alex === 3){poi++;}
-                        alex = 0;
-                        if(b4.x === b2.x){alex++;}
-                        if(b4.y === b2.y){alex++;}
-                        if(b4.z === b2.z){alex++;}
-                        if(alex === 3){poi++;}
-                        alex = 0;
-                        if(c4.x === c2.x){alex++;}
-                        if(c4.y === c2.y){alex++;}
-                        if(c4.z === c2.z){alex++;}
-                        if(alex === 3){poi++;}
-                        
-                        if( poi >= 2){
-                            console.log(modelface[i]);
-                            console.log('=============================');
+                        var poi = 0;  //相同的点数
+                        console.log(rsface);
+                        console.log(a4);
+
+                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+                        // console.log(newpointArr);
+                        // console.log(pointArr);
+                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+                        faceCompare(pointArr,newpointArr);
+                        if(key){
+
+                            // faceCompare(faceCompare(pointArr,newpointArr),newpointArr);
                             //添加小球 使用PointsMaterial
                             var starsGeometry = new THREE.Geometry();
-                            starsGeometry.vertices.push( a2,b2,c2 );
-                            var starsMaterial = new THREE.PointsMaterial( { size:20,color: 0xff0000 } );
-                            var starField = new THREE.Points( starsGeometry, starsMaterial );
-                            scene.add( starField );;
-                            triangle = new THREE.Triangle(a2,b2,c2);
+                            starsGeometry.vertices.push(a2, b2, c2);
+                            var pointColor = Math.random() * 0xffffff;
+                            var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
+                            var starField = new THREE.Points(starsGeometry, starsMaterial);
+                            scene.add(starField);
+                            triangle = new THREE.Triangle(a2, b2, c2);
                             triangleArea += triangle.getArea();
                         }
-
-
-
-                        // else if(b4 === b2){
-                        //     key++;
-                        // }else if(c4 === c2){
-                        //     key++
-                        // }
-                        // if(key === 2){
-                        //     alert(i);
-                        // }
-
-                        
-
-
-
 
                     }
                 }
@@ -286,6 +268,26 @@
                     i--;
                 }
             }
+        }
+    }
+
+
+    // 比较面
+    function faceCompare(arr1,arr2) {
+        key = 0;
+        var sum = 0;
+        for (var i = 0; i < 9; i += 3) {
+            for (var j = 0; j < 9; j += 3) {
+                if (arr1[i] === arr2[j] &&
+                    arr1[i + 1] === arr2[j + 1] &&
+                    arr1[i + 2] === arr2[j + 2]) {
+                    sum++;
+                }
+            }
+        }
+        if (sum >= 2) {
+            key ++;
+            return(arr2);
         }
     }
 
@@ -359,5 +361,8 @@
     }
 
 </script>
+<script type="text/javascript" src="js/OrbitControls.js"></script>
+<script type="text/javascript" src="js/ColladaLoader.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 </html>
 

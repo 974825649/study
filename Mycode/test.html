@@ -1,251 +1,120 @@
-<!DOCTYPE html> 
-
-<html lang="en"> 
-
-<head> 
-
- <meta charset="UTF-8"> 
-
- <title>Title</title> 
-
- <style type="text/css"> 
-
-  html, body { 
-
-   margin: 0; 
-
-   height: 100%; 
-
-  } 
-
-  
-
-  canvas { 
-
-   display: block; 
-
-  } 
-
-  
-
- </style> 
-
-</head> 
-
-<body onload="draw();"> 
-
-  
-
-</body> 
-
-    <script type="text/javascript" src="js/three.js" ></script>
-    <script type="text/javascript" src="js/OrbitControls.js"></script>
-    <script type="text/javascript" src="js/ColladaLoader.js"></script>
-
-<script> 
-
- var renderer; 
-
- function initRender() { 
-
-  renderer = new THREE.WebGLRenderer({antialias:true}); 
-
-  renderer.setSize(window.innerWidth, window.innerHeight); 
-
-  document.body.appendChild(renderer.domElement); 
-
- } 
-
-  
-
- var camera; 
-
- function initCamera() { 
-
-  camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 1, 10000); 
-
-  camera.position.set(0, 0, 400); 
-
- } 
-
-  
-
- var scene; 
-
- function initScene() { 
-
-  scene = new THREE.Scene(); 
-
- } 
-
-  
-
- var light; 
-
- function initLight() { 
-
-  scene.add(new THREE.AmbientLight(0x404040)); 
-
-  
-
-  light = new THREE.DirectionalLight(0xffffff); 
-
-  light.position.set(1,1,1); 
-
-  scene.add(light); 
-
- } 
-
-  
-
- function initModel() { 
-
-  var map = new THREE.TextureLoader().load("examples/textures/UV_Grid_Sm.jpg"); 
-
-  var material = new THREE.MeshLambertMaterial({map:map}); 
-
-  
-
-  var cube = new THREE.Mesh(new THREE.BoxGeometry(100, 200, 100, 1, 1, 1), material); 
-
-  scene.add(cube); 
-
- } 
-
-  
-
- //初始化性能插件 
-
- var stats; 
-
- function initStats() { 
-
-  stats = new Stats(); 
-
-  document.body.appendChild(stats.dom); 
-
- } 
-
-  
-
- //用户交互插件 鼠标左键按住旋转，右键按住平移，滚轮缩放 
-
- var controls; 
-
- function initControls() { 
-
-  
-
-  controls = new THREE.OrbitControls( camera, renderer.domElement ); 
-
-  
-
-  // 如果使用animate方法时，将此函数删除 
-
-  //controls.addEventListener( 'change', render ); 
-
-  // 使动画循环使用时阻尼或自转 意思是否有惯性 
-
-  controls.enableDamping = true; 
-
-  //动态阻尼系数 就是鼠标拖拽旋转灵敏度 
-
-  //controls.dampingFactor = 0.25; 
-
-  //是否可以缩放 
-
-  controls.enableZoom = true; 
-
-  //是否自动旋转 
-
-  controls.autoRotate = true; 
-
-  //设置相机距离原点的最远距离 
-
-  controls.minDistance = 200; 
-
-  //设置相机距离原点的最远距离 
-
-  controls.maxDistance = 600; 
-
-  //是否开启右键拖拽 
-
-  controls.enablePan = true; 
-
- } 
-
-  
-
- function render() { 
-
-  renderer.render( scene, camera ); 
-
- } 
-
-  
-
- //窗口变动触发的函数 
-
- function onWindowResize() { 
-
-  camera.aspect = window.innerWidth / window.innerHeight; 
-
-  camera.updateProjectionMatrix(); 
-
-  render(); 
-
-  renderer.setSize( window.innerWidth, window.innerHeight ); 
-
-  
-
- } 
-
-  
-
- function animate() { 
-
-  //更新控制器 
-
-  controls.update(); 
-
-  render(); 
-
-  
-
-  //更新性能插件 
-
-  stats.update(); 
-
-  requestAnimationFrame(animate); 
-
- } 
-
-  
-
- function draw() { 
-
-  initRender(); 
-
-  initScene(); 
-
-  initCamera(); 
-
-  initLight(); 
-
-  initModel(); 
-
-  initControls(); 
-
-  initStats(); 
-
-  
-
-  animate(); 
-
-  window.onresize = onWindowResize; 
-
- } 
-
-</script> 
-
+<html>
+
+<head></head>
+<body></body>
+<script>
+    Editor.prototype.getArea = function () {
+        return false;
+        var intersects = this.intersects;
+        var editor = this;
+        if (intersects.length > 0) {
+            for (var i = 0; i < intersects.length; i++) {
+                //获取点击的对象
+                var object = intersects[i].object;
+                var geo = object.geometry;
+
+                if (geo instanceof THREE.BufferGeometry) {
+                    var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+                    var arr = geo.getAttribute("position").array;
+                    var a = intersects[i].face.a;
+                    var b = intersects[i].face.b;
+                    var c = intersects[i].face.c;
+                    //计算面积是先取出三角形角a，角b,角c所对应的三维坐标点   并转化成现实的坐标点
+                    var newVec1 = new THREE.Vector3(arr[3 * a], arr[3 * a + 1], arr[3 * a + 2]);
+                    newVec1.applyMatrix4(object.matrixWorld);
+                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                    var newVec2 = new THREE.Vector3(arr[3 * b], arr[3 * b + 1], arr[3 * b + 2]);
+                    newVec2.applyMatrix4(object.matrixWorld);
+                    newVec2.set(newVec2.x.toFixed(2), newVec2.y.toFixed(2), newVec2.z.toFixed(2));
+                    var newVec3 = new THREE.Vector3(arr[3 * c], arr[3 * c + 1], arr[3 * c + 2]);
+                    newVec3.applyMatrix4(object.matrixWorld);
+                    newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
+                    var triangle = new THREE.Triangle(newVec1, newVec2, newVec3);
+                    //被点击的三角形的面积
+                    var allArea = triangle.getArea();
+                    //点击的法向量
+                    var f = intersects[0].face;
+                    var clickNormal = f.normal;
+                    if(typeof clickNormal.x.toFixed !== 'function') break; // 错误处理
+                    clickNormal.set(clickNormal.x.toFixed(2), clickNormal.y.toFixed(2), clickNormal.z.toFixed(2));
+                    var newFaces = new Array();
+                    //找出所有与点击法向量相同的三角形面
+                    for (var i = 0; i < geometry.faces.length; i++) {
+                        var ff = geometry.faces[i];
+                        var normal = ff.normal;
+                        normal.set(normal.x.toFixed(2), normal.y.toFixed(2), normal.z.toFixed(2));
+                        if (clickNormal.equals(normal)) {
+                            if (ff.a == a && ff.b == b && ff.c == c) ff.isCoplanar = true;
+                            else ff.isCoplanar = false;
+                            newFaces.push(ff);
+                        }
+                    }
+                    //选中所选面的周边的面
+                    var parentFaces = new Array(f);
+                    var pointsAry = []; //  本次选取的点
+                    while (parentFaces.length > 0) {
+                        var childrenFaces = new Array();
+                        for (var i = 0; i < newFaces.length; i++) {
+                            var fi = newFaces[i];
+                            //isCoplanar  是否是共面的三角形
+                            if (fi.isCoplanar) {
+                                var newVec1 = new THREE.Vector3(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2]);
+                                var newVec2 = new THREE.Vector3(arr[3 * fi.b], arr[3 * fi.b + 1], arr[3 * fi.b + 2]);
+                                var newVec3 = new THREE.Vector3(arr[3 * fi.c], arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
+                                for (var j = 0; j < newFaces.length; j++) {
+                                    var fj = newFaces[j];
+                                    var point1 = new THREE.Vector3(arr[3 * fj.a], arr[3 * fj.a + 1], arr[3 * fj.a + 2]);
+                                    var point2 = new THREE.Vector3(arr[3 * fj.b], arr[3 * fj.b + 1], arr[3 * fj.b + 2]);
+                                    var point3 = new THREE.Vector3(arr[3 * fj.c], arr[3 * fj.c + 1], arr[3 * fj.c + 2]);
+                                    //不是三角形本身且不是已经标记为共面的面
+                                    if (i != j && !fj.isCoplanar) {
+                                        //两个点相同，另一个不同的面
+                                        if (
+                                            !newVec1.equals(point1) && newVec2.equals(point2) && newVec3.equals(point3) ||
+                                            !newVec1.equals(point1) && newVec2.equals(point3) && newVec3.equals(point2) ||
+                                            !newVec1.equals(point2) && newVec2.equals(point1) && newVec3.equals(point3) ||
+                                            !newVec1.equals(point2) && newVec2.equals(point3) && newVec3.equals(point1) ||
+                                            !newVec1.equals(point3) && newVec2.equals(point1) && newVec3.equals(point2) ||
+                                            !newVec1.equals(point3) && newVec2.equals(point2) && newVec3.equals(point1) ||
+
+                                            !newVec2.equals(point1) && newVec1.equals(point2) && newVec3.equals(point3) ||
+                                            !newVec2.equals(point1) && newVec1.equals(point3) && newVec3.equals(point2) ||
+                                            !newVec2.equals(point2) && newVec1.equals(point1) && newVec3.equals(point3) ||
+                                            !newVec2.equals(point2) && newVec1.equals(point3) && newVec3.equals(point1) ||
+                                            !newVec2.equals(point3) && newVec1.equals(point1) && newVec3.equals(point2) ||
+                                            !newVec2.equals(point3) && newVec1.equals(point2) && newVec3.equals(point1) ||
+
+                                            !newVec3.equals(point1) && newVec1.equals(point2) && newVec2.equals(point3) ||
+                                            !newVec3.equals(point1) && newVec1.equals(point3) && newVec2.equals(point2) ||
+                                            !newVec3.equals(point2) && newVec1.equals(point1) && newVec2.equals(point3) ||
+                                            !newVec3.equals(point2) && newVec1.equals(point3) && newVec2.equals(point1) ||
+                                            !newVec3.equals(point3) && newVec1.equals(point1) && newVec2.equals(point2) ||
+                                            !newVec3.equals(point3) && newVec1.equals(point2) && newVec2.equals(point1)
+                                        ) {
+                                            point1.applyMatrix4(object.matrixWorld);
+                                            point1.set(point1.x.toFixed(2), point1.y.toFixed(2), point1.z.toFixed(2));
+                                            point2.applyMatrix4(object.matrixWorld);
+                                            point2.set(point2.x.toFixed(2), point2.y.toFixed(2), point2.z.toFixed(2));
+                                            point3.applyMatrix4(object.matrixWorld);
+                                            point3.set(point3.x.toFixed(2), point3.y.toFixed(2), point3.z.toFixed(2));
+                                            fj.isCoplanar = true;
+                                            var fjTriangle = new THREE.Triangle(point1, point2, point3);
+                                            pointsAry.push(point1, point2, point3);
+                                            allArea += parseFloat(fjTriangle.getArea());
+                                            childrenFaces.push(fj);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        parentFaces = childrenFaces;    //找出的面成为父面，继续遍历
+                    }
+                    editor.addAreaPointAndLine(pointsAry);
+                    console.log("当前面的面积为 ：" + allArea.toFixed(2));
+                    //alert("当前面的面积为 ：" + allArea.toFixed(2));
+                }
+            }
+        }
+    }
+</script>
 </html>
