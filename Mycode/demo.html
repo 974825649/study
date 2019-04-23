@@ -261,30 +261,44 @@
                 newVec2.set(newVec2.x.toFixed(2), newVec2.y.toFixed(2), newVec2.z.toFixed(2));
                 newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
                 triangle = new THREE.Triangle(newVec1, newVec2, newVec3);
-                triangleArea = triangle.getArea();
+                triangleArea = triangle.getArea()/1500;
                 
                 console.log(newFace);
-                for(var i = 0; i < newFace.length; i++){
-                    var childFace =[];
+                var newParentchildFace =[];
+                for (var i = 0; i < newFace.length; i++) {
+                    // while (parentFace.length > 0) {
+                    var childFace = [];
                     var fi = newFace[i];
-                    childFace.push(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2]);
-                    childFace.push(arr[3 * fi.b], arr[3 * fi.b + 1], arr[3 * fi.b + 2]);
-                    childFace.push(arr[3 * fi.c], arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
-                    // console.log(childFace);
-                    key = 0;
-                    // console.log(parentFace);
-                    // console.log(childFace);
-                    // console.log('iiiiiiiiiiii');
-                    faceCompare(parentFace,childFace);
-                    if(key){
-                        console.log(i);
+                        childFace.push(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2]);
+                        childFace.push(arr[3 * fi.b], arr[3 * fi.b + 1], arr[3 * fi.b + 2]);
+                        childFace.push(arr[3 * fi.c], arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
+                        // console.log(childFace);
+                        key = 0;
+                        // console.log(parentFace);
+                        // console.log(childFace);
+                        // console.log('iiiiiiiiiiii');
+                        if (!fi.isCoplanar) {
+                            faceCompare(parentFace, childFace);
+                            if (key) {
+                                console.log(i);
+                                fi.isCoplanar = true;
+                                newParentchildFace.push(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2],arr[3 * fi.b],
+                                    arr[3 * fi.b + 1], arr[3 * fi.b + 2],arr[3 * fi.c],
+                                    arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
+                                var point1 = new THREE.Vector3(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2]);
+                                var point2 = new THREE.Vector3(arr[3 * fi.b], arr[3 * fi.b + 1], arr[3 * fi.b + 2]);
+                                var point3 = new THREE.Vector3(arr[3 * fi.c], arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
+                                triangle = new THREE.Triangle(point1, point2, point3);
+                                triangleArea += (triangle.getArea()/1500);
+                                // newParentchildFace.splice(0,9);
+                                console.log(newParentchildFace);
+                            }
+                        }
                     }
-                }
-
-
-
-
-                console.log(Math.floor(triangleArea)/1550);
+                //     newParentchildFace.splice(0,9);
+                //     parentFace = newParentchildFace;
+                // }
+                console.log(Math.floor(triangleArea));
             }
         }else{
             // pointsArr = null; 数组方法删除
