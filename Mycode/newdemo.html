@@ -152,6 +152,7 @@
     mouse = new THREE.Vector2();
 
     function ray(event) {
+        deletpoint();
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
         mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
         mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -164,7 +165,6 @@
                 //获取点击的对象
                 var object = intersects[i].object;
                 var geo = object.geometry;
-                console.log(object);
                 if (geo instanceof THREE.BufferGeometry) {
                     var geometry = new THREE.Geometry().fromBufferGeometry(geo);
                     var arr = geo.getAttribute("position").array;  //记录所有点的数组
@@ -174,7 +174,9 @@
                     var c = intersects[i].face.c;
                     //计算面积是先取出三角形角a，角b,角c所对应的三维坐标点   并转化成现实的坐标点
                     var newVec1 = new THREE.Vector3(arr[3 * a], arr[3 * a + 1], arr[3 * a + 2]);
+                    console.log(newVec1);
                     newVec1.applyMatrix4(object.matrixWorld);
+                    console.log(newVec1);
                     newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
                     var newVec2 = new THREE.Vector3(arr[3 * b], arr[3 * b + 1], arr[3 * b + 2]);
                     newVec2.applyMatrix4(object.matrixWorld);
@@ -183,6 +185,15 @@
                     newVec3.applyMatrix4(object.matrixWorld);
                     newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
                     var triangle = new THREE.Triangle(newVec1, newVec2, newVec3);
+
+                    // //添加小球 使用PointsMaterial
+                    var starsGeometry = new THREE.Geometry();
+                    starsGeometry.vertices.push(newVec1, newVec2, newVec3);
+                    var pointColor = Math.random() * 0xffffff;
+                    var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
+                    var starField = new THREE.Points(starsGeometry, starsMaterial);
+                    scene.add(starField);
+
                     //被点击的三角形的面积
                     var allArea = triangle.getArea();  //计算三角形面积
                     //点击的法向量
@@ -251,6 +262,15 @@
                                             point2.set(point2.x.toFixed(2), point2.y.toFixed(2), point2.z.toFixed(2));
                                             point3.applyMatrix4(object.matrixWorld);
                                             point3.set(point3.x.toFixed(2), point3.y.toFixed(2), point3.z.toFixed(2));
+
+                                            //添加小球 使用PointsMaterial
+                                            var starsGeometry = new THREE.Geometry();
+                                            starsGeometry.vertices.push(point1, point2, point3);
+                                            var pointColor = Math.random() * 0xffffff;
+                                            var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
+                                            var starField = new THREE.Points(starsGeometry, starsMaterial);
+                                            scene.add(starField);
+
                                             fj.isCoplanar = true;
                                             var fjTriangle = new THREE.Triangle(point1, point2, point3);
                                             pointsAry.push(point1, point2, point3);
@@ -267,7 +287,7 @@
                     }
                 }
             }
-            console.log(allArea/1550);
+            console.log((allArea/1550).toFixed(2));
         }
     }
     // 删除点

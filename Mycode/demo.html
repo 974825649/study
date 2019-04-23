@@ -39,7 +39,7 @@
 
     var scene,camera,light,renderer; //定义必须量
     var controls,mesh,address,dae;         //自定义添加量
-    var raycaster,raynormal,mouse;                   //射线 射线法向量 鼠标位置
+    var raycaster,rayNormal,mouse;                   //射线 射线法向量 鼠标位置
     var modelgeometry,modelmesh,modelface;           //模型形状 模型
     var triangle,triangleArea;                       //三角形，三角形总面积
     var canvas = null;                               //DOM对象
@@ -159,85 +159,134 @@
         raycaster.setFromCamera( mouse, camera );
         // 计算物体和射线的焦点
         var intersects = raycaster.intersectObjects([dae],true);
-        console.log(intersects);
-        console.log('----------------');
         deletpoint();   //清空所有点
         if (intersects.length) {
-            var rs = intersects[0];
-            if(rs.object.type === "Mesh"){
+            for (var i = 0; i < intersects.length; i++) {
                 // var mate = new THREE.LineBasicMaterial( ); 更换材质
                 // rs.object.material = mate;
                 // rs.object.material.color = {r: 0.5, g: 0.5, b: 1}; //设置颜色
-                modelmesh = rs.object;
-                if(modelmesh.geometry.type === "BufferGeometry"){
+                modelmesh = intersects[i].object;
+                if(modelmesh.geometry instanceof THREE.BufferGeometry){
                     modelgeometry  = new THREE.Geometry().fromBufferGeometry( modelmesh.geometry );//转换得出新对象
                 }
-                // console.log(modelgeometry);           //输出新模型的几何
+                var arr = modelmesh.geometry.getAttribute("position").array;
+                //获取索引
+                var a = intersects[i].face.a;
+                var b = intersects[i].face.b;
+                var c = intersects[i].face.c;
                 modelface = modelgeometry.faces;        //模型的面
-                raynormal = rs.face.normal;  //射线法向量
+                rayNormal = intersects[i].face.normal;            //射线法向量
+                rayNormal.set(rayNormal.x.toFixed(2), rayNormal.y.toFixed(2), rayNormal.z.toFixed(2));
                 triangleArea = 0;     //图形面积
-                // JSON.stringify(raynormal) === JSON.stringify(modelface[i].normal)
+
+                var newFace = [];     //容纳所有共面三角形
                 for(var i = 0; i<modelface.length; i++){
+                    var faceI = modelface[i];        //三角面
+                    var faceNormal = faceI.normal;
+                    faceNormal.set(faceNormal.x.toFixed(2),faceNormal.y.toFixed(2),faceNormal.z.toFixed(2));
                     // 通过法向量判断平行
-                    if(Math.round(raynormal.x) === Math.round(modelface[i].normal.x) &&
-                        Math.round(raynormal.y) === Math.round(modelface[i].normal.y) &&
-                        Math.round(raynormal.z) === Math.round(modelface[i].normal.z)){
-                        // 设置面的颜色
-                        // modelface[i].color.setHex( 0xFFC0CB );
-                        // modelmesh.material = new THREE.MeshLambertMaterial( {
-                        //     vertexColors: THREE.FaceColors,
-                        // } );
-                        var a2 = modelgeometry.vertices[modelface[i].a];  //三角面的点
-                        var b2 = modelgeometry.vertices[modelface[i].b];
-                        var c2 = modelgeometry.vertices[modelface[i].c];
-                        var newpointArr=[];                               //三角面的数组
-                        a2.applyMatrix4(modelmesh.matrixWorld);
-                        b2.applyMatrix4(modelmesh.matrixWorld);
-                        c2.applyMatrix4(modelmesh.matrixWorld);
-                        a2.toArray(newpointArr);
-                        b2.toArray(newpointArr,3);
-                        c2.toArray(newpointArr,6);
-
-                        //通过点相同判断共面
-                        var pointArr=[];                                  //相交面数组
-                        rsface = rs.face;                                 //相交面
-                        var a4 = modelgeometry.vertices[rsface.a];       //相交面的点
-                        var b4 = modelgeometry.vertices[rsface.b];
-                        var c4 = modelgeometry.vertices[rsface.c];
-                        // pointArr.push(a4,b4,c4);
-                        a4.toArray(pointArr);
-                        b4.toArray(pointArr,3);
-                        c4.toArray(pointArr,6);
-
-                        var alex = 0; //相同的坐标数
-                        var poi = 0;  //相同的点数
-                        console.log(rsface);
-                        console.log(a4);
-
-                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-                        // console.log(newpointArr);
-                        // console.log(pointArr);
-                        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-                        faceCompare(pointArr,newpointArr);
-                        if(key){
-
-                            // faceCompare(faceCompare(pointArr,newpointArr),newpointArr);
-                            //添加小球 使用PointsMaterial
-                            var starsGeometry = new THREE.Geometry();
-                            starsGeometry.vertices.push(a2, b2, c2);
-                            var pointColor = Math.random() * 0xffffff;
-                            var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
-                            var starField = new THREE.Points(starsGeometry, starsMaterial);
-                            scene.add(starField);
-                            triangle = new THREE.Triangle(a2, b2, c2);
-                            triangleArea += triangle.getArea();
-                        }
-
+                    if(faceNormal.equals(rayNormal)){
+                        if (faceI.a === a && faceI.b === b && faceI.c === c) faceI.isCoplanar = true;
+                        else faceI.isCoplanar = false;
+                        newFace.push(faceI);
+                        // var newVec1 = new THREE.Vector3(arr[3 * a], arr[3 * a + 1], arr[3 * a + 2]);
+                        // console.log(newVec1);
+                        // newVec1.applyMatrix4(object.matrixWorld);
+                        // console.log(newVec1);
+                        // newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                        //
+                        // // 设置面的颜色
+                        // // modelface[i].color.setHex( 0xFFC0CB );
+                        // // modelmesh.material = new THREE.MeshLambertMaterial( {
+                        // //     vertexColors: THREE.FaceColors,
+                        // // } );
+                        // var a2 = modelgeometry.vertices[modelface[i].a];  //三角面的点
+                        // var b2 = modelgeometry.vertices[modelface[i].b];
+                        // var c2 = modelgeometry.vertices[modelface[i].c];
+                        // var newpointArr=[];                               //三角面的数组
+                        // a2.applyMatrix4(modelmesh.matrixWorld);
+                        // b2.applyMatrix4(modelmesh.matrixWorld);
+                        // c2.applyMatrix4(modelmesh.matrixWorld);
+                        // a2.toArray(newpointArr);
+                        // b2.toArray(newpointArr,3);
+                        // c2.toArray(newpointArr,6);
+                        //
+                        // //通过点相同判断共面
+                        // var pointArr=[];                                  //相交面数组
+                        // rsface = rs.face;                                 //相交面
+                        // var a4 = modelgeometry.vertices[rsface.a];       //相交面的点
+                        // var b4 = modelgeometry.vertices[rsface.b];
+                        // var c4 = modelgeometry.vertices[rsface.c];
+                        // // pointArr.push(a4,b4,c4);
+                        // a4.toArray(pointArr);
+                        // b4.toArray(pointArr,3);
+                        // c4.toArray(pointArr,6);
+                        //
+                        // var alex = 0; //相同的坐标数
+                        // var poi = 0;  //相同的点数
+                        // // console.log(rsface);
+                        // // console.log(a4);
+                        //
+                        // // console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+                        // // console.log(newpointArr);
+                        // // console.log(pointArr);
+                        // // console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+                        // faceCompare(pointArr,newpointArr);
+                        // if(key){
+                        //
+                        //     // faceCompare(faceCompare(pointArr,newpointArr),newpointArr);
+                        //     //添加小球 使用PointsMaterial
+                        //     var starsGeometry = new THREE.Geometry();
+                        //     starsGeometry.vertices.push(a2, b2, c2);
+                        //     var pointColor = Math.random() * 0xffffff;
+                        //     var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
+                        //     var starField = new THREE.Points(starsGeometry, starsMaterial);
+                        //     scene.add(starField);
+                        //     triangle = new THREE.Triangle(a2, b2, c2);
+                        //     triangleArea += triangle.getArea();
+                        // }
                     }
                 }
+
+                var parentFace = [];
+                parentFace.push(arr[3 * a], arr[3 * a + 1], arr[3 * a + 2],arr[3 * b],
+                    arr[3 * b + 1], arr[3 * b + 2],arr[3 * c], arr[3 * c + 1], arr[3 * c + 2]);
+                var newVec1 = new THREE.Vector3(arr[3 * a], arr[3 * a + 1], arr[3 * a + 2]);
+                var newVec2 = new THREE.Vector3(arr[3 * b], arr[3 * b + 1], arr[3 * b + 2]);
+                var newVec3 = new THREE.Vector3(arr[3 * c], arr[3 * c + 1], arr[3 * c + 2]);
+                newVec1.applyMatrix4(modelmesh.matrixWorld);
+                newVec2.applyMatrix4(modelmesh.matrixWorld);
+                newVec3.applyMatrix4(modelmesh.matrixWorld);
+                newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                newVec2.set(newVec2.x.toFixed(2), newVec2.y.toFixed(2), newVec2.z.toFixed(2));
+                newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
+                triangle = new THREE.Triangle(newVec1, newVec2, newVec3);
+                triangleArea = triangle.getArea();
+                
+                console.log(newFace);
+                for(var i = 0; i < newFace.length; i++){
+                    var childFace =[];
+                    var fi = newFace[i];
+                    childFace.push(arr[3 * fi.a], arr[3 * fi.a + 1], arr[3 * fi.a + 2]);
+                    childFace.push(arr[3 * fi.b], arr[3 * fi.b + 1], arr[3 * fi.b + 2]);
+                    childFace.push(arr[3 * fi.c], arr[3 * fi.c + 1], arr[3 * fi.c + 2]);
+                    // console.log(childFace);
+                    key = 0;
+                    // console.log(parentFace);
+                    // console.log(childFace);
+                    // console.log('iiiiiiiiiiii');
+                    faceCompare(parentFace,childFace);
+                    if(key){
+                        console.log(i);
+                    }
+                }
+
+
+
+
                 console.log(Math.floor(triangleArea)/1550);
             }
-        }else {
+        }else{
             // pointsArr = null; 数组方法删除
             // scene.traverse(function (child) {
             //     if(child && child.type === 'Points'){
@@ -290,7 +339,7 @@
             }
         }
         if (sum >= 2) {
-            key ++;
+            key++;
             return(arr2);
         }
     }
