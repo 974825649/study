@@ -184,21 +184,25 @@
                     newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
 
                     // 划线
-                    if(firstVec){
-                        console.log(2333333333333);
+                    if(firstVec.length){
+                        console.log(firstVec);
+                        console.log(newVec1);
                         deleline();
                         var linegeometry = new THREE.Geometry(); //创建一个几何体
                         var linematerial = new THREE.LineBasicMaterial( { color: '#ff4545',} );//定义线条的材质
                         var color1 = new THREE.Color( 0x444444 ), color2 = new THREE.Color( 0xFF0000 );//定义点颜色
                         
                         // 线的材质可以由2点的颜色决定
-                        
+                        console.log('sssssssss');
                         linegeometry.vertices.push(firstVec);
                         linegeometry.vertices.push(newVec1);
                         linegeometry.colors.push( color1, color2 );
                         var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
                         line.userData = {'my':'line'};
                         scene.add(line);
+                        var lineDis = new THREE.Line3( firstVec,newVec1);
+                        var lineDistance = lineDis.distanceSq().toFixed(2)/1550;
+                        console.log(lineDistance);
                     }
 
                     // console.log(geometry);
