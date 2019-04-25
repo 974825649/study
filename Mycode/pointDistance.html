@@ -149,7 +149,6 @@
     //射线计算鼠标移动
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
-
     function getDistance(event) {
         deletpoint();
         // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
@@ -175,48 +174,38 @@
                     if (geo instanceof THREE.BufferGeometry) {
                         var geometry = new THREE.Geometry().fromBufferGeometry(geo);
                     }
-                    // console.log(pointVec);
-                    // 显示小球
-                    pointVec = new THREE.Vector3(point.x, point.y, point.z);
-                    pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
-                    addPoint(pointVec);
-                    var newVec1 = new THREE.Vector3(point.x, point.y, point.z);
-                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
-
-                    // 划线
-                    if(firstVec.length){
-                        console.log(firstVec);
-                        console.log(newVec1);
-                        deleline();
-                        var linegeometry = new THREE.Geometry(); //创建一个几何体
-                        var linematerial = new THREE.LineBasicMaterial( { color: '#ff4545',} );//定义线条的材质
-                        var color1 = new THREE.Color( 0x444444 ), color2 = new THREE.Color( 0xFF0000 );//定义点颜色
-                        
-                        // 线的材质可以由2点的颜色决定
-                        console.log('sssssssss');
-                        linegeometry.vertices.push(firstVec);
-                        linegeometry.vertices.push(newVec1);
-                        linegeometry.colors.push( color1, color2 );
-                        var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
-                        line.userData = {'my':'line'};
-                        scene.add(line);
-                        var lineDis = new THREE.Line3( firstVec,newVec1);
-                        var lineDistance = lineDis.distanceSq().toFixed(2)/1550;
-                        console.log(lineDistance);
+                    geometry.mergeVertices ();    //顶点去重
+                    var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
+                    for(var i = 0;i < geometry.vertices.length;i++){
+                        var verI = geometry.vertices[i];
+                        var newVec1 = new THREE.Vector3(verI.x, verI.y, verI.z);
+                        newVec1.applyMatrix4(object.matrixWorld);
+                        newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                        verticesAll.push(newVec1);
                     }
 
-                    // console.log(geometry);
-                    // console.log(geo);
-                    // var arr = geo.getAttribute("position").array;  //记录所有点的数组
-                    // console.log(arr);
-                    // var vertices = geometry.vertices;
-                    // console.log(vertices);
+                    // 显示移动点
+                    pointVec = new THREE.Vector3(point.x, point.y, point.z);
+                    pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
+
+                    addPoint(pointVec);               //显示移动点
+                    serchVertices(pointVec,verticesAll);  //寻找最近点
+
+                    //  画线测距
+                    if(firstVec.length && pointVec.length){
+                        deleline();                  //删除旧线
+                        console.log(firstVec,pointVec);
+                        drawLine(firstVec,pointVec);
+                    }
                 }
             }
+        }else {
+            //如果点不在物体上，删除线和小球
+            deleline();
         }
     }
     
-    // 删除点
+    // 删除移动点
     function deletpoint() {
         for(var i = 0;i < scene.children.length; i ++){
             // 删除鼠标移动点
@@ -226,52 +215,97 @@
         }
     }
 
-    // 添加点
+    // 添加移动点
     function addPoint(po) {
         var starsGeometry = new THREE.Geometry();
         starsGeometry.vertices.push(po);
-        var pointColor = Math.random() * 0xffffff;
-        var starsMaterial = new THREE.PointsMaterial({size: 20, color: pointColor});
+        // var pointColor = Math.random() * 0xffffff;
+        var starsMaterial = new THREE.PointsMaterial({size: 20, color: 0xff0000});
         var starField = new THREE.Points(starsGeometry, starsMaterial);
         scene.add(starField);
     }
 
-    function addSphere() {
-        // 判断当前点是否能添加
-        poiNum++;
+    //小球寻找最近顶点
+    function serchVertices(po,ver) {
+        var newarr = [];
+        var n = 5;
+        var x = parseInt(po.x);
+        var y = parseInt(po.y);
+        var z = parseInt(po.z);
+        for (var i = 0; i < ver.length; i++) {
+            var verI = ver[i];
+            var verX = parseInt(verI.x);
+            var verY = parseInt(verI.y);
+            var verZ = parseInt(verI.z);
+            if(x+n>verX && x-n<verX &&
+                y+n>verY && y-n<verY &&
+                    z+n>verZ && z-n<verZ){
+                newarr.push(verI);
+                pointVec.set(newarr[0].x,newarr[0].y,newarr[0].z);
+            }
+        }
+    }
 
+    //添加测距小球
+    function addSphere() {
+        poiNum++;
         var geometry = new THREE.SphereGeometry(5, 32, 32);
         var material = new THREE.MeshBasicMaterial({color: 0xffff00});
         var sphere = new THREE.Mesh(geometry, material);
         sphere.userData = {'my': 'sphere'};
+        console.log(pointVec);
         sphere.position.set(pointVec.x, pointVec.y, pointVec.z);
         scene.add(sphere);
         if(poiNum === 1){
             firstVec = new THREE.Vector3(pointVec.x, pointVec.y, pointVec.z);
-            console.log(firstVec);
         }else if(poiNum === poiNumMax){
+            // 删除线和小球
             deleline();
-            firstVec = [];
-            var myadd = []; //添加的球体
-            for (var i = 0; i < scene.children.length; i++) {
-                if (scene.children[i].userData.my === 'sphere') {
-                    scene.remove(scene.children[i]);
-                }
-            }
-            poiNum = 0;
+            deleSphere();
         }
     }
 
+    //删除小球
+    function deleSphere() {
+        for(var i = 0;i < scene.children.length; i++){
+            if(scene.children[i].userData.my === 'sphere'){
+                scene.remove(scene.children[i]);
+                i--;
+            }
+        }
+        poiNum = 0;  //球数归零
+        firstVec = []; //起点归零
+    }
+
+    //删除线
     function deleline() {
         for(var i = 0;i < scene.children.length; i++){
             if(scene.children[i].userData.my === 'line'){
                 scene.remove(scene.children[i]);
+                i--;
             }
         }
     }
 
+    //根据点画线测距
+    function drawLine(start,end) {
+        var linegeometry = new THREE.Geometry(); //创建一个几何体
+        var linematerial = new THREE.LineBasicMaterial( { color: '#ff4545',} );//定义线条的材质
+        var color1 = new THREE.Color( 0x444444 ), color2 = new THREE.Color( 0xFF0000 );//定义点颜色
+        // 线的材质可以由2点的颜色决定
+        linegeometry.vertices.push(start);
+        linegeometry.vertices.push(end);
+        linegeometry.colors.push( color1, color2 );
+        var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
+        line.userData = {'my':'line'};
+        scene.add(line);
 
-
+        var lineDis = new THREE.Line3(start,end);
+        var a = new  THREE.Vector3();
+        console.log(lineDis.getCenter(a));
+        var lineDistance = (lineDis.distance()/40).toFixed(2);
+        console.log(lineDistance);
+    }
 
     //控件操作模块
     function OrbitControls(camera, renderer) {
@@ -288,6 +322,8 @@
         renderer.render(scene, camera);
         requestAnimationFrame(animation);
     }
+    
+    // 添加其他模型
     /* function select(){
          // console.log(typeof parseInt($(this).val()));
          switch (value) {
