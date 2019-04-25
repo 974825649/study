@@ -194,14 +194,14 @@
                     //  画线测
                     if(firstVec.length && pointVec.length){
                         deleline();                  //删除旧线
-                        console.log(firstVec,pointVec);
                         drawLine(firstVec,pointVec);
                     }
                 }
             }
         }else {
-            //如果点不在物体上，删除所有线
+            //如果点不在物体上，删除所有线和点
             deleline();
+            deleSphere();
         }
     }
     
