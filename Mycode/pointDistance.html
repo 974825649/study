@@ -218,10 +218,16 @@
 
     // 添加移动点
     function addPoint(po) {
+        var sca = camera.position;
+        var zero = new THREE.Vector3(0,0,0);
+        var distan = sca.distanceTo(zero);
+        var n = 5;
+        poSize = n/distan;
+        console.log(distan);
         var starsGeometry = new THREE.Geometry();
         starsGeometry.vertices.push(po);
         // var pointColor = Math.random() * 0xffffff;
-        var starsMaterial = new THREE.PointsMaterial({size: 0.5, color: 0xff0000});
+        var starsMaterial = new THREE.PointsMaterial({size: poSize, color: 0xff0000});
         var starField = new THREE.Points(starsGeometry, starsMaterial);
         scene.add(starField);
     }
@@ -391,9 +397,7 @@
         }
         scene.add(line);
         var lineDis = new THREE.Line3(start, end);
-        console.log(lineDis);
         var lineDistance = (lineDis.distance());
-        console.log(lineDistance);
     }
 
     //控件操作模块
