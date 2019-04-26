@@ -45,6 +45,8 @@
     var poiNumMax = 2;                                  //最多存在的球数
     var canvas = null;                               //DOM对象
     var pointsArr =[];                               //记录所有点的数组
+    var lineTag = 0,lineTotal = [];                  //保存的线标识，线的数组
+    var pointExist = false,key;
     // var $choose = $('#choose');
     //初始化DOM对象
     function initDOM(){
@@ -146,8 +148,8 @@
         }
     }
 
-    var key;
-    function showPoint(event) {
+    // 算距离
+    function showDistance(event) {
         deletpoint();                      //删除点
         var mouse = getMouse2DPosition(event);               //获取鼠标2d坐标
         var mouse3D = getMouse3DPosition(mouse);             //获取鼠标3d坐标
@@ -167,6 +169,9 @@
                 var point = intersects[i].point;
                 var face = intersects[i].face;
                 var facePoint = getFacePoint(object,face);  //获取相交面的数组
+                if(facePoint){                              //根据是否有相交面判断小球是否添加
+                    pointExist = true;
+                }
 
                 // 显示移动点的交点
                 pointVec = new THREE.Vector3(point.x, point.y, point.z);
@@ -176,19 +181,24 @@
                 serchVertices(pointVec, facePoint);  //寻找最近点
                 deletpoint();
                 addPoint(pointVec);
-                if (firstVec.length && pointVec.length) {     //绘制物体内直线
+
+                //绘制物体内直线
+                if (firstVec.length && pointVec.length) {
                     deleline();                  //删除旧线
-                    drawLine(firstVec, pointVec);
+                    drawLine(firstVec, pointVec,false);
                 }
             }
-        } else if(firstVec.length && mouse3D.length){     //绘制物体外直线
+        }else if(firstVec.length){     //有起点绘制物体外直线
+            pointExist = false;
             deleline();
-            drawLine(firstVec, mouse3D);
+            drawLine(firstVec, mouse3D,false);
+        }else {
+            pointExist = false;       //什么都没有
         }
     }
 
 
-    //获取鼠标2d移动
+    //获取鼠标2d坐标
     function getMouse2DPosition(event) {
         raycaster = new THREE.Raycaster();
         mouse = new THREE.Vector2();
@@ -301,29 +311,44 @@
                 z + n > facePointZ && z - n < facePointZ) {
                 newarr.push(facePointI);
                 pointVec.set(newarr[0].x, newarr[0].y, newarr[0].z);
-                console.log('ok');
-                console.log(newarr);
             }
         }
     }
 
     //添加测距小球
-    function addSphere() {
-        poiNum++;
-        var geometry = new THREE.SphereGeometry(0.5, 32, 32);
-        var material = new THREE.MeshBasicMaterial({color: 0xffff00});
-        var sphere = new THREE.Mesh(geometry, material);
-        sphere.userData = {'my': 'sphere'};
-        console.log(pointVec);
-        sphere.position.set(pointVec.x, pointVec.y, pointVec.z);
-        scene.add(sphere);
-        if (poiNum === 1) {
-            firstVec = new THREE.Vector3(pointVec.x, pointVec.y, pointVec.z);
-        } else if (poiNum === poiNumMax) {
-            // 删除线和小球
+    function addSphere(event) {
+        event.preventDefault();
+        // 判断是否测量
+        if(event.which === 1){
+            if(pointExist){
+                poiNum++;
+                // 添加球
+                var geometry = new THREE.SphereGeometry(0.5, 32, 32);
+                var material = new THREE.MeshBasicMaterial({color: 0xffff00});
+                var sphere = new THREE.Mesh(geometry, material);
+                sphere.userData = {'my': 'sphere'};
+                sphere.position.set(pointVec.x, pointVec.y, pointVec.z);
+                scene.add(sphere);
+                if (poiNum === 1) {
+                    //设置原点
+                    firstVec = new THREE.Vector3(pointVec.x, pointVec.y, pointVec.z);
+                } else if (poiNum === poiNumMax) {
+                    //保存新线
+                    drawLine(firstVec, pointVec,true);
+                    // 删除线和小球
+                    deleline();
+                    deleSphere();
+                }
+            }else {
+                // 删除线和小球
+                deleline();
+                deleSphere();
+            }
+        }else if(event.which ===3){
             deleline();
             deleSphere();
         }
+
     }
 
     //删除小球
@@ -349,7 +374,7 @@
     }
 
     //根据点画线测距
-    function drawLine(start, end) {
+    function drawLine(start, end ,saveLine) {
         var linegeometry = new THREE.Geometry(); //创建一个几何体
         var linematerial = new THREE.LineBasicMaterial({color: '#ff4545'});//定义线条的材质
         var color1 = new THREE.Color(0x444444), color2 = new THREE.Color(0xFF0000);//定义点颜色
@@ -358,10 +383,16 @@
         linegeometry.vertices.push(end);
         linegeometry.colors.push(color1, color2);
         var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
-        line.userData = {'my': 'line'};
+        if(saveLine === true){
+            line.userData = {'my': 'line' + lineTag };
+            lineTag++;
+            lineTotal.push(line);
+        }else{
+            line.userData = {'my': 'line'};
+        }
         scene.add(line);
-
         var lineDis = new THREE.Line3(start, end);
+        console.log(lineDis);
         var lineDistance = (lineDis.distance());
         console.log(lineDistance);
     }
@@ -435,8 +466,8 @@
         //实时动画
         animation();
         // $choose.bind('click',select);
-        $('body').bind('mousemove', showPoint);
-        $('body').bind('click', addSphere);
+        $('body').bind('mousemove', showDistance);
+        $('body').bind('mousedown', addSphere);
     }
 
 
