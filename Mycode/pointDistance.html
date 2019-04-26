@@ -70,7 +70,7 @@
     //初始化相机
     function initCamera() {  //透视相机
         camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
-        camera.position.set(500, 500, 500);
+        camera.position.set(25, 20, 25);
         // camera.position.set(0, 400, 0);
         camera.lookAt(0,0,0);
     }
@@ -100,7 +100,7 @@
 
     //辅助网格
     function initGrid(){
-        var helper = new THREE.GridHelper( 1000, 50 );
+        var helper = new THREE.GridHelper( 10, 10 );
         scene.add( helper );
     }
 
@@ -140,71 +140,83 @@
             dae = collada.scene;
             dae.position.set(0,0,0);
             // 缩放
-            var n = 1;
-            dae.scale.set(n, n, n);
+            // var n = 1;
+            // dae.scale.set(n, n, n);
             scene.add(dae);
         }
     }
 
-    //射线计算鼠标移动
-    raycaster = new THREE.Raycaster();
-    mouse = new THREE.Vector2();
-    function getDistance(event) {
-        deletpoint();
-        // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        //通过摄像机和鼠标位置更新射线
-        raycaster.setFromCamera(mouse, camera);
+    var key;
+    function showPoint(event) {
+        deletpoint();                      //删除点
+        var mouse = getMouse2DPosition(event);               //获取鼠标2d坐标
+        var mouse3D = getMouse3DPosition(mouse);             //获取鼠标3d坐标
+        addPoint(mouse3D);               //显示移动点
+
         // 计算物体和射线的焦点
         var intersects = raycaster.intersectObjects(scene.children, true);
-        var key = 0; //每次只需要一个点
+        key = 0; //每次只需要一个点
         if (intersects.length > 0) {
             for (var i = 0; i < intersects.length; i++) {
-                if(key){
+                if (key) {
                     key = 0;
                     break;
                 }
                 //获取点击的对象
                 var object = intersects[i].object;
                 var point = intersects[i].point;
-                if  (object instanceof THREE.Mesh) {
-                    key++;
-                    var geo = object.geometry;
-                    if (geo instanceof THREE.BufferGeometry) {
-                        var geometry = new THREE.Geometry().fromBufferGeometry(geo);
-                    }
-                    geometry.mergeVertices ();    //顶点去重
-                    var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
-                    for(var i = 0;i < geometry.vertices.length;i++){
-                        var verI = geometry.vertices[i];
-                        var newVec1 = new THREE.Vector3(verI.x, verI.y, verI.z);
-                        newVec1.applyMatrix4(object.matrixWorld);
-                        newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
-                        verticesAll.push(newVec1);
-                    }
+                var verticesAll = getVertices(object);
+                if(verticesAll){
+                    console.log(verticesAll);
+                }
 
-                    // 显示移动点
-                    pointVec = new THREE.Vector3(point.x, point.y, point.z);
-                    pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
-
-                    addPoint(pointVec);               //显示移动点
-                    serchVertices(pointVec,verticesAll);  //寻找最近点
-
-                    //  画线测
-                    if(firstVec.length && pointVec.length){
-                        deleline();                  //删除旧线
-                        drawLine(firstVec,pointVec);
-                    }
+                // 显示移动点
+                pointVec = new THREE.Vector3(point.x, point.y, point.z);
+                pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
+                // serchVertices(pointVec, verticesAll);  //寻找最近点
+                //  画线测
+                if (firstVec.length && pointVec.length) {
+                    deleline();                  //删除旧线
+                    drawLine(firstVec, pointVec);
                 }
             }
-        }else {
+        } else {
             //如果点不在物体上，删除所有线和点
-            deleline();
-            deleSphere();
+            // deleline();
+            // deleSphere();
         }
     }
-    
+
+
+    //获取鼠标2d移动
+    function getMouse2DPosition(event) {
+        raycaster = new THREE.Raycaster();
+        mouse = new THREE.Vector2();
+        // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        //通过摄像机和鼠标位置更新射线
+        raycaster.setFromCamera(mouse, camera);
+        return mouse;
+    }
+
+    //获取鼠标3d坐标
+    function getMouse3DPosition(mouse){
+        var vector = new THREE.Vector3(mouse.x,mouse.y,0.5);
+        vector.unproject(camera);
+        return vector;
+    }
+
+    // 添加移动点
+    function addPoint(po) {
+        var starsGeometry = new THREE.Geometry();
+        starsGeometry.vertices.push(po);
+        // var pointColor = Math.random() * 0xffffff;
+        var starsMaterial = new THREE.PointsMaterial({size: 0.1, color: 0xff0000});
+        var starField = new THREE.Points(starsGeometry, starsMaterial);
+        scene.add(starField);
+    }
+
     // 删除移动点
     function deletpoint() {
         for(var i = 0;i < scene.children.length; i ++){
@@ -215,20 +227,37 @@
         }
     }
 
-    // 添加移动点
-    function addPoint(po) {
-        var starsGeometry = new THREE.Geometry();
-        starsGeometry.vertices.push(po);
-        // var pointColor = Math.random() * 0xffffff;
-        var starsMaterial = new THREE.PointsMaterial({size: 20, color: 0xff0000});
-        var starField = new THREE.Points(starsGeometry, starsMaterial);
-        scene.add(starField);
+    //获取顶点数组
+    function getVertices(object) {
+        this.object = object;
+        if (object instanceof THREE.Mesh && object.userData.my !== 'sphere') {
+            key++;
+            if (object.userData.hasVertiece) {
+                var verticesAll = object.userData.vertices;
+            } else {
+                var geo = object.geometry;
+                if (geo instanceof THREE.BufferGeometry) {
+                    var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+                }
+                geometry.mergeVertices();    //顶点去重
+                var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
+                for (var i = 0; i < geometry.vertices.length; i++) {
+                    var verI = geometry.vertices[i];
+                    var newVec1 = new THREE.Vector3(verI.x, verI.y, verI.z);
+                    newVec1.applyMatrix4(object.matrixWorld);
+                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                    verticesAll.push(newVec1);
+                }
+                object.userData = {'hasVertiece': true, 'vertices': verticesAll};
+            }
+            return verticesAll;
+        }
     }
 
     //小球寻找最近顶点
-    function serchVertices(po,ver) {
+    function serchVertices(po, ver) {
         var newarr = [];
-        var n = 5;
+        var n = 1;
         var x = parseInt(po.x);
         var y = parseInt(po.y);
         var z = parseInt(po.z);
@@ -237,11 +266,11 @@
             var verX = parseInt(verI.x);
             var verY = parseInt(verI.y);
             var verZ = parseInt(verI.z);
-            if(x+n>verX && x-n<verX &&
-                y+n>verY && y-n<verY &&
-                    z+n>verZ && z-n<verZ){
+            if (x + n > verX && x - n < verX &&
+                y + n > verY && y - n < verY &&
+                z + n > verZ && z - n < verZ) {
                 newarr.push(verI);
-                pointVec.set(newarr[0].x,newarr[0].y,newarr[0].z);
+                pointVec.set(newarr[0].x, newarr[0].y, newarr[0].z);
             }
         }
     }
@@ -249,16 +278,16 @@
     //添加测距小球
     function addSphere() {
         poiNum++;
-        var geometry = new THREE.SphereGeometry(5, 32, 32);
+        var geometry = new THREE.SphereGeometry(0.5, 32, 32);
         var material = new THREE.MeshBasicMaterial({color: 0xffff00});
         var sphere = new THREE.Mesh(geometry, material);
         sphere.userData = {'my': 'sphere'};
         console.log(pointVec);
         sphere.position.set(pointVec.x, pointVec.y, pointVec.z);
         scene.add(sphere);
-        if(poiNum === 1){
+        if (poiNum === 1) {
             firstVec = new THREE.Vector3(pointVec.x, pointVec.y, pointVec.z);
-        }else if(poiNum === poiNumMax){
+        } else if (poiNum === poiNumMax) {
             // 删除线和小球
             deleline();
             deleSphere();
@@ -267,8 +296,8 @@
 
     //删除小球
     function deleSphere() {
-        for(var i = 0;i < scene.children.length; i++){
-            if(scene.children[i].userData.my === 'sphere'){
+        for (var i = 0; i < scene.children.length; i++) {
+            if (scene.children[i].userData.my === 'sphere') {
                 scene.remove(scene.children[i]);
                 i--;
             }
@@ -279,8 +308,8 @@
 
     //删除线
     function deleline() {
-        for(var i = 0;i < scene.children.length; i++){
-            if(scene.children[i].userData.my === 'line'){
+        for (var i = 0; i < scene.children.length; i++) {
+            if (scene.children[i].userData.my === 'line') {
                 scene.remove(scene.children[i]);
                 i--;
             }
@@ -288,20 +317,20 @@
     }
 
     //根据点画线测距
-    function drawLine(start,end) {
+    function drawLine(start, end) {
         var linegeometry = new THREE.Geometry(); //创建一个几何体
-        var linematerial = new THREE.LineBasicMaterial( { color: '#ff4545',} );//定义线条的材质
-        var color1 = new THREE.Color( 0x444444 ), color2 = new THREE.Color( 0xFF0000 );//定义点颜色
+        var linematerial = new THREE.LineBasicMaterial({color: '#ff4545'});//定义线条的材质
+        var color1 = new THREE.Color(0x444444), color2 = new THREE.Color(0xFF0000);//定义点颜色
         // 线的材质可以由2点的颜色决定
         linegeometry.vertices.push(start);
         linegeometry.vertices.push(end);
-        linegeometry.colors.push( color1, color2 );
+        linegeometry.colors.push(color1, color2);
         var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
-        line.userData = {'my':'line'};
+        line.userData = {'my': 'line'};
         scene.add(line);
 
-        var lineDis = new THREE.Line3(start,end);
-        var lineDistance = (lineDis.distance()/40).toFixed(2);
+        var lineDis = new THREE.Line3(start, end);
+        var lineDistance = (lineDis.distance());
         console.log(lineDistance);
     }
 
@@ -313,43 +342,44 @@
     }
 
     // 动画循环
-    function animation(){
+    function animation() {
         controls.update();
         // ray();
         // dae.position.x +=1;
         renderer.render(scene, camera);
         requestAnimationFrame(animation);
     }
-    
+
     // 添加其他模型
     /* function select(){
-         // console.log(typeof parseInt($(this).val()));
-         switch (value) {
-             case 1:
-                 address = './TestModel/35号楼门卫.dae';
-                 break;
-             case 2:
-                 address = './TestModel/36号楼配电房.dae';
-                 break;
-             case 3:
-                 address = './TestModel/高层21.dae';
-                 break;
-             case 4:
-                 address = './TestModel/a34.dae';
-                 break;
-             case 5:
-                 address = './TestModel/叠拼0.dae';
-                 break;
-             case 6:
-                 address = './TestModel/叠拼1.dae';
-                 break;
-             case 7:
-                 address = './TestModel/高层10.dae';
-                 break;
-         }
-     }*/
+     // console.log(typeof parseInt($(this).val()));
+     switch (value) {
+         case 1:
+             address = './TestModel/35号楼门卫.dae';
+             break;
+         case 2:
+             address = './TestModel/36号楼配电房.dae';
+             break;
+         case 3:
+             address = './TestModel/高层21.dae';
+             break;
+         case 4:
+             address = './TestModel/a34.dae';
+             break;
+         case 5:
+             address = './TestModel/叠拼0.dae';
+             break;
+         case 6:
+             address = './TestModel/叠拼1.dae';
+             break;
+         case 7:
+             address = './TestModel/高层10.dae';
+             break;
+     }
+ }*/
+
     //初始化页面加载
-    function threeStart(){
+    function threeStart() {
         //初始化DOM对象
         initDOM();
         //初始化渲染器
@@ -373,9 +403,10 @@
         //实时动画
         animation();
         // $choose.bind('click',select);
-        $('body').bind('mousemove',getDistance);
-        $('body').bind('click',addSphere);
+        $('body').bind('mousemove', showPoint);
+        $('body').bind('click', addSphere);
     }
+
 
 </script>
 
