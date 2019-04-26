@@ -154,7 +154,7 @@
         addPoint(mouse3D);               //显示移动点
 
         // 计算物体和射线的焦点
-        var intersects = raycaster.intersectObjects(scene.children, true);
+        var intersects = raycaster.intersectObjects([dae], true);
         key = 0; //每次只需要一个点
         if (intersects.length > 0) {
             for (var i = 0; i < intersects.length; i++) {
@@ -165,25 +165,25 @@
                 //获取点击的对象
                 var object = intersects[i].object;
                 var point = intersects[i].point;
-                var verticesAll = getVertices(object);
-                if(verticesAll){
-                    console.log(verticesAll);
-                }
+                var face = intersects[i].face;
+                var facePoint = getFacePoint(object,face);  //获取相交面的数组
 
-                // 显示移动点
+                // 显示移动点的交点
                 pointVec = new THREE.Vector3(point.x, point.y, point.z);
                 pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
-                // serchVertices(pointVec, verticesAll);  //寻找最近点
-                //  画线测
-                if (firstVec.length && pointVec.length) {
+
+                //寻找新点，找到替换
+                serchVertices(pointVec, facePoint);  //寻找最近点
+                deletpoint();
+                addPoint(pointVec);
+                if (firstVec.length && pointVec.length) {     //绘制物体内直线
                     deleline();                  //删除旧线
                     drawLine(firstVec, pointVec);
                 }
             }
-        } else {
-            //如果点不在物体上，删除所有线和点
-            // deleline();
-            // deleSphere();
+        } else if(firstVec.length && mouse3D.length){     //绘制物体外直线
+            deleline();
+            drawLine(firstVec, mouse3D);
         }
     }
 
@@ -212,7 +212,7 @@
         var starsGeometry = new THREE.Geometry();
         starsGeometry.vertices.push(po);
         // var pointColor = Math.random() * 0xffffff;
-        var starsMaterial = new THREE.PointsMaterial({size: 0.1, color: 0xff0000});
+        var starsMaterial = new THREE.PointsMaterial({size: 0.5, color: 0xff0000});
         var starField = new THREE.Points(starsGeometry, starsMaterial);
         scene.add(starField);
     }
@@ -253,24 +253,56 @@
             return verticesAll;
         }
     }
+    
+    //获取相交面数组
+    function getFacePoint(object,face){
+        this.face = face;
+        if (object instanceof THREE.Mesh && object.userData.my !== 'sphere') {
+            key++;
+            var geo = object.geometry;
+            var facePoint = [];
+            if (geo instanceof THREE.BufferGeometry) {
+                var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+                var vertices = geometry.vertices;
+                var a = face.a;
+                var b = face.b;
+                var c = face.c;
+                // //计算面积是先取出三角形角a，角b,角c所对应的三维坐标点   并转化成现实的坐标点
+                var newVec1 = new THREE.Vector3(vertices[a].x, vertices[a].y, vertices[a].z);
+                newVec1.applyMatrix4(object.matrixWorld);
+                newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                var newVec2 = new THREE.Vector3(vertices[b].x, vertices[b].y, vertices[b].z);
+                newVec2.applyMatrix4(object.matrixWorld);
+                newVec2.set(newVec2.x.toFixed(2), newVec2.y.toFixed(2), newVec2.z.toFixed(2));
+                var newVec3 = new THREE.Vector3(vertices[c].x, vertices[c].y, vertices[c].z);
+                newVec3.applyMatrix4(object.matrixWorld);
+                newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
+                facePoint.push(newVec1,newVec2,newVec3);
+                return facePoint;
+            }
+        }
+
+    }
 
     //小球寻找最近顶点
-    function serchVertices(po, ver) {
+    function serchVertices(po, facePoint) {
         var newarr = [];
-        var n = 1;
+        var n = 0.5;
         var x = parseInt(po.x);
         var y = parseInt(po.y);
         var z = parseInt(po.z);
-        for (var i = 0; i < ver.length; i++) {
-            var verI = ver[i];
-            var verX = parseInt(verI.x);
-            var verY = parseInt(verI.y);
-            var verZ = parseInt(verI.z);
-            if (x + n > verX && x - n < verX &&
-                y + n > verY && y - n < verY &&
-                z + n > verZ && z - n < verZ) {
-                newarr.push(verI);
+        for (var i = 0; i < facePoint.length; i++) {
+            var facePointI = facePoint[i];
+            var facePointX = parseInt(facePointI.x);
+            var facePointY = parseInt(facePointI.y);
+            var facePointZ = parseInt(facePointI.z);
+            if (x + n > facePointX && x - n < facePointX &&
+                y + n > facePointY && y - n < facePointY &&
+                z + n > facePointZ && z - n < facePointZ) {
+                newarr.push(facePointI);
                 pointVec.set(newarr[0].x, newarr[0].y, newarr[0].z);
+                console.log('ok');
+                console.log(newarr);
             }
         }
     }
