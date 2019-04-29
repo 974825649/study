@@ -15,11 +15,17 @@
             padding: 0;
             margin: 0;
         }
+        .label{
+            color: #0FF;
+            font-family: sans-serif;
+            padding: 2px;
+        }
     </style>
 </head>
 
-<body onload="threeStart()">
+<body>
 <div id="canvas-frame" ></div>
+
 <!--        <select id="choose" >-->
 <!--            <option value="1" selected="selected">35号楼门卫</option>-->
 <!--            <option value="2">36号楼配电房</option>-->
@@ -35,6 +41,7 @@
 <script type="text/javascript" src="js/OrbitControls.js"></script>
 <script type="text/javascript" src="js/ColladaLoader.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/renderers/CSS2DRenderer.js"></script>
 <script type="text/javascript">
 
     var scene,camera,light,renderer; //定义必须量
@@ -47,6 +54,7 @@
     var pointsArr =[];                               //记录所有点的数组
     var lineTag = 0,lineTotal = [];                  //保存的线标识，线的数组
     var pointExist = false,key;
+    var labelRenderer;
     // var $choose = $('#choose');
     //初始化DOM对象
     function initDOM(){
@@ -55,14 +63,20 @@
 
     //初始化渲染器
     function initThree(){
-        renderer = new THREE.WebGLRenderer({
-            antialias : true
-            //canvas: document.getElementById('canvas-frame')
-        });
+        renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0xFFFFFF, 1.0);
         canvas.appendChild(renderer.domElement);
     }
+
+    function initSecond(){
+        labelRenderer = new THREE.CSS2DRenderer();
+        labelRenderer.setSize( window.innerWidth, window.innerHeight );
+        labelRenderer.domElement.style.position = 'absolute';
+        labelRenderer.domElement.style.top = 0;
+        canvas.appendChild( labelRenderer.domElement );
+    }
+
 
     //初始化场景
     function initScene(){
@@ -98,6 +112,7 @@
         //初始化地板
         // initFloor();
         // initSphere();
+
     }
 
     //辅助网格
@@ -157,8 +172,8 @@
 
         // 计算物体和射线的焦点
         var intersects = raycaster.intersectObjects([dae], true);
-        key = 0; //每次只需要一个点
-        if (intersects.length > 0) {
+        key = 0; //每次只需要一个点;
+        if (intersects !== null && intersects.length > 0) {
             for (var i = 0; i < intersects.length; i++) {
                 if (key) {
                     key = 0;
@@ -221,9 +236,8 @@
         var sca = camera.position;
         var zero = new THREE.Vector3(0,0,0);
         var distan = sca.distanceTo(zero);
-        var n = 5;
+        var n = 15;
         poSize = n/distan;
-        console.log(distan);
         var starsGeometry = new THREE.Geometry();
         starsGeometry.vertices.push(po);
         // var pointColor = Math.random() * 0xffffff;
@@ -372,13 +386,14 @@
     function deleline() {
         for (var i = 0; i < scene.children.length; i++) {
             if (scene.children[i].userData.my === 'line') {
+                scene.children[i].remove(scene.children[i].children[0]);
                 scene.remove(scene.children[i]);
                 i--;
             }
         }
     }
 
-    //根据点画线测距
+    //画线测距
     function drawLine(start, end ,saveLine) {
         var linegeometry = new THREE.Geometry(); //创建一个几何体
         var linematerial = new THREE.LineBasicMaterial({color: '#ff4545'});//定义线条的材质
@@ -387,32 +402,62 @@
         linegeometry.vertices.push(start);
         linegeometry.vertices.push(end);
         linegeometry.colors.push(color1, color2);
+
         var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
+        var lineDis = new THREE.Line3(start, end);
+        var lineDistance = (lineDis.distance().toFixed(2));
+        //添加文字
+        makeText(line,lineDistance,end);
+
         if(saveLine === true){
             line.userData = {'my': 'line' + lineTag };
             lineTag++;
             lineTotal.push(line);
-        }else{
+            }else{
             line.userData = {'my': 'line'};
         }
         scene.add(line);
-        var lineDis = new THREE.Line3(start, end);
-        var lineDistance = (lineDis.distance());
     }
 
-    //控件操作模块
-    function OrbitControls(camera, renderer) {
-        controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.autoRotate = false; //是否自动旋转
-        controls.autoRotateSpeed = 0.5; //自动旋转速度，正比
+    //添加文字
+    function makeText(line,lineDistance,textPoint) {
+        this.line = line;
+        this.lineDistances = lineDistance;
+        this.textPoint = textPoint;
+        var lineDiv = document.createElement( 'div' );
+        lineDiv.className = 'label';
+        lineDiv.textContent = lineDistance;
+        lineDiv.style.marginTop = '-1em';
+
+        var lineLabel = new THREE.CSS2DObject( lineDiv );
+        console.log(textPoint);
+        lineLabel.position.set( textPoint.x,textPoint.y,textPoint.z );
+        line.add( lineLabel );
+        console.log(line);
+
     }
+
+
+    //控制器
+    // function OrbitControls(camera, renderer, ) {
+    //     controls = new THREE.OrbitControls(camera, renderer.domElement);
+    // }
+    function OrbitControls(camera) {
+        controls = new THREE.OrbitControls(camera);
+    }
+
+    //窗口自适应
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+
 
     // 动画循环
     function animation() {
-        controls.update();
-        // ray();
-        // dae.position.x +=1;
         renderer.render(scene, camera);
+        labelRenderer.render(scene, camera);
         requestAnimationFrame(animation);
     }
 
@@ -449,6 +494,7 @@
         //初始化DOM对象
         initDOM();
         //初始化渲染器
+        initSecond();
         initThree();
         //初始化场景
         initScene();
@@ -464,16 +510,21 @@
         OrbitControls(camera, renderer);
         //加载人物模型
         manload();
-        //渲染
-        renderer.render(scene, camera);
         //实时动画
         animation();
-        // $choose.bind('click',select);
+        //窗口自适应
+        window.addEventListener( 'resize', onWindowResize, false );
+        //显示距离
         $('body').bind('mousemove', showDistance);
+        //添加球
         $('body').bind('mousedown', addSphere);
+        // $choose.bind('click',select);
+
     }
 
-
+    (function () {
+        threeStart();
+    })();
 </script>
 
 </html>
