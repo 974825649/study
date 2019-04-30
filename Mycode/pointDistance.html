@@ -389,7 +389,6 @@
                 newVec3.applyMatrix4(object.matrixWorld);
                 newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
                 facePoint.push(newVec1,newVec2,newVec3);
-                console.log(newVec1,newVec2,newVec3);
                 return facePoint;
             }
         }
@@ -409,9 +408,6 @@
             var facePointX = parseFloat(facePointI.x);
             var facePointY = parseFloat(facePointI.y);
             var facePointZ = parseFloat(facePointI.z);
-            console.log(x,y,z);
-            console.log('============');
-            console.log(facePointX,facePointY,facePointZ);
             if (x + n > facePointX && x - n < facePointX &&
                 y + n > facePointY && y - n < facePointY &&
                 z + n > facePointZ && z - n < facePointZ) {
