@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //获取顶点数组
+    function getVertices(object) {
+        this.object = object;
+        if (object instanceof THREE.Mesh && object.userData.my !== 'sphere') {
+            key++;
+            if (object.userData.hasVertiece) {
+                var verticesAll = object.userData.vertices;
+            } else {
+                var geo = object.geometry;
+                if (geo instanceof THREE.BufferGeometry) {
+                    var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+                }
+                geometry.mergeVertices();    //顶点去重
+                var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
+                for (var i = 0; i < geometry.vertices.length; i++) {
+                    var verI = geometry.vertices[i];
+                    var newVec1 = new THREE.Vector3(verI.x, verI.y, verI.z);
+                    newVec1.applyMatrix4(object.matrixWorld);
+                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                    verticesAll.push(newVec1);
+                }
+                object.userData = {'hasVertiece': true, 'vertices': verticesAll};
+            }
+            return verticesAll;
+        }
+    }
+</script>
+</body>
+</html>
