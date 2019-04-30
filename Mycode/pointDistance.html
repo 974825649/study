@@ -57,7 +57,6 @@
         pointExist = false, key,                            //判断点是否存在 只计算第一个物体
         labelRenderer,                                      //添加文字的2d渲染器
         colorChange = false;
-        sphereSize   = 1;
     // var $choose = $('#choose');
     //初始化DOM对象
     function initDOM(){
@@ -171,6 +170,7 @@
         deletPoint();                      //删除点
         var mouse2D = getMouse2DPosition(event);               //获取鼠标2d坐标
         var mouse3D = getMouse3DPosition(mouse2D);             //获取鼠标3d坐标
+        sizeChangeSphere();//小球动态变化
         // 计算物体和射线的焦点
         var intersects = raycaster.intersectObjects([dae], true);
         key = 0; //每次只需要一个点;
@@ -191,8 +191,7 @@
                 // 显示移动点的交点
                 pointVec = new THREE.Vector3(point.x, point.y, point.z);
                 pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
-                
-                console.log(scene);
+
                 //寻找新点，找到替换
                 serchVertices(pointVec, facePoint);  //寻找最近点
                 deletPoint();
@@ -238,15 +237,12 @@
         if (colorChange){
             pointColor = 0x0000ff;
         }
-        var d = camera.position.distanceTo( new THREE.Vector3( 0,0,0) );
-        sphereSize = 40;
-        sphereSize =  d / sphereSize ;
+        var newSize = getChangeSize();
         var starsGeometry = new THREE.Geometry();
         starsGeometry.vertices.push(poi);
-        var starsMaterial = new THREE.PointsMaterial({size: sphereSize, color: pointColor});
+        var starsMaterial = new THREE.PointsMaterial({size: newSize, color: pointColor});
         var starField = new THREE.Points(starsGeometry, starsMaterial);
         scene.add(starField);
-        sizeChangeSphere();//小球动态变化
     }
 
     // 删除移动点
@@ -267,7 +263,8 @@
             if(pointExist){
                 poiNum++;
                 // 添加球
-                var geometry = new THREE.SphereGeometry(sphereSize/5, 32, 32);
+                var newSize = getChangeSize();
+                var geometry = new THREE.SphereGeometry(newSize/5, 32, 32);
                 var material = new THREE.MeshBasicMaterial({color: 0xffff00});
                 var sphere = new THREE.Mesh(geometry, material);
                 sphere.userData = {'my': 'sphere'};
@@ -298,9 +295,18 @@
         }
     }
 
+    //获取动态变化大小
+    function getChangeSize() {
+        var sphereSize = 40;
+        var d = camera.position.distanceTo( new THREE.Vector3( 0,0,0) );
+        sphereSize =  d / sphereSize ;
+        return sphereSize;
+    }
+
     //小球大小动态变化
     function sizeChangeSphere() {
-        var geometry = new THREE.SphereGeometry( sphereSize/5, 32, 32 );
+        var newSize = getChangeSize();
+        var geometry = new THREE.SphereGeometry( newSize/5, 32, 32 );
         for(var i = 0;i < scene.children.length; i++){
             var sphere = scene.children[i];
             if(sphere.type === 'Mesh'){
@@ -383,6 +389,7 @@
                 newVec3.applyMatrix4(object.matrixWorld);
                 newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
                 facePoint.push(newVec1,newVec2,newVec3);
+                console.log(newVec1,newVec2,newVec3);
                 return facePoint;
             }
         }
@@ -394,19 +401,23 @@
         colorChange = false;
         var newarr = [];
         var n = 0.5;
-        var x = parseInt(po.x);
-        var y = parseInt(po.y);
-        var z = parseInt(po.z);
+        var x = parseFloat(po.x);
+        var y = parseFloat(po.y);
+        var z = parseFloat(po.z);
         for (var i = 0; i < 3; i++) {
             var facePointI = facePoint[i];
-            var facePointX = parseInt(facePointI.x);
-            var facePointY = parseInt(facePointI.y);
-            var facePointZ = parseInt(facePointI.z);
+            var facePointX = parseFloat(facePointI.x);
+            var facePointY = parseFloat(facePointI.y);
+            var facePointZ = parseFloat(facePointI.z);
+            console.log(x,y,z);
+            console.log('============');
+            console.log(facePointX,facePointY,facePointZ);
             if (x + n > facePointX && x - n < facePointX &&
                 y + n > facePointY && y - n < facePointY &&
                 z + n > facePointZ && z - n < facePointZ) {
                 newarr.push(facePointI);
                 pointVec.set(newarr[0].x, newarr[0].y, newarr[0].z);
+                console.log(pointVec);
                 colorChange = true;
                 break;
             }
