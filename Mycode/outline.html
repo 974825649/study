@@ -42,17 +42,17 @@
     }
 
     //初始化相机
-    function initCamera() {  //透视相机
-        camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
-        camera.position.set(25, 20, 25);
-        camera.lookAt(0,0,0);
-    }
+    // function initCamera() {  //透视相机
+    //     camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
+    //     camera.position.set(25, 20, 25);
+    //     camera.lookAt(0,0,0);
+    // }
 
-    function initOrCamera() {
-        var camera_Or=new THREE.OrthographicCamera(window.innerWidth/-2,window.innerWidth/2,window.innerHeight/2,window.innerHeight/-2,1,1000);
-        camera_Or.position.set(0,7,0);
-        camera_Or.lookAt(0,0,0);
-        scene.add(camera_Or);
+    function initCamera() {
+        var camera=new THREE.OrthographicCamera(window.innerWidth/-2,window.innerWidth/2,window.innerHeight/2,window.innerHeight/-2,1,1000);
+        camera.position.set(0,7,0);
+        camera.lookAt(0,0,0);
+        scene.add(camera);
     }
 
     // 环境光
