@@ -54,7 +54,7 @@
     // 初始化相机
     function initCamera() {  //透视相机
         camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
-        camera.position.set(25, 20, 25);
+        camera.position.set(40, 40, 40);
         camera.lookAt(0,0,0);
     }
 
@@ -62,19 +62,18 @@
     function initOrbCamera() {
         camera=new THREE.OrthographicCamera(window.innerWidth/-20,window.innerWidth/20,window.innerHeight/20,window.innerHeight/-20,1,1000);
         camera.position.set(0,100,0);
-        console.log(camera);
         camera.lookAt(0,0,0);
         scene.add(camera);
     }
 
     // 初始化光源
     function initLight(){
-        var pointLight1 = new THREE.PointLight( 0xFFFFFF);
+        var pointLight1 = new THREE.PointLight( 0xffffff);
         pointLight1.position.set( 20, 20, -20 );
         pointLight1.castShadow = true;//开启灯光投射阴影
         scene.add( pointLight1 );
-        // light = new THREE.AmbientLight(0xFFC0CB); //模拟漫反射光源
-        // scene.add(light);
+        light = new THREE.AmbientLight(0xFFC0CB); //模拟漫反射光源
+        scene.add(light);
     }
 
     //初始化对象
@@ -122,7 +121,7 @@
         var planeMat = new THREE.MeshLambertMaterial({  //创建材料
             color:0xFFFFFF,
             wireframe:false,
-            side:2,
+            side:0,
             transparent: false,             //是否透明
         });
         var planeMesh = new THREE.Mesh(planeGeo, planeMat);//创建网格模型
@@ -134,12 +133,12 @@
 
     // 引入模型
     address = './TestModel/35号楼门卫.dae';
+    // address = './TestModel/高层10.dae';
     function manload(){
         var loader = new THREE.ColladaLoader();
         loader.load(address, loadDae);
         function loadDae(collada) {
             dae = collada.scene;
-            dae.position.set(0,0,0);
             scene.add(dae);
             modelSet(dae);
         }
@@ -147,21 +146,114 @@
 
     //模型设置
     function modelSet(dae) {
-        console.log(dae);
         if(dae){
             dae.traverse(function (child) {
-                if(child.type === 'Mesh'){
-                    var mesh = child;
-                    mesh.castShadow = true;//开启投影
-                    mesh.receiveShadow = true;//允许接收阴影
-                    mesh.position.set( 0, 0, 0 );
-                    console.log(mesh);
+                if(child.type === 'Mesh' ){
+                    var childMesh = child;
+                    // modelSetShadow(childMesh); //设置阴影
+                    modelSetOutline(childMesh); //显示轮廓
                 }
             })
         }
-        // floorMesh.receiveShadow = true;
     }
 
+    //模型阴影设置
+    function modelSetShadow(newmesh) {
+        newmesh.castShadow = true;//开启投影
+        newmesh.receiveShadow = true;//允许接收阴影
+    }
+
+    //模型显示轮廓
+    function modelSetOutline(newmesh) {
+        // var wireFrameGeometry = newmesh.geometry.clone ();
+        // var wireFrameMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
+        // var wireFrameMesh = new THREE.Mesh( wireFrameGeometry, wireFrameMaterial );
+        // newmesh.parent.add( wireFrameMesh );
+
+        console.log(newmesh);
+        var geo = newmesh.geometry;
+        if (geo instanceof THREE.BufferGeometry) {
+            var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+        }
+
+
+        // 获取顶点
+        var vector = [];
+        vector = geometry.vertices[0];console.log(geometry);
+        console.log(vector);
+        console.log(newmesh.matrixWorld);
+        vector.applyMatrix4( newmesh.matrixWorld );
+        console.log(vector);
+
+        geometry.mergeVertices();    //顶点去重
+        // console.log(newmesh.matrixWorld);
+        geometry.applyMatrix(newmesh.matrixWorld);
+        // console.log(geometry);
+        var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
+        var verLen = geometry.vertices.length;
+        for(var i = 0;i < verLen;i ++){
+            verticesAll.push(geometry.vertices[i]);
+        }
+        console.log(verticesAll);
+        for(var i = 0;i < verticesAll.length; i++){
+            // drawLine(verticesAll[i],verticesAll[i+1]);
+        }
+
+        // 画线
+        console.log(geometry.faces);
+        var facesLen = geometry.faces.length;
+        for(var i = 0;i < facesLen;i ++){
+            var faceI = geometry.faces[i];
+            var a = verticesAll[faceI.a];
+            var b = verticesAll[faceI.b];
+            var c = verticesAll[faceI.c];
+            console.log(a,b,c);
+            var l1 = a.distanceTo(b);
+            var l2 = a.distanceTo(c);
+            var l3 = b.distanceTo(c);
+            console.log(l1,l2,l3);
+            var max = 0;
+            if(l1 > l2){
+                max = l1;
+                if(l1 > l3){
+                    max = 'l1';
+                }else {
+                    max = 'l3';
+                }
+            }else{
+                max = l2;
+                if(l2 > l3){
+                    max = 'l2';
+                }else{
+                    max = 'l3';
+                }
+            }
+            console.log(max);
+            if(max === 'l1'){
+                drawLine(a,c);
+                drawLine(b,c);
+            }else if(max === 'l2'){
+                drawLine(a,b);
+                drawLine(b,c);
+            } else{
+                drawLine(a,b);
+                drawLine(a,c);
+            }
+        }
+    }
+    
+    // 画线
+    function drawLine(start, end ) {
+        var linegeometry = new THREE.Geometry(); //创建一个几何体
+        var linematerial = new THREE.LineBasicMaterial({color: '#ff4545'});//定义线条的材质
+        var color1 = new THREE.Color(0x444444), color2 = new THREE.Color(0xFF0000);//定义点颜色
+        // 线的材质可以由2点的颜色决定
+        linegeometry.vertices.push(start);
+        linegeometry.vertices.push(end);
+        linegeometry.colors.push(color1, color2);
+        var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
+        scene.add(line);
+    }
     //控制器
     function OrbitControls(camera, renderer) {
         controls = new THREE.OrbitControls(camera, renderer.domElement);
