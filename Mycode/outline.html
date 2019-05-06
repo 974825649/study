@@ -8,6 +8,14 @@
             padding: 0;
             margin: 0;
         }
+        body{
+            position: relative;
+        }
+        .changeCamera{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
     </style>
 </head>
 
@@ -17,6 +25,8 @@
 <script type="text/javascript" src="js/OrbitControls.js"></script>
 <script type="text/javascript" src="js/ColladaLoader.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+
+
 <script type="text/javascript">
 
     var scene, camera, light, renderer,                     //定义必须量
@@ -42,24 +52,25 @@
     }
 
     // 初始化相机
-    // function initCamera() {  //透视相机
-    //     camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
-    //     camera.position.set(25, 20, 25);
-    //     camera.lookAt(0,0,0);
-    // }
+    function initCamera() {  //透视相机
+        camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
+        camera.position.set(25, 20, 25);
+        camera.lookAt(0,0,0);
+    }
 
-    function initCamera() {
-        camera=new THREE.OrthographicCamera(window.innerWidth/-2,window.innerWidth/2,window.innerHeight/2,window.innerHeight/-2,1,1000);
-        camera.position.set(0,10,0);
+    //初始化正交相机
+    function initOrbCamera() {
+        camera=new THREE.OrthographicCamera(window.innerWidth/-20,window.innerWidth/20,window.innerHeight/20,window.innerHeight/-20,1,1000);
+        camera.position.set(0,100,0);
         console.log(camera);
         camera.lookAt(0,0,0);
         scene.add(camera);
     }
 
-    // 环境光
+    // 初始化光源
     function initLight(){
         var pointLight1 = new THREE.PointLight( 0xFFFFFF);
-        pointLight1.position.set( 10, 10, -10 );
+        pointLight1.position.set( 20, 20, -20 );
         pointLight1.castShadow = true;//开启灯光投射阴影
         scene.add( pointLight1 );
         // light = new THREE.AmbientLight(0xFFC0CB); //模拟漫反射光源
@@ -69,8 +80,8 @@
     //初始化对象
     function initObject(){
         //初始化地板
-        initFloor();
-        initSphere();
+        // initFloor();
+        // initSphere();
         initPlane();
     }
 
@@ -81,37 +92,42 @@
     }
 
     //自定义模型
+
     // 自定义小球
-    function initSphere(){
-        var geometry = new THREE.SphereGeometry( 2, 32, 32 );
-        var material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
-        var sphere = new THREE.Mesh( geometry, material );
-        sphere.position.set(0,4,0);
-        sphere.castShadow = true;//开启投影
-        sphere.receiveShadow = true;//接收阴影
-        scene.add( sphere );
-    }
+    // function initSphere(){
+    //     var geometry = new THREE.SphereGeometry( 2, 32, 32 );
+    //     var material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+    //     var sphere = new THREE.Mesh( geometry, material );
+    //     sphere.position.set(0,4,0);
+    //     sphere.castShadow = true;//开启投影
+    //     sphere.receiveShadow = true;//接收阴影
+    //     scene.add( sphere );
+    // }
     // 创建一个正方体
-    function initFloor(){
-        var geometry = new THREE.BoxGeometry(10, 0.1, 10);
-        var material = new THREE.MeshPhongMaterial({ color:0xFFFFFF });
-        var mesh = new THREE.Mesh(geometry, material);
-        mesh.castShadow = true;//开启投影
-        mesh.receiveShadow = true;//允许接收阴影
-        mesh.position.set(0,1,0);
-        scene.add(mesh);
-    }
+
+    // 自定义正方体
+    // function initFloor(){
+    //     var geometry = new THREE.BoxGeometry(10, 0.1, 10);
+    //     var material = new THREE.MeshPhongMaterial({ color:0xFFFFFF });
+    //     var mesh = new THREE.Mesh(geometry, material);
+    //     mesh.castShadow = true;//开启投影
+    //     mesh.receiveShadow = true;//允许接收阴影
+    //     mesh.position.set(0,1,0);
+    //     scene.add(mesh);
+    // }
+
     //创建平面
     function initPlane(){
         var planeGeo = new THREE.PlaneGeometry(20,20,10,10);//创建平面
         var planeMat = new THREE.MeshLambertMaterial({  //创建材料
             color:0xFFFFFF,
-            wireframe:false
+            wireframe:false,
+            side:2,
+            transparent: false,             //是否透明
         });
         var planeMesh = new THREE.Mesh(planeGeo, planeMat);//创建网格模型
         planeMesh.position.set(0, -1, 0);//设置平面的坐标
         planeMesh.rotation.x = -0.5 * Math.PI;//将平面绕X轴逆时针旋转90度
-        planeMesh.castShadow = true;
         planeMesh.receiveShadow = true;//允许接收阴影
         scene.add(planeMesh);//将平面添加到场景中
     }
@@ -133,14 +149,15 @@
     function modelSet(dae) {
         console.log(dae);
         if(dae){
-            // dae.traverse(function (child) {
-            //     if(child.type === 'Mesh'){
-            //         var mesh = child;
-            //         // mesh.castShadow = true;
-            //         mesh.position.set( 1, 0.25, 1 );
-            //         console.log(mesh);
-            //     }
-            // })
+            dae.traverse(function (child) {
+                if(child.type === 'Mesh'){
+                    var mesh = child;
+                    mesh.castShadow = true;//开启投影
+                    mesh.receiveShadow = true;//允许接收阴影
+                    mesh.position.set( 0, 0, 0 );
+                    console.log(mesh);
+                }
+            })
         }
         // floorMesh.receiveShadow = true;
     }
@@ -152,6 +169,7 @@
     // function OrbitControls(camera) {
     //     controls = new THREE.OrbitControls(camera);
     // }
+
     //窗口自适应
     function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -163,6 +181,21 @@
     function animation() {
         requestAnimationFrame(animation);
         renderer.render(scene, camera);
+        // console.log(scene);
+    }
+
+    //改变相机
+    function chanCamera() {
+         var val2 = $(this).find("option:selected").val();
+         if(val2 === 'Ort'){
+             initOrbCamera();
+             OrbitControls(camera, renderer);
+         }else if(val2 === 'Pers'){
+             initCamera();
+             OrbitControls(camera, renderer);
+         }else {
+             return 0;
+         }
     }
 
     //初始化页面加载
@@ -183,18 +216,30 @@
         initGrid();
         //控制视角函数
         OrbitControls(camera, renderer);
+
         //加载人物模型
-        // manload();
-        //实时动画
-        animation();
+        manload();
+
         //窗口自适应
         window.addEventListener( 'resize', onWindowResize, false );
+
+        //改变相机
+        $('.changeCamera').change(chanCamera);
+
+        //实时动画
+        animation();
     }
 
-    (function () {
+    //函数运行
+    $(function () {
         threeStart();
-    })();
+    });
 </script>
+
+    <select class="changeCamera">
+        <option value="Pers" selected="selected">透视相机</option>
+        <option value="Ort">正交相机</option>
+    </select>
 </body>
 </html>
 
