@@ -29,10 +29,11 @@
 <div id="canvas-frame" ></div>
 <script type="text/javascript" src="js/three.js" ></script>
 <script type="text/javascript" src="js/OrbitControls.js"></script>
-<script type="text/javascript" src="js/ColladaLoader.js">
-</script><script type="text/javascript" src="js/stats.js"></script>
+<script type="text/javascript" src="js/ColladaLoader.js"></script>
+<script type="text/javascript" src="js/Stats.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
-
+<script type="text/javascript" src=" myJS/microFnc.js"></script>
+<script type="text/javascript" src=" myJS/newFnc.js"></script>
 
 <script type="text/javascript">
 
@@ -52,7 +53,6 @@
         stats = new Stats();
         canvas.appendChild( stats.domElement );
         canvas.appendChild(renderer.domElement);
-        console.log(canvas);
     }
 
     //初始化场景
@@ -79,27 +79,26 @@
 
     //初始化辅助对象
     function initHelper(){
-        initGridHelper();
-        initAxesHelper();
-    }
-        //辅助网格
-        function initGridHelper(){
-            var n = 20;
-            var helper = new THREE.GridHelper( n, n );
-            scene.add( helper );
-        }
         //辅助坐标系
         function initAxesHelper() {
             var n = 5;
             var axesHelper = new THREE.AxesHelper( n );
             scene.add( axesHelper );
         }
+        //辅助网格
+        function initGridHelper(){
+            var n = 20;
+            var helper = new THREE.GridHelper( n, n );
+            scene.add( helper );
+        }
+        initGridHelper();
+        initAxesHelper();
+    }
 
     //初始化物体对象
     function initObject() {
 
     }
-
 
     //控制器
     function OrbitControls(camera, renderer) {
@@ -109,6 +108,7 @@
     //窗口自适应
     function onWindowResize() {
         camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();    //窗口自动变化
         renderer.setSize( window.innerWidth, window.innerHeight );
     }
 
@@ -136,17 +136,18 @@
         initObject();
         //控制视角函数
         OrbitControls(camera, renderer);
-
         //窗口自适应
         window.addEventListener( 'resize', onWindowResize, false );
-
         //实时动画
         animation();
+
     }
 
     //函数运行
     $(function () {
         threeStart();
+        var newFnc = new NewFnc();
+        newFnc.createBox();
     });
 </script>
 

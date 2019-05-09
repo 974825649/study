@@ -168,6 +168,7 @@
                 var object = intersects[i].object;
                 var point = intersects[i].point;
                 var face = intersects[i].face;
+                getVertices(object);
                 var facePoint = getFacePoint(object,face);  //获取相交面的数组
                 if(facePoint){                              //根据是否有相交面判断小球是否添加
                     pointExist = true;
@@ -241,16 +242,27 @@
                 if (geo instanceof THREE.BufferGeometry) {
                     var geometry = new THREE.Geometry().fromBufferGeometry(geo);
                 }
+
+                console.log(object);
+
+                var vector = [];
+                vector = geometry.vertices[0];
+                console.log(vector);
+                console.log(object.matrixWorld);
+                vector.applyMatrix4( object.matrixWorld );
+                console.log(vector);
+
+
+
                 geometry.mergeVertices();    //顶点去重
+                geometry.applyMatrix(object.matrixWorld);
+
                 var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
-                for (var i = 0; i < geometry.vertices.length; i++) {
-                    var verI = geometry.vertices[i];
-                    var newVec1 = new THREE.Vector3(verI.x, verI.y, verI.z);
-                    newVec1.applyMatrix4(object.matrixWorld);
-                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
-                    verticesAll.push(newVec1);
+                var verLen = geometry.vertices.length;
+                for(var i = 0;i < verLen;i ++){
+                    verticesAll.push(geometry.vertices[i]);
                 }
-                object.userData = {'hasVertiece': true, 'vertices': verticesAll};
+                console.log(verticesAll);
             }
             return verticesAll;
         }
