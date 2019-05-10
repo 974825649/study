@@ -59,7 +59,6 @@
 
     //添加球
     function addSphere(event, newFnc) {
-    console.log(newFnc);
         event.preventDefault();
         if(movePoint){
             // 判断是否测量

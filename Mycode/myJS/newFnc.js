@@ -1,14 +1,11 @@
 
 function NewFnc (){
     myPlane = [];      //平面初始化
-    var mouse;
-    this.mouse = mouse;
-    // movePoint = [];     //移动点
+    this.mouse = [];    //鼠标位置
 }
 NewFnc.prototype.createBox = function () {
     //获取鼠标点
-    mouse = getMouse2DPosition(event);
-
+    this.mouse = getMouse2DPosition(event);
     //创建平面
     creatPlane();
     //求鼠标与平面交点
