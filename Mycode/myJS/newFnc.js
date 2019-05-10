@@ -1,15 +1,16 @@
 
 function NewFnc (){
     myPlane = [];      //平面初始化
+    var mouse;
+    this.mouse = mouse;
     // movePoint = [];     //移动点
 }
 NewFnc.prototype.createBox = function () {
     //获取鼠标点
-    var mouse = getMouse2DPosition(event);
+    mouse = getMouse2DPosition(event);
 
     //创建平面
     creatPlane();
-
     //求鼠标与平面交点
     movePoint = getIntersetPoint(mouse,myPlane);   //求交点
     if(movePoint){
@@ -18,11 +19,15 @@ NewFnc.prototype.createBox = function () {
 
         //单击时添加球
         //顶点吸引交点
-        serchVertices(movePoint,sphereVertices[0]);
-        console.log(sphereVertices[0]);
+        if (sphereVertices.length > 0){            //判断物体顶点是否存在
+            serchVertices(movePoint,sphereVertices);
+        }
     }else{
         deletPoint();
     }
+
+    // console.log(sphereVertices);
+
 }
 
 //创建平面

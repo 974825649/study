@@ -39,6 +39,7 @@
 
     var scene, camera, light, renderer,                     //场景 相机 光源 渲染器
         controls, stats ;                                          //视角控制 FPS
+    var movePoint = [], sphereVertices = [];                   //移动点   物体顶点
     //初始化DOM对象
     function initDOM(){
         canvas = document.getElementById("canvas-frame");
@@ -143,12 +144,19 @@
 
     }
 
+
     //函数运行
     $(function () {
         threeStart();
         var newFnc = new NewFnc();
-        newFnc.createBox();
+        $('body').bind('mousemove', function (e){
+            newFnc.createBox(e);
+        });
+        $('body').bind('mousedown', function(e){
+            addSphere(e,newFnc);
+        });
     });
+
 </script>
 
 
