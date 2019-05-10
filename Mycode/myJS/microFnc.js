@@ -60,6 +60,8 @@
     //添加球
     function addSphere(event, newFnc) {
         event.preventDefault();
+        //console.log(newFnc);  会输出undefined
+        var movePoint = newFnc.movePoint;
         if(movePoint){
             // 判断是否测量
             if (event.which === 1) {
@@ -106,7 +108,7 @@
                 y + n > pointArrY && y - n < pointArrY &&
                 z + n > pointArrZ && z - n < pointArrZ) {
                 newarr.push(pointArrI);
-                movePoint.set(newarr[0].x, newarr[0].y, newarr[0].z);
+                nowPoint.set(newarr[0].x, newarr[0].y, newarr[0].z);
             }
         }
     }

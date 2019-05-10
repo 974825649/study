@@ -2,28 +2,48 @@
 function NewFnc (){
     myPlane = [];      //平面初始化
     this.mouse = [];    //鼠标位置
+    this.movePoint = [];  //鼠标与平面交点
 }
-NewFnc.prototype.createBox = function () {
+NewFnc.prototype.createBox = function (e) {
     //获取鼠标点
-    this.mouse = getMouse2DPosition(event);
+    var mouse = this.mouse;
+    mouse = getMouse2DPosition(e);
     //创建平面
     creatPlane();
     //求鼠标与平面交点
-    movePoint = getIntersetPoint(mouse,myPlane);   //求交点
-    if(movePoint){
+    this.movePoint = getIntersetPoint(mouse,myPlane);   //求交点
+    if( this.movePoint){
         deletPoint();
-        addPoint(movePoint);                         //添加鼠标点
-
+        addPoint(this.movePoint);                         //添加鼠标点
+        
         //单击时添加球
         //顶点吸引交点
         if (sphereVertices.length > 0){            //判断物体顶点是否存在
-            serchVertices(movePoint,sphereVertices);
+            serchVertices( this.movePoint,sphereVertices);
         }
+        
+        //生成自定义面
+        var startPoint = sphereVertices[0];
+        var endPoint = sphereVertices[sphereVertices.length -1];
+        if(sphereVertices.length > 1){
+            if(startPoint.equals(endPoint)){
+                var sv = sphereVertices;
+                var svl = sphereVertices.length;
+                console.log(sv);
+                //
+                var sv2 = sv.slice(0);
+                //
+                sv[2] =1;
+                console.log(sv2);
+
+            }
+        }
+
     }else{
         deletPoint();
     }
+    
 
-    // console.log(sphereVertices);
 
 }
 

@@ -214,6 +214,7 @@
          if(val2 === 'Ort'){
              initOrbCamera();
              OrbitControls(camera, renderer);
+             controls.enableRotate = false;            //禁止旋转
          }else if(val2 === 'Pers'){
              initCamera();
              OrbitControls(camera, renderer);
