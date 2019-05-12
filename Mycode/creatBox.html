@@ -26,7 +26,7 @@
 </head>
 
 <body>
-<div id="canvas-frame" ></div>
+<div id="myCanvas" ></div>
 <script type="text/javascript" src="js/three.js" ></script>
 <script type="text/javascript" src="js/OrbitControls.js"></script>
 <script type="text/javascript" src="js/ColladaLoader.js"></script>
@@ -39,10 +39,9 @@
 
     var scene, camera, light, renderer,                     //场景 相机 光源 渲染器
         controls, stats ;                                          //视角控制 FPS
-    var movePoint = [], sphereVertices = [];                   //移动点   物体顶点
     //初始化DOM对象
     function initDOM(){
-        canvas = document.getElementById("canvas-frame");
+        canvas = document.getElementById("myCanvas");
     }
 
     //初始化3d渲染器
@@ -98,7 +97,7 @@
 
     //初始化物体对象
     function initObject() {
-
+        var goe = new THREE.CubeGeometry(1,2,3);
     }
 
     //控制器
@@ -149,11 +148,15 @@
     $(function () {
         threeStart();
         var newFnc = new NewFnc();
-        $('body').bind('mousemove', function (e){
-            newFnc.createBox(e);
+        newFnc.creatPlane();
+        // $('#myCanvas').bind('mousewheel',function (e) {
+        //     console.log('sssss');
+        // });
+        $('#myCanvas').bind('mousemove', function (e){
+            newFnc.onMouseMove(e);
         });
-        $('body').bind('mousedown', function(e){
-            addSphere(e,newFnc);
+        $('#myCanvas').bind('mousedown', function(e){
+            newFnc.onMouseDown(e);
         });
     });
 

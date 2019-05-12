@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d031fea1-0a78-4e1f-9d9a-1ab9adceb169" name="Default Changelist" comment="" />
+    <list default="true" id="d031fea1-0a78-4e1f-9d9a-1ab9adceb169" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/Mycode/myJS/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/creatBox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/creatBox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/myJS/microFnc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myJS/microFnc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/myJS/newFnc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myJS/newFnc.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -12,17 +18,77 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/hello.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mycode/creatBox.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+            <state relative-caret-position="375">
+              <caret line="158" column="34" lean-forward="true" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
+              <folding>
+                <element signature="e#1205#1266#0" />
+                <element signature="e#1315#1662#0" />
+                <element signature="e#1700#1742#0" />
+                <element signature="e#1783#1972#0" />
+                <element signature="e#2336#2745#0" />
+                <element signature="e#2787#2843#0" />
+                <element signature="e#2900#2980#0" />
+                <element signature="e#3024#3215#0" />
+                <element signature="e#3254#3367#0" />
+                <element signature="e#3409#3855#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Mycode/myJS/newFnc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="52" column="64" lean-forward="true" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
+              <folding>
+                <element signature="e#204#821#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mycode/myJS/microFnc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-67">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="n#!!block;n#getMouse2DPosition#0" />
+                <element signature="n#!!block;n#getMouse3DPosition#0" />
+                <element signature="n#!!block;n#addPoint#0" />
+                <element signature="n#!!block;n#deletePoint#0" />
+                <element signature="n#!!block;n#searchVertices#0" />
+                <element signature="n#!!block;n#getChangeSize#0" />
+                <element signature="n#!!block;n#getInterset#0" />
+                <element signature="n#!!block;n#addSphere#0" />
+                <element signature="n#!!block;n#deleteSphere#0" />
+                <element signature="n#!!block;n#getMySphere#0" />
+                <element signature="n#!!block;n#drawLine#0" />
+                <element signature="n#!!block;n#deleteLine#0" />
+                <element signature="n#!!block;n#extrudeShape#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dae</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,56 +97,60 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/hello.html" />
+        <option value="$PROJECT_DIR$/Mycode/demo.html" />
+        <option value="$PROJECT_DIR$/Mycode/myJS/test.js" />
+        <option value="$PROJECT_DIR$/Mycode/pointDistance.html" />
+        <option value="$PROJECT_DIR$/Mycode/myJS/test.html" />
+        <option value="$PROJECT_DIR$/Mycode/creatBox.html" />
+        <option value="$PROJECT_DIR$/Mycode/myJS/microFnc.js" />
+        <option value="$PROJECT_DIR$/Mycode/myJS/newFnc.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/git.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-      </list>
-    </option>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-228" />
+    <option name="y" value="16" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
-    <option name="y" value="28" />
-    <option name="width" value="1400" />
-    <option name="height" value="820" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="git" type="462c0819:PsiDirectoryNode" />
+              <item name="mycode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="git" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="mycode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycode" type="462c0819:PsiDirectoryNode" />
+              <item name="Mycode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mycode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mycode" type="462c0819:PsiDirectoryNode" />
+              <item name="Mycode" type="462c0819:PsiDirectoryNode" />
+              <item name="myJS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mycode/creatBox.html" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -94,6 +164,14 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/mycode/Mycode/creatBox.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="creatBox.html" type="JavascriptDebugType" nameIsGenerated="true" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:63342/mycode/Mycode/creatBox.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -105,6 +183,18 @@
       <option name="presentableId" value="Default" />
       <updated>1555545635700</updated>
       <workItem from="1555545638185" duration="976000" />
+      <workItem from="1555827105424" duration="109000" />
+      <workItem from="1555836258826" duration="933000" />
+      <workItem from="1555837217911" duration="216000" />
+      <workItem from="1555837459383" duration="17539000" />
+      <workItem from="1555861406684" duration="1282000" />
+      <workItem from="1555930272533" duration="7320000" />
+      <workItem from="1557569399887" duration="366000" />
+      <workItem from="1557569809006" duration="3330000" />
+      <workItem from="1557573482720" duration="4663000" />
+      <workItem from="1557585229790" duration="1220000" />
+      <workItem from="1557586604768" duration="10811000" />
+      <workItem from="1557616747741" duration="7040000" />
     </task>
     <task id="LOCAL-00001" summary="8:03">
       <created>1555546001328</created>
@@ -113,23 +203,33 @@
       <option name="project" value="LOCAL" />
       <updated>1555546001328</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Default Changelist">
+      <created>1555862527253</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555862527253</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Default Changelist">
+      <created>1555943792499</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555943792499</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="976000" />
+    <option name="totallyTimeSpent" value="55805000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="28" width="1400" height="820" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496329" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32944608" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -137,6 +237,13 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32944608" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="运行" order="11" />
+      <window_info anchor="bottom" id="调试" order="12" weight="0.6044521" />
+      <window_info anchor="bottom" id="消息" order="13" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -147,13 +254,131 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="8:03" />
-    <option name="LAST_COMMIT_MESSAGE" value="8:03" />
+    <MESSAGE value="Default Changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/hello.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        <state relative-caret-position="108">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4646">
+          <caret line="213" column="38" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
+          <folding>
+            <element signature="n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/outline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4321">
+          <caret line="30981" column="8" selection-start-line="30981" selection-start-column="8" selection-end-line="30981" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/pointDistance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="357" column="18" selection-start-line="357" selection-start-column="18" selection-end-line="357" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#8757#10178#0" />
+            <element signature="e#10224#10399#0" />
+            <element signature="e#10448#10771#0" />
+            <element signature="e#10811#11115#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/js/OrbitControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11871">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/myJS/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/shadow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding>
+            <element signature="e#2098#2475#0" />
+            <element signature="e#2515#2911#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/creatBox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="158" column="34" lean-forward="true" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
+          <folding>
+            <element signature="e#1205#1266#0" />
+            <element signature="e#1315#1662#0" />
+            <element signature="e#1700#1742#0" />
+            <element signature="e#1783#1972#0" />
+            <element signature="e#2336#2745#0" />
+            <element signature="e#2787#2843#0" />
+            <element signature="e#2900#2980#0" />
+            <element signature="e#3024#3215#0" />
+            <element signature="e#3254#3367#0" />
+            <element signature="e#3409#3855#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/myJS/microFnc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="n#!!block;n#getMouse2DPosition#0" />
+            <element signature="n#!!block;n#getMouse3DPosition#0" />
+            <element signature="n#!!block;n#addPoint#0" />
+            <element signature="n#!!block;n#deletePoint#0" />
+            <element signature="n#!!block;n#searchVertices#0" />
+            <element signature="n#!!block;n#getChangeSize#0" />
+            <element signature="n#!!block;n#getInterset#0" />
+            <element signature="n#!!block;n#addSphere#0" />
+            <element signature="n#!!block;n#deleteSphere#0" />
+            <element signature="n#!!block;n#getMySphere#0" />
+            <element signature="n#!!block;n#drawLine#0" />
+            <element signature="n#!!block;n#deleteLine#0" />
+            <element signature="n#!!block;n#extrudeShape#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/myJS/newFnc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="52" column="64" lean-forward="true" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
+          <folding>
+            <element signature="e#204#821#0" />
+          </folding>
         </state>
       </provider>
     </entry>
