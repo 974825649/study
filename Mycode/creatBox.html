@@ -78,21 +78,25 @@
     }
 
     //初始化辅助对象
-    function initHelper(){
+    function initHelper(axeN,gridN){
         //辅助坐标系
-        function initAxesHelper() {
-            var n = 5;
-            var axesHelper = new THREE.AxesHelper( n );
+        function initAxesHelper(axeN) {
+            if(!axeN){
+                axeN = 10;
+            }
+            var axesHelper = new THREE.AxesHelper( axeN );
             scene.add( axesHelper );
         }
         //辅助网格
-        function initGridHelper(){
-            var n = 20;
-            var helper = new THREE.GridHelper( n, n );
+        function initGridHelper(gridN){
+            if(!gridN){
+                gridN = 40;
+            }
+            var helper = new THREE.GridHelper( gridN, gridN );
             scene.add( helper );
         }
-        initGridHelper();
-        initAxesHelper();
+        initAxesHelper(axeN);
+        initGridHelper(gridN);
     }
 
     //初始化物体对象
@@ -132,7 +136,7 @@
         //初始化光源
         initLight();
         //初始化辅助对象
-        initHelper();
+        initHelper(20,40);               //坐标，网格
         initObject();
         //控制视角函数
         OrbitControls(camera, renderer);
@@ -148,15 +152,19 @@
     $(function () {
         threeStart();
         var newFnc = new NewFnc();
-        newFnc.creatPlane();
+        newFnc.creatPlane(40);
         // $('#myCanvas').bind('mousewheel',function (e) {
         //     console.log('sssss');
         // });
         $('#myCanvas').bind('mousemove', function (e){
             newFnc.onMouseMove(e);
+            // newFnc.controlMove(e);
         });
         $('#myCanvas').bind('mousedown', function(e){
             newFnc.onMouseDown(e);
+        });
+        $('#myCanvas').bind('mouseup', function(e){
+            newFnc.onMouseUp(e);
         });
     });
 

@@ -73,7 +73,7 @@
         return sphereSize;
     }
 
-    //求交点
+    //求相交物
     function getInterset(mouse,obj,recursive) {
         if(!recursive){     //是否遍历后代
             recursive = false;
@@ -165,9 +165,10 @@
 
     }
 
-    function extrudeShape(new2DPointArr,depth) {
+    //创造挤压物体
+    function creatExtrudeShape(new2DPointArr,depth){
         if(!depth){
-            depth = 4;
+            depth = 0.0001;
         }
         var shape = new THREE.Shape(new2DPointArr);     //自定义二维形状
         var extrudeSettings = {                         //自定义拉伸
@@ -178,14 +179,17 @@
             bevelSize: 0.001,
             bevelSegments: 1
         };
-        var geometry = new THREE.ExtrudeBufferGeometry( shape, extrudeSettings );
+        var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
         var material = new THREE.MeshPhongMaterial({ color:0xFF0000 });
         var mesh = new THREE.Mesh( geometry, material ) ;
+        mesh.userData = {'my': 'extrudeShape'};
         mesh.castShadow = true;
         mesh.receiveShadow = true;
         mesh.rotation.x = 0.5 * Math.PI;
         scene.add( mesh );
+        return mesh;
     }
+
 
 
 
