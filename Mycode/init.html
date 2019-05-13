@@ -149,32 +149,14 @@
         window.addEventListener( 'resize', onWindowResize, false );
         //实时动画
         animation();
-
     }
 
 
     //函数运行
     $(function () {
         threeStart();
-        var newFnc = new NewFnc();
-        newFnc.creatPlane(40);
-        // $('#myCanvas').bind('mousewheel',function (e) {
-        //     console.log('sssss');
-        // });
-        $('#myCanvas').bind('mousemove', function (e){
-            newFnc.onMouseMove(e);
-        });
-        $('#myCanvas').bind('mousedown', function(e){
-            newFnc.onMouseDown(e);
-        });
-        $('#myCanvas').bind('mouseup', function(e){
-            newFnc.onMouseUp(e);
-        });
     });
-
 </script>
-
-
 </body>
 </html>
 

@@ -29,7 +29,7 @@
 
 <script type="text/javascript">
 
-    var scene, camera, light, renderer,                     //定义必须量
+    var scene, camera, renderer,                     //定义必须量
         controls, mesh, address, dae,                       //自定义添加量
         raycaster, mouse;                                 //射线 射线法向量 鼠标位置
     //初始化DOM对象
@@ -54,7 +54,7 @@
     // 初始化相机
     function initCamera() {  //透视相机
         camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
-        camera.position.set(-40, 40, 40);
+        camera.position.set(40, 40, 40);
         camera.lookAt(0,0,0);
     }
 
@@ -66,17 +66,17 @@
         // camera=new THREE.OrthographicCamera(window.innerWidth/-20,window.innerWidth/20,window.innerHeight/20,window.innerHeight/-20,1,1000);
         camera.position.set(0,100,0);
         camera.lookAt(0,0,0);
-        scene.add(camera);
     }
 
     // 初始化光源
     function initLight(){
-        var pointLight1 = new THREE.PointLight( 0xffffff);
-        pointLight1.position.set( 20, 20, -20 );
-        pointLight1.castShadow = true;//开启灯光投射阴影
-        scene.add( pointLight1 );
-        light = new THREE.AmbientLight(0xFFC0CB); //模拟漫反射光源
+        var light = new THREE.AmbientLight(0xffffff); //模拟漫反射光源
         scene.add(light);
+        var pointLight = new THREE.PointLight( 0xFFC0CB);
+        pointLight.position.set( 20, 20, -20 );
+        pointLight.castShadow = true;//开启灯光投射阴影
+        scene.add( pointLight );
+
     }
 
     //初始化对象
@@ -91,6 +91,15 @@
     function initGrid(){
         var helper = new THREE.GridHelper( 10, 10 );
         scene.add( helper );
+    }
+
+    //辅助坐标系
+    function initAxesHelper(axeN) {
+        if(!axeN){
+            axeN = 10;
+        }
+        var axesHelper = new THREE.AxesHelper( axeN );
+        scene.add( axesHelper );
     }
 
     //自定义模型
@@ -124,11 +133,11 @@
         var planeMat = new THREE.MeshLambertMaterial({  //创建材料
             color:0xFFFFFF,
             wireframe:false,
-            side:0,
+            side: THREE.FrontSide,
             transparent: false,             //是否透明
         });
         var planeMesh = new THREE.Mesh(planeGeo, planeMat);//创建网格模型
-        planeMesh.position.set(0, -1, 0);//设置平面的坐标
+        planeMesh.position.set(0, 0, 0);//设置平面的坐标
         planeMesh.rotation.x = -0.5 * Math.PI;//将平面绕X轴逆时针旋转90度
         planeMesh.receiveShadow = true;//允许接收阴影
         scene.add(planeMesh);//将平面添加到场景中
@@ -168,25 +177,28 @@
 
     //模型显示轮廓
     function modelSetOutline(newmesh) {
-        // var wireFrameGeometry = newmesh.geometry.clone ();
-        // var wireFrameMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
-        // var wireFrameMesh = new THREE.Mesh( wireFrameGeometry, wireFrameMaterial );
-        // newmesh.parent.add( wireFrameMesh );
+        var geometry = newmesh.geometry;
+        var edges = new THREE.EdgesGeometry( geometry );
+        var line = new THREE.Line( edges, new THREE.LineBasicMaterial( { color: 0x000000 } ) );
+        newmesh.parent.add( line );
+
+        // newmesh.rotation.z = Math.PI / 2;
+        console.log(newmesh);
+        console.log(newmesh.parent);
+        var geo = newmesh.geometry;
+        // var maw = newmesh.matrixWorld;
+        // newmesh.position.x = 2;
+        //
+        // console.log(newmesh);
+        // console.log(';;;;;;;;;;;;;;;;;;;;;;');
+        // // var arr = newmesh.geometry.getAttribute("position").array;
+        var mesh = new THREE.Mesh( geo, new THREE.MeshLambertMaterial({ color: 0xfcfcfc }));
+        // scene.add(mesh);
+        mesh.position.y = 6;
+        console.log(mesh.material);
 
     }
-    
-    // 画线
-    function drawLine(start, end ) {
-        var linegeometry = new THREE.Geometry(); //创建一个几何体
-        var linematerial = new THREE.LineBasicMaterial({color: '#ff4545'});//定义线条的材质
-        var color1 = new THREE.Color(0x444444), color2 = new THREE.Color(0xFF0000);//定义点颜色
-        // 线的材质可以由2点的颜色决定
-        linegeometry.vertices.push(start);
-        linegeometry.vertices.push(end);
-        linegeometry.colors.push(color1, color2);
-        var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
-        scene.add(line);
-    }
+
     //控制器
     function OrbitControls(camera, renderer) {
         controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -239,6 +251,8 @@
         initObject();
         //初始化网格辅助线
         initGrid();
+        //辅助坐标系
+        initAxesHelper();
         //控制视角函数
         OrbitControls(camera, renderer);
 
