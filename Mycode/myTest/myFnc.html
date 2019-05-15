@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //获取顶点数组
+    function getVertices(object) {
+        this.object = object;
+        if (object instanceof THREE.Mesh && object.userData.my !== 'sphere') {
+            key++;
+            if (object.userData.hasVertiece) {
+                var verticesAll = object.userData.vertices;
+            } else {
+                var geo = object.geometry;
+                if (geo instanceof THREE.BufferGeometry) {
+                    var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+                }
+                geometry.mergeVertices();    //顶点去重
+                var verticesAll = [];    //得到所有顶点转化为世界坐标系的新数组
+                for (var i = 0; i < geometry.vertices.length; i++) {
+                    var verI = geometry.vertices[i];
+                    var newVec1 = new THREE.Vector3(verI.x, verI.y, verI.z);
+                    newVec1.applyMatrix4(object.matrixWorld);
+                    newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+                    verticesAll.push(newVec1);
+                }
+                object.userData = {'hasVertiece': true, 'vertices': verticesAll};
+            }
+            return verticesAll;
+        }
+    }
+
+    //获取鼠标屏幕坐标
+    function getMouse2DPosition(event) {
+        raycaster = new THREE.Raycaster();
+        mouse = new THREE.Vector2();
+        // 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        //通过摄像机和鼠标位置更新射线
+        raycaster.setFromCamera(mouse, camera);
+        return mouse;
+    }
+
+    //获取鼠标3d坐标
+    function getMouse3DPosition(mouse){
+        var vector = new THREE.Vector3(mouse.x,mouse.y,0);
+        vector.unproject(camera);
+        return vector;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d0f799b-bce7-4a7d-8ffa-5181c6a0f809" name="Default Changelist" comment="5/14">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/123" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/build/three.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/build/three.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/build/three.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/css/dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/css/light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/docs/Implementing additional commands for undo-redo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/docs/Writing unit tests for undo-redo commands.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/examples/arkanoid.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/examples/camera.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/examples/particles.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/examples/pong.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/examples/shaders.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/images/icon.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Command.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/History.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.Add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.Edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.Examples.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.File.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.Help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.Play.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.Status.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.View.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Menubar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Player.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Animation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.BoxGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.BufferGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.CircleGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.CylinderGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.Geometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.IcosahedronGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.LatheGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.Modifiers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.PlaneGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.SphereGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.TeapotBufferGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.TorusGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.TorusKnotGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.TubeGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Geometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.History.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Material.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Project.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Properties.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Scene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Settings.Shortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Settings.Viewport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.Settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Storage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Strings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Viewport.Camera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Viewport.Info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/Viewport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/AddObjectCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/AddScriptCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/MoveObjectCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/MultiCmdsCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/RemoveObjectCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/RemoveScriptCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetColorCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetGeometryCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetGeometryValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetMaterialColorCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetMaterialCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetMaterialMapCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetMaterialValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetPositionCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetRotationCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetScaleCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetSceneCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetScriptValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetUuidCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/commands/SetValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/exporters/DracoExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/acorn/acorn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/acorn/acorn_loose.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/acorn/walk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ammo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/app/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/addon/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/addon/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/addon/show-hint.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/addon/show-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/addon/tern.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/addon/tern.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/codemirror.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/mode/glsl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/mode/javascript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/codemirror/theme/monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/dat.gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/gltf/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/gltf/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/gltf/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/draco/gltf/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/esprima.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/glslprep.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/gunzip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/html2canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/inflate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/jsonlint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/mmdparser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/o3dgc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/opentype.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/signals.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/stats.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/system.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/tern-threejs/threejs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/def.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/doc_comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/infer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/polyfill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/signal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ternjs/tern.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/three.html.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/timeliner_gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/tween.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/js/libs/ui.three.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editor/sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/NOTICE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/droid_sans_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/droid_sans_mono_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/droid_sans_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/droid_serif_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/droid/droid_serif_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/gentilis_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/gentilis_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/helvetiker_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/helvetiker_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/optimer_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/optimer_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/fonts/ttf/kenpixel.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/AnimationClipCreator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/Car.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/Cloth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ConvexObjectBreaker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/CurveExtras.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/GPUComputationRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/GPUParticleSystem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/Gyroscope.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ImprovedNoise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/MD2Character.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/MD2CharacterComplex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/MarchingCubes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/MorphAnimMesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/MorphBlendMesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/Ocean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/PRNG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ParametricGeometries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/QuickHull.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/RollerCoaster.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ShaderGodRays.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ShaderSkin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ShaderTerrain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ShaderToon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/ShaderTranslucent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/SimplexNoise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/TimelinerController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/Volume.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/VolumeSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/WebGL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/animation/CCDIKSolver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/animation/MMDAnimationHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/animation/MMDPhysics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/cameras/CinematicCamera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/DeviceOrientationControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/DragControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/EditorControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/FirstPersonControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/FlyControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/MapControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/OrbitControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/OrthographicTrackballControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/PointerLockControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/TrackballControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/controls/TransformControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/crossfade/gui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/crossfade/scenes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/crossfade/transition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/curves/NURBSCurve.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/curves/NURBSSurface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/curves/NURBSUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/effects/AnaglyphEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/effects/AsciiEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/effects/OutlineEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/effects/ParallaxBarrierEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/effects/PeppersGhostEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/effects/StereoEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/ColladaExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/DracoExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/GLTFExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/MMDExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/OBJExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/PLYExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/STLExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/exporters/TypedGeometryExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/BoxLineGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/ConvexGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/DecalGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/LightningStrike.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/TeapotBufferGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/hilbert2D.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/geometries/hilbert3D.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/interactive/SelectionBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/interactive/SelectionHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/ammo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/dat.gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/gltf/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/gltf/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/gltf/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/draco/gltf/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/gunzip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/inflate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/mmdparser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/o3dgc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/opentype.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/stats.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/system.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/timeliner_gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/libs/tween.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lights/RectAreaLightUniformsLib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/Line2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/LineGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/LineMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/LineSegments2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/LineSegmentsGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/Wireframe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/lines/WireframeGeometry2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/3MFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/AMFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/AWDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/AssimpJSONLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/AssimpLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/BVHLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/BabylonLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ColladaLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/DDSLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/DRACOLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/EXRLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/EquirectangularToCubeGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/FBXLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/GCodeLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/GLTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/HDRCubeTextureLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/KMZLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/KTXLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/LDrawLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/LWOLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/LoaderSupport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/MD2Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/MMDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/MTLLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/NRRDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/NodeMaterialLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/OBJLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/OBJLoader2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/PCDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/PDBLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/PLYLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/PRWMLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/PVRLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/PlayCanvasLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/RGBELoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/STLLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/SVGLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/TDSLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/TGALoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/TTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/VRMLLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/VRMLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/VTKLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/XLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/CTMLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/CTMWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/ctm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/license/OpenCTM.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/license/js-lzma.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/license/js-openctm.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/ctm/lzma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/deprecated/LegacyGLTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/deprecated/LegacyJSONLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/SEA3D.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/SEA3DDeflate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/SEA3DDraco.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/SEA3DLZMA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/SEA3DLegacy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/SEA3DLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/o3dgc/SEA3DGC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/physics/SEA3DAmmo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/physics/SEA3DAmmoLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/loaders/sea3d/physics/SEA3DRigidBody.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/math/ColorConverter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/math/Lut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/modifiers/ExplodeModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/modifiers/SimplifyModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/modifiers/SubdivisionModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/modifiers/TessellateModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/Nodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/THREE.Nodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/CameraNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/ColorsNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/LightNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/NormalNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/PositionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/ReflectNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/ResolutionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/ScreenUVNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/accessors/UVNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/bsdfs/BlinnExponentToRoughnessNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/bsdfs/BlinnShininessExponentNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/bsdfs/RoughnessToBlinnExponentNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/AttributeNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/ConstNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/ExpressionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/FunctionCallNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/FunctionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/InputNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/NodeBuilder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/NodeFrame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/NodeLib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/NodeUniform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/NodeUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/StructNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/TempNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/core/VarNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/effects/BlurNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/effects/ColorAdjustmentNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/effects/LuminanceNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/BoolNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/ColorNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/CubeTextureNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/FloatNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/IntNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/Matrix3Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/Matrix4Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/PropertyNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/RTTNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/ReflectorNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/ScreenNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/TextureNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/Vector2Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/Vector3Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/inputs/Vector4Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/MeshStandardNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/NodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/PhongNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/SpriteNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/StandardNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/nodes/MeshStandardNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/nodes/PhongNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/nodes/RawNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/nodes/SpriteNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/materials/nodes/StandardNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/math/CondNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/math/Math1Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/math/Math2Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/math/Math3Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/math/OperatorNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/misc/BumpMapNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/misc/NormalMapNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/misc/TextureCubeNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/misc/TextureCubeUVNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/postprocessing/NodePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/postprocessing/NodePostProcessing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/procedural/CheckerNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/procedural/NoiseNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/BypassNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/ColorSpaceNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/JoinNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/MaxMIPLevelNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/SwitchNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/TimerNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/UVTransformNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/nodes/utils/VelocityNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Fire.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Lensflare.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/LightningStorm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Reflector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/ReflectorRTT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Refractor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/ShadowMesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Sky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Water.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/objects/Water2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/offscreen/jank.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/offscreen/offscreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/offscreen/scene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/pmrem/PMREMCubeUVPacker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/pmrem/PMREMGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/AdaptiveToneMappingPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/AfterimagePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/BloomPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/BokehPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/ClearPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/CubeTexturePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/DotScreenPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/EffectComposer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/FilmPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/GlitchPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/HalftonePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/MaskPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/OutlinePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/RenderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/SAOPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/SMAAPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/SSAARenderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/SSAOPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/SavePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/ShaderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/TAARenderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/TexturePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/postprocessing/UnrealBloomPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/CSS2DRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/CSS3DRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/Projector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/RaytracingRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/RaytracingWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/SVGRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/SoftwareRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/renderers/WebGLDeferredRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/AfterimageShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/BasicShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/BleachBypassShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/BlendShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/BokehShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/BokehShader2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/BrightnessContrastShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/ColorCorrectionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/ColorifyShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/ConvolutionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/CopyShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/DOFMipMapShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/DepthLimitedBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/DigitalGlitch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/DotScreenShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/FXAAShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/FilmShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/FocusShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/FreiChenShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/FresnelShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/GammaCorrectionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/HalftoneShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/HorizontalBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/HorizontalTiltShiftShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/HueSaturationShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/KaleidoShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/LuminosityHighPassShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/LuminosityShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/MirrorShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/NormalMapShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/OceanShaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/ParallaxShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/PixelShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/RGBShiftShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/SAOShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/SMAAShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/SSAOShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/SepiaShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/SobelOperatorShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/TechnicolorShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/ToneMapShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/TriangleBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/UnpackDepthRGBAShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/VerticalBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/VerticalTiltShiftShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/VignetteShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/VolumeShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/shaders/WaterRefractionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/BufferGeometryUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/GeometryUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/MathUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/SceneUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/ShadowMapViewer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/SkeletonUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/TypedArrayUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/utils/UVsDebug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/vr/PaintViveController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/vr/ViveController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/vr/WebVR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/vr/deprecated/DaydreamController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/js/vr/deprecated/GearVRController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/myJS/microFnc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myTest/myJS/newFnc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/35号楼门卫.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/35号楼门卫.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/36号楼配电房.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/36号楼配电房.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/a34.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/a34.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/叠拼0.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/叠拼0.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/叠拼1.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/叠拼1.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/高层10.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/高层10.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestModel/高层21.dae" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/TestModel/高层21.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creatBox.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/creatBox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo1.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/demo1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getArea.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/getArea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getArea.txt" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/getArea.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/grid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/hello" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/AnimationClipCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/AnimationClipCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Car.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/Car.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Cloth.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/Cloth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ColladaLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ColladaLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ConvexObjectBreaker.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ConvexObjectBreaker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/CurveExtras.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/CurveExtras.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/GPUComputationRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/GPUComputationRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/GPUParticleSystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/GPUParticleSystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Gyroscope.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/Gyroscope.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ImprovedNoise.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ImprovedNoise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/MD2Character.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/MD2Character.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/MD2CharacterComplex.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/MD2CharacterComplex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/MarchingCubes.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/MarchingCubes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/MorphAnimMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/MorphAnimMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/MorphBlendMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/MorphBlendMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Ocean.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/Ocean.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/OrbitControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/PRNG.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/PRNG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ParametricGeometries.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ParametricGeometries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/QuickHull.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/QuickHull.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/RollerCoaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/RollerCoaster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ShaderGodRays.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ShaderGodRays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ShaderSkin.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ShaderSkin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ShaderTerrain.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ShaderTerrain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ShaderToon.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ShaderToon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ShaderTranslucent.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/ShaderTranslucent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/SimplexNoise.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/SimplexNoise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/Stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/TimelinerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/TimelinerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Tween.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/Tween.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Volume.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/Volume.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/VolumeSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/VolumeSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/WebGL.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/WebGL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/animation/CCDIKSolver.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/animation/CCDIKSolver.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/animation/MMDAnimationHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/animation/MMDAnimationHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/animation/MMDPhysics.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/animation/MMDPhysics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/cameras/CinematicCamera.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/cameras/CinematicCamera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/DeviceOrientationControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/DeviceOrientationControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/DragControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/DragControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/EditorControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/EditorControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/FirstPersonControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/FirstPersonControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/FlyControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/FlyControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/MapControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/MapControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/OrbitControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/OrthographicTrackballControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/OrthographicTrackballControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/PointerLockControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/PointerLockControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/TrackballControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/TrackballControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls/TransformControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/controls/TransformControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/crossfade/gui.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/crossfade/gui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/crossfade/scenes.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/crossfade/scenes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/crossfade/transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/crossfade/transition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/curves/NURBSCurve.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/curves/NURBSCurve.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/curves/NURBSSurface.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/curves/NURBSSurface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/curves/NURBSUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/curves/NURBSUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/effects/AnaglyphEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/effects/AnaglyphEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/effects/AsciiEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/effects/AsciiEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/effects/OutlineEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/effects/OutlineEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/effects/ParallaxBarrierEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/effects/ParallaxBarrierEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/effects/PeppersGhostEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/effects/PeppersGhostEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/effects/StereoEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/effects/StereoEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/ColladaExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/ColladaExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/GLTFExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/GLTFExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/MMDExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/MMDExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/OBJExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/OBJExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/PLYExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/PLYExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/STLExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/STLExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/exporters/TypedGeometryExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/exporters/TypedGeometryExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/BoxLineGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/BoxLineGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/ConvexGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/ConvexGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/DecalGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/DecalGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/LightningStrike.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/LightningStrike.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/TeapotBufferGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/TeapotBufferGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/hilbert2D.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/hilbert2D.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/geometries/hilbert3D.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/geometries/hilbert3D.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interactive/SelectionBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/interactive/SelectionBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/interactive/SelectionHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/interactive/SelectionHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-1.7.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/jquery-1.7.2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lights/RectAreaLightUniformsLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lights/RectAreaLightUniformsLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/Line2.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/Line2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/LineGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/LineGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/LineMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/LineMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/LineSegments2.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/LineSegments2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/LineSegmentsGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/LineSegmentsGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/Wireframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/Wireframe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lines/WireframeGeometry2.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/lines/WireframeGeometry2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/3MFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/3MFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/AMFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/AMFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/AWDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/AWDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/AssimpJSONLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/AssimpJSONLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/AssimpLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/AssimpLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/BVHLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/BVHLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/BabylonLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/BabylonLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ColladaLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/ColladaLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/DDSLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/DDSLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/DRACOLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/DRACOLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/EXRLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/EXRLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/EquirectangularToCubeGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/EquirectangularToCubeGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/FBXLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/FBXLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/GCodeLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/GCodeLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/GLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/GLTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/HDRCubeTextureLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/HDRCubeTextureLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/KMZLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/KMZLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/KTXLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/KTXLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/LDrawLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/LDrawLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/LWOLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/LWOLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/LoaderSupport.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/LoaderSupport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/MD2Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/MD2Loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/MMDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/MMDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/MTLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/MTLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/NRRDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/NRRDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/NodeMaterialLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/NodeMaterialLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/OBJLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/OBJLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/OBJLoader2.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/OBJLoader2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/PCDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/PCDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/PDBLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/PDBLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/PLYLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/PLYLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/PRWMLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/PRWMLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/PVRLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/PVRLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/PlayCanvasLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/PlayCanvasLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/RGBELoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/RGBELoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/STLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/STLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/SVGLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/SVGLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/TDSLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/TDSLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/TGALoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/TGALoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/TTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/TTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/VRMLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/VRMLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/VRMLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/VRMLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/VTKLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/VTKLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/XLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/XLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/CTMLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/CTMLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/CTMWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/CTMWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/ctm.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/ctm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/license/OpenCTM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/license/OpenCTM.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/license/js-lzma.txt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/license/js-lzma.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/license/js-openctm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/license/js-openctm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/ctm/lzma.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/ctm/lzma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/deprecated/LegacyGLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/deprecated/LegacyGLTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/deprecated/LegacyJSONLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/deprecated/LegacyJSONLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/SEA3D.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/SEA3D.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/SEA3DDeflate.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/SEA3DDeflate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/SEA3DDraco.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/SEA3DDraco.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/SEA3DLZMA.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/SEA3DLZMA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/SEA3DLegacy.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/SEA3DLegacy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/SEA3DLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/SEA3DLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/o3dgc/SEA3DGC.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/o3dgc/SEA3DGC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/physics/SEA3DAmmo.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/physics/SEA3DAmmo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/physics/SEA3DAmmoLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/physics/SEA3DAmmoLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loaders/sea3d/physics/SEA3DRigidBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/loaders/sea3d/physics/SEA3DRigidBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/math/ColorConverter.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/math/ColorConverter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/math/Lut.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/math/Lut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modifiers/ExplodeModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/modifiers/ExplodeModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modifiers/SimplifyModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/modifiers/SimplifyModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modifiers/SubdivisionModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/modifiers/SubdivisionModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modifiers/TessellateModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/modifiers/TessellateModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/myFucTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/myFucTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/Nodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/Nodes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/THREE.Nodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/THREE.Nodes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/CameraNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/CameraNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/ColorsNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/ColorsNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/LightNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/LightNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/NormalNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/NormalNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/PositionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/PositionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/ReflectNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/ReflectNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/ResolutionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/ResolutionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/ScreenUVNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/ScreenUVNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/accessors/UVNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/accessors/UVNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/bsdfs/BlinnExponentToRoughnessNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/bsdfs/BlinnExponentToRoughnessNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/bsdfs/BlinnShininessExponentNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/bsdfs/BlinnShininessExponentNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/bsdfs/RoughnessToBlinnExponentNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/bsdfs/RoughnessToBlinnExponentNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/AttributeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/AttributeNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/ConstNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/ConstNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/ExpressionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/ExpressionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/FunctionCallNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/FunctionCallNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/FunctionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/FunctionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/InputNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/InputNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/NodeBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/NodeBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/NodeFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/NodeFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/NodeLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/NodeLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/NodeUniform.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/NodeUniform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/NodeUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/NodeUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/StructNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/StructNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/TempNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/TempNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/core/VarNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/core/VarNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/effects/BlurNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/effects/BlurNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/effects/ColorAdjustmentNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/effects/ColorAdjustmentNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/effects/LuminanceNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/effects/LuminanceNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/BoolNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/BoolNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/ColorNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/ColorNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/CubeTextureNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/CubeTextureNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/FloatNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/FloatNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/IntNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/IntNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/Matrix3Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/Matrix3Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/Matrix4Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/Matrix4Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/PropertyNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/PropertyNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/RTTNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/RTTNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/ReflectorNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/ReflectorNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/ScreenNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/ScreenNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/TextureNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/TextureNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/Vector2Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/Vector2Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/Vector3Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/Vector3Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/inputs/Vector4Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/inputs/Vector4Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/MeshStandardNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/MeshStandardNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/NodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/NodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/PhongNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/PhongNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/SpriteNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/SpriteNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/StandardNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/StandardNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/nodes/MeshStandardNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/nodes/MeshStandardNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/nodes/PhongNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/nodes/PhongNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/nodes/RawNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/nodes/RawNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/nodes/SpriteNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/nodes/SpriteNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/materials/nodes/StandardNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/materials/nodes/StandardNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/math/CondNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/math/CondNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/math/Math1Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/math/Math1Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/math/Math2Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/math/Math2Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/math/Math3Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/math/Math3Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/math/OperatorNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/math/OperatorNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/misc/BumpMapNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/misc/BumpMapNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/misc/NormalMapNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/misc/NormalMapNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/misc/TextureCubeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/misc/TextureCubeNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/misc/TextureCubeUVNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/misc/TextureCubeUVNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/postprocessing/NodePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/postprocessing/NodePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/postprocessing/NodePostProcessing.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/postprocessing/NodePostProcessing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/procedural/CheckerNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/procedural/CheckerNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/procedural/NoiseNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/procedural/NoiseNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/BypassNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/BypassNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/ColorSpaceNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/ColorSpaceNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/JoinNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/JoinNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/MaxMIPLevelNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/MaxMIPLevelNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/SwitchNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/SwitchNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/TimerNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/TimerNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/UVTransformNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/UVTransformNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/nodes/utils/VelocityNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/nodes/utils/VelocityNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Fire.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Fire.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Lensflare.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Lensflare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/LightningStorm.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/LightningStorm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Reflector.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Reflector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/ReflectorRTT.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/ReflectorRTT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Refractor.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Refractor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/ShadowMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/ShadowMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Sky.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Sky.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Water.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Water.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/Water2.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/objects/Water2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/offscreen/jank.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/offscreen/jank.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/offscreen/offscreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/offscreen/offscreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/offscreen/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/offscreen/scene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pmrem/PMREMCubeUVPacker.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/pmrem/PMREMCubeUVPacker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/pmrem/PMREMGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/pmrem/PMREMGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/AdaptiveToneMappingPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/AdaptiveToneMappingPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/AfterimagePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/AfterimagePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/BloomPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/BloomPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/BokehPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/BokehPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/ClearPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/ClearPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/CubeTexturePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/CubeTexturePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/DotScreenPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/DotScreenPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/EffectComposer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/EffectComposer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/FilmPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/FilmPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/GlitchPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/GlitchPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/HalftonePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/HalftonePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/MaskPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/MaskPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/OutlinePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/OutlinePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/RenderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/RenderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/SAOPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/SAOPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/SMAAPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/SMAAPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/SSAARenderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/SSAARenderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/SSAOPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/SSAOPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/SavePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/SavePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/ShaderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/ShaderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/TAARenderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/TAARenderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/TexturePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/TexturePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/postprocessing/UnrealBloomPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/postprocessing/UnrealBloomPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/CSS2DRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/CSS2DRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/CSS3DRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/CSS3DRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/Projector.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/Projector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/RaytracingRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/RaytracingRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/RaytracingWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/RaytracingWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/SVGRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/SVGRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/SoftwareRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/SoftwareRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/renderers/WebGLDeferredRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/renderers/WebGLDeferredRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/AfterimageShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/AfterimageShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/BasicShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/BasicShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/BleachBypassShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/BleachBypassShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/BlendShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/BlendShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/BokehShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/BokehShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/BokehShader2.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/BokehShader2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/BrightnessContrastShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/BrightnessContrastShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/ColorCorrectionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/ColorCorrectionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/ColorifyShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/ColorifyShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/ConvolutionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/ConvolutionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/CopyShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/CopyShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/DOFMipMapShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/DOFMipMapShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/DepthLimitedBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/DepthLimitedBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/DigitalGlitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/DigitalGlitch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/DotScreenShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/DotScreenShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/FXAAShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/FXAAShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/FilmShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/FilmShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/FocusShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/FocusShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/FreiChenShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/FreiChenShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/FresnelShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/FresnelShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/GammaCorrectionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/GammaCorrectionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/HalftoneShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/HalftoneShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/HorizontalBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/HorizontalBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/HorizontalTiltShiftShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/HorizontalTiltShiftShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/HueSaturationShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/HueSaturationShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/KaleidoShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/KaleidoShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/LuminosityHighPassShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/LuminosityHighPassShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/LuminosityShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/LuminosityShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/MirrorShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/MirrorShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/NormalMapShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/NormalMapShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/OceanShaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/OceanShaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/ParallaxShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/ParallaxShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/PixelShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/PixelShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/RGBShiftShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/RGBShiftShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/SAOShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/SAOShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/SMAAShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/SMAAShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/SSAOShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/SSAOShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/SepiaShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/SepiaShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/SobelOperatorShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/SobelOperatorShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/TechnicolorShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/TechnicolorShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/ToneMapShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/ToneMapShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/TriangleBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/TriangleBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/UnpackDepthRGBAShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/UnpackDepthRGBAShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/VerticalBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/VerticalBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/VerticalTiltShiftShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/VerticalTiltShiftShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/VignetteShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/VignetteShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/VolumeShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/VolumeShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/shaders/WaterRefractionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/shaders/WaterRefractionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/three.js" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/js/three.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/BufferGeometryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/BufferGeometryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/GeometryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/GeometryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/MathUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/MathUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/SceneUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/SceneUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/ShadowMapViewer.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/ShadowMapViewer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/SkeletonUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/SkeletonUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/TypedArrayUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/TypedArrayUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/utils/UVsDebug.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/utils/UVsDebug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vr/PaintViveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/vr/PaintViveController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vr/ViveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/vr/ViveController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vr/WebVR.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/vr/WebVR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vr/deprecated/DaydreamController.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/vr/deprecated/DaydreamController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vr/deprecated/GearVRController.js" beforeDir="false" afterPath="$PROJECT_DIR$/editor/js/vr/deprecated/GearVRController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myFnc.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/myFnc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myJS/microFnc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myJS/newFnc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myJS/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/myJS/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/outline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part0.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/part0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pointDistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/pointDistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shadow.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/shadow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/平移.html" beforeDir="false" afterPath="$PROJECT_DIR$/myTest/平移.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="319" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Mycode" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/editor/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="174" column="16" lean-forward="true" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/editor/123">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mesh</find>
+      <find>light</find>
+      <find>position.</find>
+      <find>triangle</find>
+      <find>getAre</find>
+      <find>n3</find>
+      <find>pointsarr</find>
+      <find>pointVec</find>
+      <find>scale</find>
+      <find>serchVertices</find>
+      <find>onWind</find>
+      <find>threeStart</find>
+      <find>deletpoint</find>
+      <find>getFacePoint</find>
+      <find>controls</find>
+      <find>dae</find>
+      <find>camera</find>
+      <find>stats</find>
+      <find>sts</find>
+      <find>ststs</find>
+      <find>event</find>
+      <find>showDistance</find>
+      <find>addPoint</find>
+      <find>getMouse2DPosition</find>
+      <find>getChangeSize()</find>
+      <find>addSphere</find>
+      <find>../examples</find>
+      <find>&quot;../examples</find>
+      <find>&quot;../</find>
+      <find>script.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>.</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="1" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="editor" />
+                <branch-info repo="$PROJECT_DIR$/.." source="1" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/part0.html" />
+        <option value="$PROJECT_DIR$/hello" />
+        <option value="$PROJECT_DIR$/demo1.html" />
+        <option value="$PROJECT_DIR$/TestModel/newdemo.html" />
+        <option value="$PROJECT_DIR$/newdemo.html" />
+        <option value="$PROJECT_DIR$/TestModel/pointDistance.html" />
+        <option value="$PROJECT_DIR$/平移.html" />
+        <option value="$PROJECT_DIR$/outLine.html" />
+        <option value="$PROJECT_DIR$/html.html" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/demo.html" />
+        <option value="$PROJECT_DIR$/test1.html" />
+        <option value="$PROJECT_DIR$/myFnc.html" />
+        <option value="$PROJECT_DIR$/myFnc.js" />
+        <option value="$PROJECT_DIR$/myFucTest.html" />
+        <option value="$PROJECT_DIR$/TestModel/creatBox.html" />
+        <option value="$PROJECT_DIR$/TestModel/newFun.js" />
+        <option value="$PROJECT_DIR$/myJS/newFun.js" />
+        <option value="$PROJECT_DIR$/pointDistance.html" />
+        <option value="$PROJECT_DIR$/myJS/microFnc.js" />
+        <option value="$PROJECT_DIR$/myJS/newFnc.js" />
+        <option value="$PROJECT_DIR$/creatBox.html" />
+        <option value="$PROJECT_DIR$/shadow.html" />
+        <option value="$PROJECT_DIR$/init.html" />
+        <option value="$PROJECT_DIR$/outline.html" />
+        <option value="$PROJECT_DIR$/editor/js/commands/AddObjectCommand.js" />
+        <option value="$PROJECT_DIR$/editor/index.html" />
+        <option value="$PROJECT_DIR$/editor/js/Editor.js" />
+        <option value="$PROJECT_DIR$/editor/123" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2" />
+    <option name="y" value="69" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Mycode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mycode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mycode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mycode" type="462c0819:PsiDirectoryNode" />
+              <item name="editor" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="Mycode" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="H:\git\Mycode" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="js.last.introduce.type" value="VAR" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/three.js-master" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\git\Mycode\myTest" />
+      <recent name="H:\git\Mycode" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="outline.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Mycode/myTest/outline.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" path-to-js-file="$PROJECT_DIR$/myFucTest.html" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.outline.html" />
+        <item itemvalue="JavaScript Debug.outline.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d0f799b-bce7-4a7d-8ffa-5181c6a0f809" name="Default Changelist" comment="" />
+      <created>1555487697168</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555487697168</updated>
+      <workItem from="1555487700884" duration="2895000" />
+      <workItem from="1555490620593" duration="42000" />
+      <workItem from="1555490925429" duration="7000" />
+      <workItem from="1555491429726" duration="3399000" />
+      <workItem from="1555494896247" duration="1751000" />
+      <workItem from="1555501689982" duration="266000" />
+      <workItem from="1555501980944" duration="621000" />
+      <workItem from="1555502753731" duration="11768000" />
+      <workItem from="1555582012765" duration="260000" />
+      <workItem from="1555585531885" duration="429000" />
+      <workItem from="1555635437260" duration="29274000" />
+      <workItem from="1555824189978" duration="938000" />
+      <workItem from="1555827580596" duration="376000" />
+      <workItem from="1555890223591" duration="33442000" />
+      <workItem from="1555976343172" duration="33025000" />
+      <workItem from="1556069003681" duration="25883000" />
+      <workItem from="1556154326216" duration="22455000" />
+      <workItem from="1556180292693" duration="396000" />
+      <workItem from="1556180745118" duration="126000" />
+      <workItem from="1556180888594" duration="7221000" />
+      <workItem from="1556241825286" duration="25960000" />
+      <workItem from="1556499788546" duration="27365000" />
+      <workItem from="1556585868975" duration="26061000" />
+      <workItem from="1556616917021" duration="649000" />
+      <workItem from="1556618086538" duration="491000" />
+      <workItem from="1556618668674" duration="960000" />
+      <workItem from="1557026136872" duration="17081000" />
+      <workItem from="1557106527749" duration="10398000" />
+      <workItem from="1557120887909" duration="16853000" />
+      <workItem from="1557195421516" duration="290000" />
+      <workItem from="1557196877994" duration="802000" />
+      <workItem from="1557199466921" duration="2157000" />
+      <workItem from="1557207856276" duration="51000" />
+      <workItem from="1557210643888" duration="606000" />
+      <workItem from="1557366137456" duration="9118000" />
+      <workItem from="1557375454799" duration="312000" />
+      <workItem from="1557377255010" duration="1774000" />
+      <workItem from="1557379897265" duration="14906000" />
+      <workItem from="1557450991707" duration="9864000" />
+      <workItem from="1557466607387" duration="11998000" />
+      <workItem from="1557708755826" duration="11757000" />
+      <workItem from="1557726089106" duration="13427000" />
+      <workItem from="1557796507193" duration="3181000" />
+      <workItem from="1557801561000" duration="4516000" />
+      <workItem from="1557806159080" duration="203000" />
+      <workItem from="1557806420030" duration="2385000" />
+      <workItem from="1557810042244" duration="80000" />
+      <workItem from="1557810171244" duration="947000" />
+      <workItem from="1557812107817" duration="17218000" />
+    </task>
+    <task id="LOCAL-00003" summary="1729">
+      <created>1555666211248</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555666211248</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1800">
+      <created>1555668067250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555668067250</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1800">
+      <created>1555824291971</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555824291971</updated>
+    </task>
+    <task id="LOCAL-00006" summary="4/21">
+      <created>1555827717420</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555827717420</updated>
+    </task>
+    <task id="LOCAL-00007" summary="4/21">
+      <created>1555827786960</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555827786960</updated>
+    </task>
+    <task id="LOCAL-00008" summary="4/21">
+      <created>1555827879128</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555827879128</updated>
+    </task>
+    <task id="LOCAL-00009" summary="4/22/14">
+      <created>1555915319277</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1555915319278</updated>
+    </task>
+    <task id="LOCAL-00010" summary="4/22/14">
+      <created>1555919955497</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555919955497</updated>
+    </task>
+    <task id="LOCAL-00011" summary="4/22/14">
+      <created>1555927576991</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1555927576992</updated>
+    </task>
+    <task id="LOCAL-00012" summary="4/23/10">
+      <created>1555986947557</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555986947557</updated>
+    </task>
+    <task id="LOCAL-00013" summary="4/23/14">
+      <created>1556001059064</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556001059064</updated>
+    </task>
+    <task id="LOCAL-00014" summary="4/23/17">
+      <created>1556011479939</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556011479940</updated>
+    </task>
+    <task id="LOCAL-00015" summary="4/23/17">
+      <created>1556014953657</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556014953657</updated>
+    </task>
+    <task id="LOCAL-00016" summary="4/23/17">
+      <created>1556098578175</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556098578175</updated>
+    </task>
+    <task id="LOCAL-00017" summary="4/24/18">
+      <created>1556100303088</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556100303088</updated>
+    </task>
+    <task id="LOCAL-00018" summary="4/25/16">
+      <created>1556180065989</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556180065989</updated>
+    </task>
+    <task id="LOCAL-00019" summary="4/25/16">
+      <created>1556180140557</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1556180140557</updated>
+    </task>
+    <task id="LOCAL-00020" summary="4/25/16">
+      <created>1556180439044</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1556180439044</updated>
+    </task>
+    <task id="LOCAL-00021" summary="4/25/16">
+      <created>1556180672188</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1556180672188</updated>
+    </task>
+    <task id="LOCAL-00022" summary="4/25/16">
+      <created>1556180938029</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556180938030</updated>
+    </task>
+    <task id="LOCAL-00023" summary="4/25/17">
+      <created>1556183803004</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556183803004</updated>
+    </task>
+    <task id="LOCAL-00024" summary="4/26/12">
+      <created>1556251676252</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556251676252</updated>
+    </task>
+    <task id="LOCAL-00025" summary="4/26/12">
+      <created>1556261504171</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1556261504171</updated>
+    </task>
+    <task id="LOCAL-00026" summary="4/26/12">
+      <created>1556268851031</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1556268851031</updated>
+    </task>
+    <task id="LOCAL-00027" summary="4/26/12">
+      <created>1556269679146</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1556269679146</updated>
+    </task>
+    <task id="LOCAL-00028" summary="4/26/18">
+      <created>1556273123959</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556273123959</updated>
+    </task>
+    <task id="LOCAL-00029" summary="4/29/16">
+      <created>1556526603721</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1556526603721</updated>
+    </task>
+    <task id="LOCAL-00030" summary="4/29/16">
+      <created>1556533375691</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1556533375691</updated>
+    </task>
+    <task id="LOCAL-00031" summary="4/30/16">
+      <created>1556613727128</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1556613727128</updated>
+    </task>
+    <task id="LOCAL-00032" summary="4/30/18">
+      <created>1556616258283</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1556616258283</updated>
+    </task>
+    <task id="LOCAL-00033" summary="4/30/18">
+      <created>1556616763016</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1556616763016</updated>
+    </task>
+    <task id="LOCAL-00034" summary="4/30/18">
+      <created>1556618132877</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1556618132877</updated>
+    </task>
+    <task id="LOCAL-00035" summary="4/30/18">
+      <created>1557045915391</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1557045915391</updated>
+    </task>
+    <task id="LOCAL-00036" summary="4/30/18">
+      <created>1557047107605</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1557047107605</updated>
+    </task>
+    <task id="LOCAL-00037" summary="4/30/18">
+      <created>1557047399202</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1557047399202</updated>
+    </task>
+    <task id="LOCAL-00038" summary="4/30/18">
+      <created>1557051126613</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1557051126613</updated>
+    </task>
+    <task id="LOCAL-00039" summary="4/30/18">
+      <created>1557111921947</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1557111921947</updated>
+    </task>
+    <task id="LOCAL-00040" summary="5/6">
+      <created>1557112052281</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1557112052281</updated>
+    </task>
+    <task id="LOCAL-00041" summary="5/6">
+      <created>1557138261958</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1557138261958</updated>
+    </task>
+    <task id="LOCAL-00042" summary="5/6">
+      <created>1557369503333</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1557369503333</updated>
+    </task>
+    <task id="LOCAL-00043" summary="5/6">
+      <created>1557380055379</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1557380055379</updated>
+    </task>
+    <task id="LOCAL-00044" summary="5/6">
+      <created>1557380184955</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1557380184955</updated>
+    </task>
+    <task id="LOCAL-00045" summary="5/9">
+      <created>1557394841037</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1557394841037</updated>
+    </task>
+    <task id="LOCAL-00046" summary="5/6">
+      <created>1557458581459</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1557458581459</updated>
+    </task>
+    <task id="LOCAL-00047" summary="5/6">
+      <created>1557460866599</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1557460866599</updated>
+    </task>
+    <task id="LOCAL-00048" summary="5/6">
+      <created>1557482090308</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1557482090308</updated>
+    </task>
+    <task id="LOCAL-00049" summary="5/6">
+      <created>1557744099180</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1557744099180</updated>
+    </task>
+    <task id="LOCAL-00050" summary="5/14">
+      <created>1557804680270</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1557804680271</updated>
+    </task>
+    <task id="LOCAL-00051" summary="5/14">
+      <created>1557806770761</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1557806770762</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="439383000" />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892932" visible="true" weight="0.1480959" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010707" side_tool="true" weight="0.108603664" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41374663" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47304583" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49788433" weight="0.3301887" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49788433" weight="0.33692724" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4992948" weight="0.32479784" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50211567" side_tool="true" weight="0.34724092" />
+      <window_info anchor="bottom" id="找到" order="11" />
+      <window_info anchor="bottom" id="运行" order="12" />
+      <window_info anchor="bottom" id="调试" order="13" weight="0.32876712" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.14555256" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.33452722" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1808" />
+    <MESSAGE value="1729" />
+    <MESSAGE value="1800" />
+    <MESSAGE value="4/21" />
+    <MESSAGE value="4/22/14" />
+    <MESSAGE value="4/23/10" />
+    <MESSAGE value="4/23/14" />
+    <MESSAGE value="4/23/17" />
+    <MESSAGE value="4/24/18" />
+    <MESSAGE value="4/25/16" />
+    <MESSAGE value="4/25/17" />
+    <MESSAGE value="4/26/12" />
+    <MESSAGE value="4/26/18" />
+    <MESSAGE value="4/29/16" />
+    <MESSAGE value="4/30/16" />
+    <MESSAGE value="4/30/18" />
+    <MESSAGE value="5/9" />
+    <MESSAGE value="5/6" />
+    <MESSAGE value="5/14" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/14" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Mycode$myFucTest_html.dat" NAME="myFucTest.html Coverage Results" MODIFIED="1557370780890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/controls/OrbitControls.js" />
+    <entry file="file://$PROJECT_DIR$/平移.html" />
+    <entry file="file://$USER_HOME$/Desktop/three.js/初级教程r73-2018年10月/chapter1/1-2.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/three.js/初级教程r73-2018年10月/chapter3/3-1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/three.js/初级教程r73-2018年10月/chapter1/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2700" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.html" />
+    <entry file="file://$PROJECT_DIR$/part0.html" />
+    <entry file="file://$PROJECT_DIR$/demo1.html" />
+    <entry file="file://$PROJECT_DIR$/js/OrbitControls.js" />
+    <entry file="file://$PROJECT_DIR$/js/jquery.js" />
+    <entry file="file://$PROJECT_DIR$/myFucTest.html" />
+    <entry file="file://$PROJECT_DIR$/TestModel/newFun.js" />
+    <entry file="file://$PROJECT_DIR$/myFnc.js" />
+    <entry file="file://$PROJECT_DIR$/TestModel/creatBox.html" />
+    <entry file="file://$PROJECT_DIR$/5_6.patch" />
+    <entry file="file://$PROJECT_DIR$/test.html" />
+    <entry file="file://$PROJECT_DIR$/getArea.html" />
+    <entry file="file://$PROJECT_DIR$/js/three.js" />
+    <entry file="file://$PROJECT_DIR$/pointDistance.html" />
+    <entry file="file://$PROJECT_DIR$/hello" />
+    <entry file="file://$PROJECT_DIR$/grid.html" />
+    <entry file="file://$PROJECT_DIR$/demo.html" />
+    <entry file="file://$PROJECT_DIR$/myFnc.html" />
+    <entry file="file://$PROJECT_DIR$/myJS/newFnc.js" />
+    <entry file="file://$PROJECT_DIR$/myJS/microFnc.js" />
+    <entry file="file://$PROJECT_DIR$/shadow.html" />
+    <entry file="file://$PROJECT_DIR$/creatBox.html" />
+    <entry file="file://$PROJECT_DIR$/init.html" />
+    <entry file="file://$PROJECT_DIR$/getArea.txt" />
+    <entry file="file://$PROJECT_DIR$/editor/manifest.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myTest/creatBox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="e#124#182#0" />
+            <element signature="e#195#268#0" />
+            <element signature="e#290#381#0" />
+            <element signature="e#396#483#0" />
+            <element signature="n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myTest/init.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/three.js-master/editor/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myTest/outline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="33" column="67" selection-start-line="33" selection-start-column="67" selection-end-line="33" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/build/three.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203693">
+          <caret line="10450" column="4" selection-start-line="10450" selection-start-column="4" selection-end-line="10450" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/docs/Writing unit tests for undo-redo commands.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/docs/Implementing additional commands for undo-redo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-462" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/Command.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/Script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4037">
+          <caret line="417" column="41" lean-forward="true" selection-start-line="417" selection-start-column="41" selection-end-line="417" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/commands/AddObjectCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myTest/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1492">
+          <caret line="4401" column="30" lean-forward="true" selection-start-line="4401" selection-start-column="30" selection-end-line="4401" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myTest/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="47747" column="4" selection-start-line="47747" selection-start-column="4" selection-end-line="47747" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/libs/signals.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="11" column="225" selection-start-line="11" selection-start-column="225" selection-end-line="11" selection-end-column="225" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/build/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8609" column="8" selection-start-line="8609" selection-start-column="8" selection-end-line="8609" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/History.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <element signature="e#725#1962#0" />
+            <element signature="e#1984#2409#0" />
+            <element signature="e#2431#2859#0" />
+            <element signature="e#2883#3446#0" />
+            <element signature="e#3478#4432#0" />
+            <element signature="e#4455#4571#0" />
+            <element signature="e#4602#5474#0" />
+            <element signature="e#5515#6202#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/libs/ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2468">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/Editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+          <folding>
+            <element signature="e#2981#3390#0" />
+            <element signature="e#3442#3769#0" />
+            <element signature="e#3811#3884#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/js/Viewport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="174" column="16" lean-forward="true" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/123">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

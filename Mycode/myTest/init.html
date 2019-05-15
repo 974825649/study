@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>threejs中3D视野的缩放</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            position: relative;
+            overflow: hidden;
+        }
+        .changeCamera{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        #stats{
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="myCanvas" ></div>
+<script type="text/javascript" src="js/three.js" ></script>
+<script type="text/javascript" src="js/OrbitControls.js"></script>
+<script type="text/javascript" src="js/ColladaLoader.js"></script>
+<script type="text/javascript" src="js/Stats.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src=" myJS/microFnc.js"></script>
+<script type="text/javascript" src=" myJS/newFnc.js"></script>
+
+<script type="text/javascript">
+
+    var scene, camera, light, renderer,                     //场景 相机 光源 渲染器
+        controls, stats ;                                          //视角控制 FPS
+    //初始化DOM对象
+    function initDOM(){
+        canvas = document.getElementById("myCanvas");
+    }
+
+    //初始化3d渲染器
+    function initThreeRenderer(){
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xC0C0C0, 1.0);
+        renderer.shadowMap.enabled = true;//开启阴影，加上阴影渲染
+        canvas.appendChild(renderer.domElement);
+    }
+
+    //初始化场景
+    function initScene(){
+        scene = new THREE.Scene();
+    }
+
+    // 初始化相机
+    function initCamera() {  //透视相机
+        camera = new THREE.PerspectiveCamera(45,  window.innerWidth/window.innerHeight , 1, 10000);
+        camera.position.set(40, 40, 40);
+        camera.lookAt( 0, 0, 0);
+    }
+
+    // 初始化光源
+    function initLight(){
+        var pointLight1 = new THREE.PointLight( 0xffffff);
+        pointLight1.position.set( 20, 20, -20 );
+        pointLight1.castShadow = true;//开启灯光投射阴影
+        scene.add( pointLight1 );
+        light = new THREE.AmbientLight(0xFFC0CB); //模拟漫反射光源
+        scene.add(light);
+    }
+
+    //初始化辅助对象
+    function initHelper(axeN,gridN){
+        //辅助坐标系
+        function initAxesHelper(axeN) {
+            if(!axeN){
+                axeN = 10;
+            }
+            var axesHelper = new THREE.AxesHelper( axeN );
+            scene.add( axesHelper );
+        }
+        //辅助网格
+        function initGridHelper(gridN){
+            if(!gridN){
+                gridN = 40;
+            }
+            var helper = new THREE.GridHelper( gridN, gridN );
+            scene.add( helper );
+        }
+        initAxesHelper(axeN);
+        initGridHelper(gridN);
+    }
+
+    //初始化物体对象
+    function initObject() {
+    }
+
+    //控制器
+    function OrbitControls(camera, renderer) {
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+    }
+
+    //窗口自适应
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();    //窗口自动变化
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+
+    //检测FPS
+    function initStats() {
+        stats = new Stats();
+        canvas.appendChild( stats.domElement );
+    }
+
+    // 动画循环
+    function animation() {
+        requestAnimationFrame(animation);
+        renderer.render(scene, camera);
+        stats.update();
+    }
+
+    //初始化页面加载
+    function threeStart() {
+        //初始化DOM对象
+        initDOM();
+        //初始化渲染器
+        initThreeRenderer();
+        //初始化场景
+        initScene();
+        //初始透视化相机
+        initCamera();
+        //初始化光源
+        initLight();
+        //初始化辅助对象
+        initHelper(20,40);               //坐标，网格
+        initObject();
+        //控制视角函数
+        OrbitControls(camera, renderer);
+        //FPS
+        initStats();
+        //窗口自适应
+        window.addEventListener( 'resize', onWindowResize, false );
+        //实时动画
+        animation();
+    }
+
+
+    //函数运行
+    $(function () {
+        threeStart();
+    });
+</script>
+</body>
+</html>
+
