@@ -5,6 +5,9 @@
 Menubar.Bg = function ( editor ) {
 
     var strings = editor.strings;
+    var signals = editor.signals;
+
+    var scene =  editor.scene;
 
     var container = new UI.Panel();
     container.setClass( 'menu' );
@@ -40,13 +43,13 @@ Menubar.Bg = function ( editor ) {
     option.setClass( 'option' );
     option.setTextContent( strings.getKey( 'menubar/bg/img1' ) );
     option.onClick( function () {
-
-        // var bg = editor.sceneHelpers.background;
+        scene.traverse(function (child) {
+            if(child.name === 'skyBox')
+                scene.remove(child);
+        });
         var texture = new THREE.TextureLoader().load( "./images/img1.jpg" );
         texture.wrapS =  texture.wrapT = THREE.RepeatWrapping;
-        editor.scene.background = texture;
-
-
+        signals.sceneSkyChanged.dispatch(texture);
     });
     options.add( option );
 
@@ -55,10 +58,10 @@ Menubar.Bg = function ( editor ) {
     option.setClass( 'option' );
     option.setTextContent( strings.getKey( 'menubar/bg/img2' ) );
     option.onClick( function () {
-        // var texture = new  THREE.TextureLoader().load( './images/img2.jpg' );
-        // texture.wrapS =  texture.wrapT = THREE.RepeatWrapping;
-        // editor.scene.background = texture;
-
+        scene.traverse(function (child) {
+            if(child.name === 'skyBox')
+                scene.remove(child);
+        });
         var skyBoxGeometry = new THREE.BoxGeometry( 500, 500, 500 );
 
         var texture = new THREE.TextureLoader().load("./images/img2.jpg");
@@ -68,9 +71,8 @@ Menubar.Bg = function ( editor ) {
         var skyBox = new THREE.Mesh( skyBoxGeometry, skyBoxMaterial );
 
         skyBox.position.set(0,249,0);
-        // console.log('sssssssss');
-        // console.log(editor.camera.position);
-        editor.scene.add(skyBox);
+        skyBox.name = 'skyBox';
+        scene.add(skyBox);
     });
     options.add( option );
 

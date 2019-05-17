@@ -20,7 +20,6 @@ var Viewport = function ( editor ) {
 	var camera = editor.camera;
 	var scene = editor.scene;
 	var sceneHelpers = editor.sceneHelpers;
-	var sceneTwo = editor.sceneHelpers;
 
 	var objects = [];
 
@@ -269,9 +268,9 @@ var Viewport = function ( editor ) {
 	// controls need to be added *after* main logic,
 	// otherwise controls.enabled doesn't work.
 
+	//相机控制器
 	var controls = new THREE.EditorControls( camera, container.dom );
 	controls.addEventListener( 'change', function () {
-		// console.log(controls);
 		signals.cameraChanged.dispatch( camera );
 
 	} );
@@ -332,6 +331,21 @@ var Viewport = function ( editor ) {
 
 		render();
 
+	} );
+
+	//自定义改变背景
+	signals.sceneSkyChanged.add( function (object) {
+		scene.traverse(function (child) {
+			if(child.name === 'skyBox')
+				scene.remove(child);
+		});
+		if( object && object instanceof THREE.Mesh){
+			scene.add(object)
+		}else if(object){
+			scene.background = object;
+		}
+		console.log('ssssss');
+		render();
 	} );
 
     // 改变相机

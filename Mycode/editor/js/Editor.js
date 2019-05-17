@@ -40,6 +40,9 @@ var Editor = function () {
 		sceneFogChanged: new Signal(),
 		sceneGraphChanged: new Signal(),
 
+		//自定义背景
+		sceneSkyChanged: new Signal(),
+
 		cameraChanged: new Signal(),
 
 		geometryChanged: new Signal(),
