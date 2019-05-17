@@ -14,6 +14,8 @@ var Menubar = function ( editor ) {
 	// container.add( new Menubar.View( editor ) );
 	container.add( new Menubar.Examples( editor ) );
 	container.add( new Menubar.Help( editor ) );
+	//myBg
+	container.add( new Menubar.Bg( editor ) );
 
 	container.add( new Menubar.Status( editor ) );
 

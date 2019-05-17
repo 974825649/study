@@ -20,6 +20,7 @@ var Viewport = function ( editor ) {
 	var camera = editor.camera;
 	var scene = editor.scene;
 	var sceneHelpers = editor.sceneHelpers;
+	var sceneTwo = editor.sceneHelpers;
 
 	var objects = [];
 
@@ -54,6 +55,7 @@ var Viewport = function ( editor ) {
 	var objectRotationOnDown = null;
 	var objectScaleOnDown = null;
 
+	//控制变化
 	var transformControls = new THREE.TransformControls( camera, container.dom );
 	transformControls.addEventListener( 'change', function () {
 
@@ -141,7 +143,7 @@ var Viewport = function ( editor ) {
 	var mouse = new THREE.Vector2();
 
 	// events
-
+	//获取相交物体
 	function getIntersects( point, objects ) {
 
 		mouse.set( ( point.x * 2 ) - 1, - ( point.y * 2 ) + 1 );
@@ -164,7 +166,7 @@ var Viewport = function ( editor ) {
 	}
 
 	function handleClick() {
-
+		//原地点击
 		if ( onDownPosition.distanceTo( onUpPosition ) === 0 ) {
 
 			var intersects = getIntersects( onUpPosition, objects );
@@ -173,7 +175,7 @@ var Viewport = function ( editor ) {
 
 				var object = intersects[ 0 ].object;
 
-				if ( object.userData.object !== undefined ) {
+				if ( object.userData.object !== undefined ) {    //点击的是辅助线
 
 					// helper
 
@@ -269,19 +271,21 @@ var Viewport = function ( editor ) {
 
 	var controls = new THREE.EditorControls( camera, container.dom );
 	controls.addEventListener( 'change', function () {
-
+		// console.log(controls);
 		signals.cameraChanged.dispatch( camera );
 
 	} );
 
 	// signals
 
+    //清除editor
 	signals.editorCleared.add( function () {
 
 		controls.center.set( 0, 0, 0 );
 		render();
 
 	} );
+    //mesh变化
 
 	signals.transformModeChanged.add( function ( mode ) {
 
@@ -301,6 +305,7 @@ var Viewport = function ( editor ) {
 
 	} );
 
+    //改变渲染器
 	signals.rendererChanged.add( function ( newRenderer ) {
 
 		if ( renderer !== null ) {
@@ -310,7 +315,6 @@ var Viewport = function ( editor ) {
 		}
 
 		renderer = newRenderer;
-
 		renderer.autoClear = false;
 		renderer.autoUpdateScene = false;
 		renderer.gammaOutput = true;
@@ -323,12 +327,14 @@ var Viewport = function ( editor ) {
 
 	} );
 
+    // 改变场景
 	signals.sceneGraphChanged.add( function () {
 
 		render();
 
 	} );
 
+    // 改变相机
 	signals.cameraChanged.add( function () {
 
 		render();
@@ -359,12 +365,14 @@ var Viewport = function ( editor ) {
 
 	} );
 
+	// 聚焦物体
 	signals.objectFocused.add( function ( object ) {
 
 		controls.focus( object );
 
 	} );
 
+	// 更改材质
 	signals.geometryChanged.add( function ( object ) {
 
 		if ( object !== undefined ) {
@@ -387,6 +395,7 @@ var Viewport = function ( editor ) {
 
 	} );
 
+	// 改变物体
 	signals.objectChanged.add( function ( object ) {
 
 		if ( editor.selected === object ) {
@@ -411,6 +420,7 @@ var Viewport = function ( editor ) {
 
 	} );
 
+	// 删除物体
 	signals.objectRemoved.add( function ( object ) {
 
 		if ( object === transformControls.object ) {
@@ -427,12 +437,14 @@ var Viewport = function ( editor ) {
 
 	} );
 
+	// 增加辅助线
 	signals.helperAdded.add( function ( object ) {
 
 		objects.push( object.getObjectByName( 'picker' ) );
 
 	} );
 
+	// 删除辅助线
 	signals.helperRemoved.add( function ( object ) {
 
 		objects.splice( objects.indexOf( object.getObjectByName( 'picker' ) ), 1 );
@@ -447,6 +459,7 @@ var Viewport = function ( editor ) {
 
 	// fog
 
+    // 改变背景色
 	signals.sceneBackgroundChanged.add( function ( backgroundColor ) {
 
 		scene.background.setHex( backgroundColor );
@@ -457,6 +470,7 @@ var Viewport = function ( editor ) {
 
 	var currentFogType = null;
 
+    //改变雾化
 	signals.sceneFogChanged.add( function ( fogType, fogColor, fogNear, fogFar, fogDensity ) {
 
 		if ( currentFogType !== fogType ) {
@@ -500,6 +514,7 @@ var Viewport = function ( editor ) {
 
 	} );
 
+    // 视图的摄像机变化
 	signals.viewportCameraChanged.add( function ( viewportCamera ) {
 
 		camera = viewportCamera;
@@ -513,6 +528,7 @@ var Viewport = function ( editor ) {
 
 	//
 
+    // 窗口自适应宽高
 	signals.windowResize.add( function () {
 
 		// TODO: Move this out?
@@ -537,7 +553,7 @@ var Viewport = function ( editor ) {
 	} );
 
 	// animations
-
+    // 动画循环
 	var prevTime = performance.now();
 
 	function animate( time ) {
@@ -564,6 +580,7 @@ var Viewport = function ( editor ) {
 	function render() {
 
 		scene.updateMatrixWorld();
+		renderer.antialias = true;
 		renderer.render( scene, camera );
 
 		if ( renderer instanceof THREE.RaytracingRenderer === false ) {

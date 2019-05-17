@@ -41,6 +41,13 @@ var Toolbar = function ( editor ) {
 	} );
 	buttons.add( scale );
 
+	//myTest
+	// var myButton = new UI.Button(strings.getKey('toolbar/myButton'));
+	// myButton.onClick(function () {
+	// 	console.log('aaaaaaaaaa');
+	// });
+	// buttons.add(myButton);
+
 	var local = new UI.THREE.Boolean( false, strings.getKey( 'toolbar/local' ) );
 	local.onChange( function () {
 
@@ -57,6 +64,7 @@ var Toolbar = function ( editor ) {
 
 	} );
 
+	//增加删除选中样式
 	signals.transformModeChanged.add( function ( mode ) {
 
 		translate.dom.classList.remove( 'selected' );

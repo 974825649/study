@@ -109,6 +109,8 @@
 		<script src="js/Menubar.Edit.js"></script>
 		<script src="js/Menubar.Add.js"></script>
 		<script src="js/Menubar.Play.js"></script>
+		<!--		myBg 	-->
+		<script src="js/Menubar.Bg.js"></script>
 		<!-- <script src="js/Menubar.View.js"></script> -->
 		<script src="js/Menubar.Examples.js"></script>
 		<script src="js/Menubar.Help.js"></script>
@@ -181,7 +183,7 @@
 				return this.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 			};
 
-			//
+			//主界面
 
 			var editor = new Editor();
 
@@ -288,6 +290,22 @@
 				event.preventDefault();
 
 				editor.loader.loadFiles( event.dataTransfer.files );
+
+			}, false );
+
+			//mybg
+			document.addEventListener( 'mousemove', function ( event ) {
+
+				event.preventDefault();
+
+				// console.log(editor.camera.position.y);
+				var cy = editor.camera.position.y;
+				if(cy <= 0.2){
+					// console.log(editor.signals);
+					// editor.controls.enable = false;
+					cy = 0.2;
+				}
+				editor.camera.position.setY(cy);
 
 			}, false );
 

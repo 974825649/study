@@ -25,6 +25,7 @@ Menubar.File = function ( editor ) {
 	title.setTextContent( strings.getKey( 'menubar/file' ) );
 	container.add( title );
 
+
 	var options = new UI.Panel();
 	options.setClass( 'options' );
 	container.add( options );
@@ -50,7 +51,7 @@ Menubar.File = function ( editor ) {
 	options.add( new UI.HorizontalRule() );
 
 	// Import
-
+	//不使用new UI，自己使用create
 	var form = document.createElement( 'form' );
 	form.style.display = 'none';
 	document.body.appendChild( form );
@@ -182,7 +183,7 @@ Menubar.File = function ( editor ) {
 	} );
 	options.add( option );
 
-	//
+	//增加水平线
 
 	options.add( new UI.HorizontalRule() );
 
@@ -406,6 +407,7 @@ Menubar.File = function ( editor ) {
 
 	}
 
+	// 保存数组
 	function saveArrayBuffer( buffer, filename ) {
 
 		save( new Blob( [ buffer ], { type: 'application/octet-stream' } ), filename );

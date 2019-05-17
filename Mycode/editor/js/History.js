@@ -24,7 +24,7 @@ History = function ( editor ) {
 
 	this.editor.signals.startPlayer.add( function () {
 
-		scope.historyDisabled = true;
+		scope.historyDisabled = true;              //运动时禁用历史记录
 
 	} );
 
@@ -111,6 +111,7 @@ History.prototype = {
 			}
 
 		}
+		console.log(cmd);
 
 		if ( cmd !== undefined ) {
 
@@ -119,7 +120,6 @@ History.prototype = {
 			this.editor.signals.historyChanged.dispatch( cmd );
 
 		}
-
 		return cmd;
 
 	},

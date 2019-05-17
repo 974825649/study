@@ -84,8 +84,7 @@ var Editor = function () {
 
 	this.scene = new THREE.Scene();
 	this.scene.name = 'Scene';
-	this.scene.background = new THREE.Color( 0xaaaaaa );
-
+	this.scene.background = new THREE.Color(0xAAAAAA);
 	this.sceneHelpers = new THREE.Scene();
 
 	this.object = {};
@@ -118,7 +117,7 @@ Editor.prototype = {
 	},
 
 	//
-
+	//设置场景
 	setScene: function ( scene ) {
 
 		this.scene.uuid = scene.uuid;
@@ -331,7 +330,7 @@ Editor.prototype = {
 
 			var picker = new THREE.Mesh( geometry, material );
 			picker.name = 'picker';
-			picker.userData.object = object;
+			picker.userData.object = object;   //辅助线的object 是 辅助的物体
 			helper.add( picker );
 
 			this.sceneHelpers.add( helper );

@@ -64,6 +64,11 @@ var Strings = function ( config ) {
 			'menubar/help/source_code': 'Source Code',
 			'menubar/help/about': 'About',
 
+			//myBg
+			'menubar/bg': 'Bg',
+			'menubar/bg/img1': 'Sky',
+			'menubar/bg/img2': 'Yaomeng',
+
 			'sidebar/scene': 'Scene',
 			'sidebar/scene/background': 'Background',
 			'sidebar/scene/fog': 'Fog',
@@ -319,6 +324,11 @@ var Strings = function ( config ) {
 			'menubar/help': '帮助',
 			'menubar/help/source_code': '源码',
 			'menubar/help/about': '关于',
+
+			//myBg
+			'menubar/bg': '背景图',
+			'menubar/bg/img1': '天空',
+			'menubar/bg/img2': '妖梦',
 
 			'sidebar/scene': '场景',
 			'sidebar/scene/background': '背景',
