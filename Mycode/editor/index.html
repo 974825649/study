@@ -111,6 +111,10 @@
 		<script src="js/Menubar.Play.js"></script>
 		<!--		myBg 	-->
 		<script src="js/Menubar.Bg.js"></script>
+		<!--		myStats-->
+		<script src="js/Menubar.Stats.js"></script>
+		<!--		tools-->
+		<script src="js/Menubar.Tools.js"></script>
 		<!-- <script src="js/Menubar.View.js"></script> -->
 		<script src="js/Menubar.Examples.js"></script>
 		<script src="js/Menubar.Help.js"></script>
@@ -145,6 +149,9 @@
 		<script src="js/Sidebar.Script.js"></script>
 		<script src="js/Sidebar.History.js"></script>
 		<script src="js/Strings.js"></script>
+
+		<!--		性能检测-->
+		<script src="js/Stats.js"></script>
 		<!--		底部工具栏-->
 		<script src="js/Toolbar.js"></script>
 		<!--		中间主视图-->
@@ -290,22 +297,6 @@
 				event.preventDefault();
 
 				editor.loader.loadFiles( event.dataTransfer.files );
-
-			}, false );
-
-			//mybg
-			document.addEventListener( 'mousemove', function ( event ) {
-
-				event.preventDefault();
-
-				// console.log(editor.camera.position.y);
-				var cy = editor.camera.position.y;
-				if(cy <= 0.2){
-					// console.log(editor.signals);
-					// editor.controls.enable = false;
-					cy = 0.2;
-				}
-				editor.camera.position.setY(cy);
 
 			}, false );
 

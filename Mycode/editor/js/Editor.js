@@ -43,6 +43,12 @@ var Editor = function () {
 		//自定义背景
 		sceneSkyChanged: new Signal(),
 
+        //自定义检测FPS
+        statsShow: new Signal(),
+
+		//工具  测距
+		distanceMeasure: new Signal(),
+
 		cameraChanged: new Signal(),
 
 		geometryChanged: new Signal(),

@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-Viewport.Info = function ( editor ) {
+Viewport.Info= function ( editor ) {
 
 	var signals = editor.signals;
 	var strings = editor.strings;

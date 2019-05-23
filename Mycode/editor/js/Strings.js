@@ -67,7 +67,15 @@ var Strings = function ( config ) {
 			//myBg
 			'menubar/bg': 'Bg',
 			'menubar/bg/img1': 'Sky',
-			'menubar/bg/img2': 'Yaomeng',
+			'menubar/bg/img2': 'YaoMeng',
+
+			//FPS
+			'menubar/stats': 'Stats',
+			'menubar/stats/showFPS': 'Show/Off',
+
+			//tools
+			'menubar/tools': 'Tools',
+			'menubar/tools/distance': 'Distance',
 
 			'sidebar/scene': 'Scene',
 			'sidebar/scene/background': 'Background',
@@ -329,6 +337,14 @@ var Strings = function ( config ) {
 			'menubar/bg': '背景图',
 			'menubar/bg/img1': '天空',
 			'menubar/bg/img2': '妖梦',
+
+			//FPS
+			'menubar/stats': '帧率',
+			'menubar/stats/showFPS': '开启或关闭',
+
+			//Tools
+			'menubar/tools': '工具',
+			'menubar/tools/distance': '测距离',
 
 			'sidebar/scene': '场景',
 			'sidebar/scene/background': '背景',

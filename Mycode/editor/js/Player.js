@@ -11,6 +11,20 @@ var Player = function ( editor ) {
 	container.setPosition( 'absolute' );
 	container.setDisplay( 'none' );
 
+	var stats = new Stats();
+	stats.domElement.style.position = "absolute";
+	stats.domElement.style.top = "10px";
+	stats.domElement.style.left = "10px";
+	stats.domElement.style.display = 'none';
+	container.dom.appendChild( stats.domElement );
+	signals.statsShow.add(function () {
+		if(stats.domElement.style.display === 'none'){
+			stats.domElement.style.display = 'block';
+		}else {
+			stats.domElement.style.display = 'none';
+		}
+	});
+
 	//
 
 	var player = new APP.Player();

@@ -142,6 +142,8 @@ var Viewport = function ( editor ) {
 	var mouse = new THREE.Vector2();
 
 	// events
+
+	//myFun
 	//获取相交物体
 	function getIntersects( point, objects ) {
 
@@ -265,16 +267,19 @@ var Viewport = function ( editor ) {
 	container.dom.addEventListener( 'touchstart', onTouchStart, false );
 	container.dom.addEventListener( 'dblclick', onDoubleClick, false );
 
+
 	// controls need to be added *after* main logic,
 	// otherwise controls.enabled doesn't work.
 
 	//相机控制器
 	var controls = new THREE.EditorControls( camera, container.dom );
 	controls.addEventListener( 'change', function () {
+
 		signals.cameraChanged.dispatch( camera );
 
 	} );
 
+	//
 	// signals
 
     //清除editor
@@ -315,7 +320,7 @@ var Viewport = function ( editor ) {
 
 		renderer = newRenderer;
 		renderer.autoClear = false;
-		renderer.autoUpdateScene = false;
+		renderer.autoUpdateScene = true;
 		renderer.gammaOutput = true;
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( container.dom.offsetWidth, container.dom.offsetHeight );
@@ -335,18 +340,366 @@ var Viewport = function ( editor ) {
 
 	//自定义改变背景
 	signals.sceneSkyChanged.add( function (object) {
-		scene.traverse(function (child) {
-			if(child.name === 'skyBox')
-				scene.remove(child);
-		});
-		if( object && object instanceof THREE.Mesh){
-			scene.add(object)
-		}else if(object){
-			scene.background = object;
+		if(object){
+			if(scene.background && scene.background.name === object.name){
+				scene.background = null;
+			}else {
+				scene.background = object;
+			}
 		}
-		console.log('ssssss');
 		render();
 	} );
+
+	//自定义检测FPS
+	var stats = new Stats();
+	stats.domElement.style.position = "absolute";
+	stats.domElement.style.top = "10px";
+	stats.domElement.style.left = "10px";
+	stats.domElement.style.display = 'none';
+	container.dom.appendChild( stats.domElement );
+	signals.statsShow.add(function () {
+		 if(stats.domElement.style.display === 'none'){
+			 stats.domElement.style.display = 'block';
+		 }else {
+			 stats.domElement.style.display = 'none';
+		 }
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//鼠标屏幕坐标归一化
+	var onMovePosition = new THREE.Vector2();
+	function onMouseMove( event ) {
+		var array = getMousePosition( container.dom, event.clientX, event.clientY );
+		onMovePosition.fromArray( array );
+		onMovePosition.x = onMovePosition.x * 2 - 1;
+		onMovePosition.y = onMovePosition.y * 2 - 1;
+		return onMovePosition;
+	}
+
+	function exitDistance(event){
+		if(event.keyCode === 27){
+			console.log('exit');
+			transformControls.enabled = true;
+			window.removeEventListener( 'keydown', exitDistance, false );
+			container.dom.removeEventListener("mousemove",onMouseMove, false);
+			container.dom.removeEventListener('mousemove',showDistance,false);
+		}
+	}
+
+	//工具 测量距离
+	signals.distanceMeasure.add(function () {
+		console.log('start');
+		window.addEventListener( 'keydown', exitDistance, false );
+		container.dom.addEventListener( "mousemove", onMouseMove, false);
+
+		transformControls.enabled = false;
+
+		//显示移动点
+		container.dom.addEventListener('mousemove',showDistance,false);
+		//添加球
+		container.dom.addEventListener('mousedown', addSphere,false);
+
+	});
+
+	var pointVec = [],                                      //鼠标滑过的点
+		firstVec = [], firstPoint = [], poiNum = 0,         //起始点位置 点模型 点个数
+		lineTag = 0, lineTotal = [],                        //保存的线标识，线的数组
+		pointExist = false, key;                           //判断点是否存在 只计算第一个物体
+	//测距离
+	function showDistance(event) {
+		var raycaster = new THREE.Raycaster();
+		raycaster.setFromCamera( onMovePosition, camera);
+		// sizeChangeSphere();//小球动态变化
+		// 计算物体和射线的焦点
+		var intersects = raycaster.intersectObjects(scene.children, true);
+		key = 0; //每次只需要一个点;
+		if (intersects !== null && intersects.length > 0) {
+			for (var i = 0; i < intersects.length; i++) {
+				if (key) {
+					key = 0;
+					break;
+				}
+				console.log(intersects);
+			}
+			// 	//获取点击的对象
+			// 	var object = intersects[i].object;
+			// 	var point = intersects[i].point;
+			// 	var face = intersects[i].face;
+			// 	var facePoint = getFacePoint(object,face);  //获取相交面的数组
+			// 	if(facePoint){                              //根据是否有相交面判断小球是否添加
+			// 		pointExist = true;
+			// 	}
+			// 	// 显示移动点的交点
+			// 	pointVec = new THREE.Vector3(point.x, point.y, point.z);
+			// 	pointVec.set(pointVec.x.toFixed(2), pointVec.y.toFixed(2), pointVec.z.toFixed(2));
+			//
+			// 	//寻找新点，找到替换
+			// 	serchVertices(pointVec, facePoint);  //寻找最近点
+			// 	deletPoint();
+			// 	addPoint(pointVec);
+			//
+			// 	//绘制物体内直线
+			// 	if (firstVec.length && pointVec.length) {
+			// 		deletLine();                  //删除旧线
+			// 		drawLine(firstVec, pointVec,false);
+			// 	}
+			// }
+		} 
+		// else if(firstVec.length){     //有起点绘制物体外直线
+		// 	pointExist = false;
+		// 	deletLine();
+		// 	drawLine(firstVec, mouse3D,false);
+		// }else {
+		// 	pointExist = false;       //无起点
+		// }
+	}
+	//获取鼠标2d坐标
+	function getMouse2DPosition(event) {
+		mouse = new THREE.Vector2();
+		// 将鼠标位置归一化为设备坐标。x 和 y 方向的取值范围是 (-1 to +1)
+		mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+		mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+		//通过摄像机和鼠标位置更新射线
+		return mouse;
+	}
+
+	//获取鼠标3d坐标
+	function getMouse3DPosition(mouse){
+		var vector = new THREE.Vector3(mouse.x,mouse.y,0);
+		vector.unproject(camera);
+		return vector;
+	}
+
+	// 添加移动点
+	function addPoint(poi) {
+		var pointColor = 0x00ff00;
+		if (colorChange){
+			pointColor = 0x0000ff;
+		}
+		var newSize = getChangeSize();
+		var starsGeometry = new THREE.Geometry();
+		starsGeometry.vertices.push(poi);
+		var starsMaterial = new THREE.PointsMaterial({size: newSize, color: pointColor});
+		var starField = new THREE.Points(starsGeometry, starsMaterial);
+		scene.add(starField);
+	}
+
+	// 删除移动点
+	function deletPoint() {
+		for(var i = 0;i < scene.children.length; i ++){
+			// 删除鼠标移动点
+			if(scene.children[i].type === "Points"){   //
+				scene.remove(scene.children[i]);
+			}
+		}
+	}
+
+	//添加小球
+	function addSphere(event) {
+		event.preventDefault();
+		// 判断是否测量
+		if(event.which === 1){
+			if(pointExist){
+				poiNum++;
+				// 添加球
+				var newSize = getChangeSize();
+				var geometry = new THREE.SphereGeometry(newSize/5, 32, 32);
+				var material = new THREE.MeshBasicMaterial({color: 0xffff00});
+				var sphere = new THREE.Mesh(geometry, material);
+				sphere.userData = {'my': 'sphere'};
+				sphere.position.set(pointVec.x, pointVec.y, pointVec.z);
+				scene.add(sphere);
+				if (poiNum === 1) {
+					//设置原点
+					firstVec = new THREE.Vector3(pointVec.x, pointVec.y, pointVec.z);
+					firstPoint.push(sphere);
+				} else if (poiNum === 2) {
+					//保存新线
+					drawLine(firstVec, pointVec,true);
+					//保存小球
+					firstPoint[0].userData.my = 'sphere'+ lineTag;    //给两个小球增加自己的标签
+					sphere.userData = {'my':'sphere'+ lineTag};
+					// 删除线和小球
+					deletLine();
+					deletSphere();
+				}
+			}else {
+				// 删除线和小球
+				deletLine();
+				deletSphere();
+			}
+		}else if(event.which ===3){
+			deletLine();
+			deletSphere();
+		}
+	}
+
+	//获取动态变化大小
+	function getChangeSize() {
+		var sphereSize = 40;
+		var d = camera.position.distanceTo( new THREE.Vector3( 0,0,0) );
+		sphereSize =  d / sphereSize ;
+		return sphereSize;
+	}
+
+	// 小球大小动态变化
+	function sizeChangeSphere() {
+		var newSize = getChangeSize();
+		var geometry = new THREE.SphereGeometry( newSize/5, 32, 32 );
+		for(var i = 0;i < scene.children.length; i++){
+			var sphere = scene.children[i];
+			if(sphere.type === 'Mesh'){
+				sphere.geometry = geometry;
+			}
+		}
+	}
+
+	//删除小球
+	function deletSphere() {
+		for (var i = 0; i < scene.children.length; i++) {
+			if (scene.children[i].userData.my === 'sphere') {
+				scene.remove(scene.children[i]);
+				i--;
+			}
+		}
+		poiNum = 0;  //球数归零
+		firstVec = []; //起点归零
+		firstPoint = [];
+	}
+
+	//画线测距
+	function drawLine(start, end ,saveLine) {
+		var linegeometry = new THREE.Geometry(); //创建一个几何体
+		var linematerial = new THREE.LineBasicMaterial({color: '#ff4545'});//定义线条的材质
+		var color1 = new THREE.Color(0x444444), color2 = new THREE.Color(0xFF0000);//定义点颜色
+		// 线的材质可以由2点的颜色决定
+		linegeometry.vertices.push(start);
+		linegeometry.vertices.push(end);
+		linegeometry.colors.push(color1, color2);
+
+		var line = new THREE.Line(linegeometry, linematerial, THREE.LineSegments);//创建出一条线
+		var lineDis = new THREE.Line3(start, end);
+		var lineDistance = (lineDis.distance().toFixed(2));
+		//添加文字
+		makeText(line,lineDistance,end);
+
+		if(saveLine === true){
+			line.userData = {'my': 'line' + lineTag };
+			lineTag++;
+			lineTotal.push(line);
+		}else{
+			line.userData = {'my': 'line'};
+		}
+		scene.add(line);
+	}
+
+	//删除线
+	function deletLine() {
+		for (var i = 0; i < scene.children.length; i++) {
+			if (scene.children[i].userData.my === 'line') {
+				scene.children[i].remove(scene.children[i].children[0]);
+				scene.remove(scene.children[i]);
+				i--;
+			}
+		}
+	}
+
+	//获取相交面数组
+	function getFacePoint(object,face){
+		this.face = face;
+		if (object instanceof THREE.Mesh) {
+			key++;
+			var geo = object.geometry;
+			var facePoint = [];
+			if (geo instanceof THREE.BufferGeometry) {
+				var geometry = new THREE.Geometry().fromBufferGeometry(geo);
+				var vertices = geometry.vertices;
+				var a = face.a;
+				var b = face.b;
+				var c = face.c;
+				// //计算面积是先取出三角形角a，角b,角c所对应的三维坐标点   并转化成现实的坐标点
+				var newVec1 = new THREE.Vector3(vertices[a].x, vertices[a].y, vertices[a].z);
+				newVec1.applyMatrix4(object.matrixWorld);
+				newVec1.set(newVec1.x.toFixed(2), newVec1.y.toFixed(2), newVec1.z.toFixed(2));
+				var newVec2 = new THREE.Vector3(vertices[b].x, vertices[b].y, vertices[b].z);
+				newVec2.applyMatrix4(object.matrixWorld);
+				newVec2.set(newVec2.x.toFixed(2), newVec2.y.toFixed(2), newVec2.z.toFixed(2));
+				var newVec3 = new THREE.Vector3(vertices[c].x, vertices[c].y, vertices[c].z);
+				newVec3.applyMatrix4(object.matrixWorld);
+				newVec3.set(newVec3.x.toFixed(2), newVec3.y.toFixed(2), newVec3.z.toFixed(2));
+				facePoint.push(newVec1,newVec2,newVec3);
+				return facePoint;
+			}
+		}
+
+	}
+
+	//小球寻找最近顶点
+	function serchVertices(po, facePoint) {
+		colorChange = false;
+		var newarr = [];
+		var n = 0.5;
+		var x = parseFloat(po.x);
+		var y = parseFloat(po.y);
+		var z = parseFloat(po.z);
+		for (var i = 0; i < 3; i++) {
+			var facePointI = facePoint[i];
+			var facePointX = parseFloat(facePointI.x);
+			var facePointY = parseFloat(facePointI.y);
+			var facePointZ = parseFloat(facePointI.z);
+			if (x + n > facePointX && x - n < facePointX &&
+				y + n > facePointY && y - n < facePointY &&
+				z + n > facePointZ && z - n < facePointZ) {
+				newarr.push(facePointI);
+				pointVec.set(newarr[0].x, newarr[0].y, newarr[0].z);
+				console.log(pointVec);
+				colorChange = true;
+				break;
+			}
+		}
+	}
+
+	//添加文字
+	function makeText(line,lineDistance,textPoint) {
+		this.line = line;
+		this.lineDistances = lineDistance;
+		var lineDiv = document.createElement( 'div' );
+		lineDiv.className = 'label';
+		lineDiv.textContent = lineDistance;
+		lineDiv.style.marginTop = '-1em';
+
+		var lineLabel = new THREE.CSS2DObject( lineDiv );
+		lineLabel.position.set( textPoint.x,textPoint.y,textPoint.z );
+		line.add( lineLabel );
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // 改变相机
 	signals.cameraChanged.add( function () {
@@ -573,7 +926,7 @@ var Viewport = function ( editor ) {
 	function animate( time ) {
 
 		requestAnimationFrame( animate );
-
+		stats.update();
 		var mixer = editor.mixer;
 
 		if ( mixer.stats.actions.inUse > 0 ) {
