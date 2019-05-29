@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>播放</title>
+		<meta charset="utf-8">
+		<meta name="generator" content="Three.js Editor">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 13px;
+				background-color: #000;
+				margin: 0px;
+				overflow: hidden;
+			}
+			.button-wrap {
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+			}
+			.button-line {
+				display: inline-block;
+				margin-left: 8px;
+				padding: 4px 8px;
+				color: #fff;
+				border: 1px solid #fff;
+				border-radius: 4px;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body ontouchstart="">
+		<script src="common/build/three105.min.js"></script>
+		<script src="common/js/controls/EditorControls.js"></script>
+		<script src="common/js/controls/PointerLockControls.js"></script>
+		<script src="js/libs/app.js"></script>
+
+		<script src="common/js/vr/WebVR.js"></script>
+		<script src="js/Storage.js"></script>
+
+		<div class="button-wrap" id="buttons">
+			<span class="button-line" id="change_controls">切 换</span>
+			<span class="button-line" id="play_camera" style="display: none;">播 放</span>
+			<span class="button-line" id="pause_camera" style="display: none;">暂 停</span>
+			<a class="button-line" id="edit_app" href="##" target="_blank" style="display: none;">编 辑</a>
+		</div>
+
+		<script>
+
+			var storage = new Storage();
+
+			storage.init( function () {
+
+				storage.get( function ( state ) {
+
+					if ( state !== undefined ) {
+
+						init( state );
+						play( state );
+
+					}
+
+				} );
+
+			} );
+
+			function init( output ) {
+
+				var vr = output.project.vr;
+			}
+
+			var player, playerData;
+
+			function play( json ) {
+
+				playerData = json;
+
+				player = new APP.Player();
+				player.load( json );
+
+				player.setSize( window.innerWidth, window.innerHeight );
+				player.setSizeMini( parseInt(window.innerWidth * 0.2), parseInt(window.innerHeight * 0.2) );
+
+				player.play();
+
+				document.body.insertBefore( player.dom, document.getElementById( 'buttons' ) );
+				document.body.insertBefore( player.domMini, document.getElementById( 'buttons' ) );
+
+				var cameraRecord = player.getCameraRecord();
+
+				if ( cameraRecord && cameraRecord.looksCount > 0 ) {
+
+					var pause_camera = document.getElementById( 'pause_camera' );
+					pause_camera.addEventListener( 'click', function () {
+
+						if ( player.getCameraPausing() ) {
+							player.resumeCamera( pause_camera );
+						} else {
+							player.pauseCamera( pause_camera );
+						}
+
+					} );
+
+					var play_camera = document.getElementById( 'play_camera' );
+					play_camera.style.cssText = 'display: inline-block;';
+					play_camera.addEventListener( 'click', function () {
+
+						if ( player.getCameraPlaying() ) {
+
+							player.stopCamera( play_camera, pause_camera );
+
+						} else {
+
+							player.playCamera( play_camera, pause_camera );
+							pause_camera.style.cssText = 'display: inline-block;';
+
+						}
+
+					} );
+
+				}
+
+				var change_controls = document.getElementById( 'change_controls' );
+				change_controls.addEventListener( 'click', function () {
+
+					if ( player.getCameraPlaying() ) return;
+					player.changeControls();
+
+				} );
+
+				window.addEventListener( 'resize', function () {
+
+					player.setSize( window.innerWidth, window.innerHeight );
+					player.setSizeMini( parseInt(window.innerWidth * 0.2), parseInt(window.innerHeight * 0.2) );
+
+				} );
+
+			}
+
+		</script>
+	</body>
+</html>
