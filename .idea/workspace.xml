@@ -2,11 +2,888 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d031fea1-0a78-4e1f-9d9a-1ab9adceb169" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/Mycode/myJS/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mycode/creatBox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/creatBox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mycode/myJS/microFnc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myJS/microFnc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mycode/myJS/newFnc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myJS/newFnc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/build/three.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/build/three.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/build/three.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/css/dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/css/light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/docs/Implementing additional commands for undo-redo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/docs/Writing unit tests for undo-redo commands.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/examples/arkanoid.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/examples/camera.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/examples/particles.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/examples/pong.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/examples/shaders.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/images/icon.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Command.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Editor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/History.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.Add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.Edit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.Examples.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.File.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.Help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.Play.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.Status.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.View.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Menubar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Player.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Animation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.BoxGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.BufferGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.CircleGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.CylinderGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.Geometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.IcosahedronGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.LatheGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.Modifiers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.PlaneGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.SphereGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.TeapotBufferGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.TorusGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.TorusKnotGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.TubeGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Geometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.History.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Material.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Project.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Properties.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Scene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Settings.Shortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Settings.Viewport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.Settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Storage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Strings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Viewport.Camera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Viewport.Info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/Viewport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/AddObjectCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/AddScriptCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/MoveObjectCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/MultiCmdsCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/RemoveObjectCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/RemoveScriptCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetColorCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetGeometryCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetGeometryValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetMaterialColorCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetMaterialCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetMaterialMapCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetMaterialValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetPositionCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetRotationCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetScaleCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetSceneCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetScriptValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetUuidCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/commands/SetValueCommand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/DracoExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/acorn/acorn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/acorn/acorn_loose.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/acorn/walk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ammo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/app/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/addon/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/addon/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/addon/show-hint.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/addon/show-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/addon/tern.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/addon/tern.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/codemirror.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/mode/glsl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/mode/javascript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/codemirror/theme/monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/dat.gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/gltf/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/gltf/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/gltf/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/draco/gltf/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/esprima.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/glslprep.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/gunzip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/html2canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/inflate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/jsonlint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/mmdparser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/o3dgc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/opentype.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/signals.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/stats.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/system.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/tern-threejs/threejs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/def.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/doc_comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/infer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/polyfill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/signal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ternjs/tern.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/three.html.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/timeliner_gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/tween.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/js/libs/ui.three.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/editor/sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/NOTICE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/droid_sans_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/droid_sans_mono_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/droid_sans_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/droid_serif_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/droid/droid_serif_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/gentilis_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/gentilis_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/helvetiker_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/helvetiker_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/optimer_bold.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/optimer_regular.typeface.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/fonts/ttf/kenpixel.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/AnimationClipCreator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/Car.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/Cloth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ConvexObjectBreaker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/CurveExtras.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/GPUComputationRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/GPUParticleSystem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/Gyroscope.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ImprovedNoise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/MD2Character.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/MD2CharacterComplex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/MarchingCubes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/MorphAnimMesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/MorphBlendMesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/Ocean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/PRNG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ParametricGeometries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/QuickHull.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/RollerCoaster.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ShaderGodRays.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ShaderSkin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ShaderTerrain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ShaderToon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/ShaderTranslucent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/SimplexNoise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/TimelinerController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/Volume.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/VolumeSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/WebGL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/animation/CCDIKSolver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/animation/MMDAnimationHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/animation/MMDPhysics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/cameras/CinematicCamera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/DeviceOrientationControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/DragControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/EditorControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/FirstPersonControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/FlyControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/MapControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/OrbitControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/OrthographicTrackballControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/PointerLockControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/TrackballControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/controls/TransformControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/crossfade/gui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/crossfade/scenes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/crossfade/transition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/curves/NURBSCurve.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/curves/NURBSSurface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/curves/NURBSUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/effects/AnaglyphEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/effects/AsciiEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/effects/OutlineEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/effects/ParallaxBarrierEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/effects/PeppersGhostEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/effects/StereoEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/ColladaExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/DracoExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/GLTFExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/MMDExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/OBJExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/PLYExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/STLExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/exporters/TypedGeometryExporter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/BoxLineGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/ConvexGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/DecalGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/LightningStrike.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/TeapotBufferGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/hilbert2D.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/geometries/hilbert3D.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/interactive/SelectionBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/interactive/SelectionHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/ammo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/dat.gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/gltf/draco_decoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/gltf/draco_decoder.wasm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/gltf/draco_encoder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/draco/gltf/draco_wasm_wrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/gunzip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/inflate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/mmdparser.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/o3dgc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/opentype.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/stats.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/system.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/timeliner_gui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/libs/tween.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lights/RectAreaLightUniformsLib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/Line2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/LineGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/LineMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/LineSegments2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/LineSegmentsGeometry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/Wireframe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/lines/WireframeGeometry2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/3MFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/AMFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/AWDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/AssimpJSONLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/AssimpLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/BVHLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/BabylonLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ColladaLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/DDSLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/DRACOLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/EXRLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/EquirectangularToCubeGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/FBXLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/GCodeLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/GLTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/HDRCubeTextureLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/KMZLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/KTXLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/LDrawLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/LWOLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/LoaderSupport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/MD2Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/MMDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/MTLLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/NRRDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/NodeMaterialLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/OBJLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/OBJLoader2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/PCDLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/PDBLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/PLYLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/PRWMLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/PVRLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/PlayCanvasLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/RGBELoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/STLLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/SVGLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/TDSLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/TGALoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/TTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/VRMLLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/VRMLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/VTKLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/XLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/CTMLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/CTMWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/ctm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/license/OpenCTM.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/license/js-lzma.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/license/js-openctm.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/ctm/lzma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/deprecated/LegacyGLTFLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/deprecated/LegacyJSONLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/SEA3D.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/SEA3DDeflate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/SEA3DDraco.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/SEA3DLZMA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/SEA3DLegacy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/SEA3DLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/o3dgc/SEA3DGC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/physics/SEA3DAmmo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/physics/SEA3DAmmoLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/loaders/sea3d/physics/SEA3DRigidBody.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/math/ColorConverter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/math/Lut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/modifiers/ExplodeModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/modifiers/SimplifyModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/modifiers/SubdivisionModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/modifiers/TessellateModifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/Nodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/THREE.Nodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/CameraNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/ColorsNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/LightNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/NormalNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/PositionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/ReflectNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/ResolutionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/ScreenUVNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/accessors/UVNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/bsdfs/BlinnExponentToRoughnessNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/bsdfs/BlinnShininessExponentNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/bsdfs/RoughnessToBlinnExponentNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/AttributeNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/ConstNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/ExpressionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/FunctionCallNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/FunctionNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/InputNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/NodeBuilder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/NodeFrame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/NodeLib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/NodeUniform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/NodeUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/StructNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/TempNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/core/VarNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/effects/BlurNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/effects/ColorAdjustmentNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/effects/LuminanceNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/BoolNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/ColorNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/CubeTextureNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/FloatNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/IntNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/Matrix3Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/Matrix4Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/PropertyNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/RTTNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/ReflectorNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/ScreenNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/TextureNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/Vector2Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/Vector3Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/inputs/Vector4Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/MeshStandardNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/NodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/PhongNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/SpriteNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/StandardNodeMaterial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/nodes/MeshStandardNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/nodes/PhongNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/nodes/RawNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/nodes/SpriteNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/materials/nodes/StandardNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/math/CondNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/math/Math1Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/math/Math2Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/math/Math3Node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/math/OperatorNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/misc/BumpMapNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/misc/NormalMapNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/misc/TextureCubeNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/misc/TextureCubeUVNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/postprocessing/NodePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/postprocessing/NodePostProcessing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/procedural/CheckerNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/procedural/NoiseNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/BypassNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/ColorSpaceNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/JoinNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/MaxMIPLevelNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/SwitchNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/TimerNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/UVTransformNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/nodes/utils/VelocityNode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Fire.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Lensflare.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/LightningStorm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Reflector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/ReflectorRTT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Refractor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/ShadowMesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Sky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Water.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/objects/Water2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/offscreen/jank.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/offscreen/offscreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/offscreen/scene.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/pmrem/PMREMCubeUVPacker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/pmrem/PMREMGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/AdaptiveToneMappingPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/AfterimagePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/BloomPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/BokehPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/ClearPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/CubeTexturePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/DotScreenPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/EffectComposer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/FilmPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/GlitchPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/HalftonePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/MaskPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/OutlinePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/RenderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/SAOPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/SMAAPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/SSAARenderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/SSAOPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/SavePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/ShaderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/TAARenderPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/TexturePass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/postprocessing/UnrealBloomPass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/CSS2DRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/CSS3DRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/Projector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/RaytracingRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/RaytracingWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/SVGRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/SoftwareRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/renderers/WebGLDeferredRenderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/AfterimageShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/BasicShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/BleachBypassShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/BlendShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/BokehShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/BokehShader2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/BrightnessContrastShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/ColorCorrectionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/ColorifyShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/ConvolutionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/CopyShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/DOFMipMapShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/DepthLimitedBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/DigitalGlitch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/DotScreenShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/FXAAShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/FilmShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/FocusShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/FreiChenShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/FresnelShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/GammaCorrectionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/HalftoneShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/HorizontalBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/HorizontalTiltShiftShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/HueSaturationShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/KaleidoShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/LuminosityHighPassShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/LuminosityShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/MirrorShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/NormalMapShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/OceanShaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/ParallaxShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/PixelShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/RGBShiftShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/SAOShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/SMAAShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/SSAOShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/SepiaShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/SobelOperatorShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/TechnicolorShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/ToneMapShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/TriangleBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/UnpackDepthRGBAShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/VerticalBlurShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/VerticalTiltShiftShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/VignetteShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/VolumeShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/shaders/WaterRefractionShader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/BufferGeometryUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/GeometryUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/MathUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/SceneUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/ShadowMapViewer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/SkeletonUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/TypedArrayUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/utils/UVsDebug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/vr/PaintViveController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/vr/ViveController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/vr/WebVR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/vr/deprecated/DaydreamController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/js/vr/deprecated/GearVRController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/myJS/microFnc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mycode/myTest/myJS/newFnc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/35号楼门卫.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/35号楼门卫.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/36号楼配电房.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/36号楼配电房.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/a34.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/a34.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/叠拼0.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/叠拼0.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/叠拼1.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/叠拼1.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/高层10.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/高层10.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/TestModel/高层21.dae" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/TestModel/高层21.dae" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/creatBox.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/creatBox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/demo1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/demo1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/getArea.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/getArea.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/getArea.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/getArea.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/grid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/hello" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/hello" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/init.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/init.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/AnimationClipCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/AnimationClipCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Car.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/Car.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Cloth.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/Cloth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ColladaLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ColladaLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ConvexObjectBreaker.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ConvexObjectBreaker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/CurveExtras.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/CurveExtras.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/GPUComputationRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/GPUComputationRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/GPUParticleSystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/GPUParticleSystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Gyroscope.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/Gyroscope.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ImprovedNoise.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ImprovedNoise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/MD2Character.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/MD2Character.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/MD2CharacterComplex.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/MD2CharacterComplex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/MarchingCubes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/MarchingCubes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/MorphAnimMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/MorphAnimMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/MorphBlendMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/MorphBlendMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Ocean.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/Ocean.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/OrbitControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/PRNG.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/PRNG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ParametricGeometries.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ParametricGeometries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/QuickHull.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/QuickHull.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/RollerCoaster.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/RollerCoaster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ShaderGodRays.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ShaderGodRays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ShaderSkin.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ShaderSkin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ShaderTerrain.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ShaderTerrain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ShaderToon.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ShaderToon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/ShaderTranslucent.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/ShaderTranslucent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/SimplexNoise.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/SimplexNoise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/Stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/TimelinerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/TimelinerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Tween.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/Tween.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/Volume.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/Volume.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/VolumeSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/VolumeSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/WebGL.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/WebGL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/animation/CCDIKSolver.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/animation/CCDIKSolver.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/animation/MMDAnimationHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/animation/MMDAnimationHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/animation/MMDPhysics.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/animation/MMDPhysics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/cameras/CinematicCamera.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/cameras/CinematicCamera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/DeviceOrientationControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/DeviceOrientationControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/DragControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/DragControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/EditorControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/EditorControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/FirstPersonControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/FirstPersonControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/FlyControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/FlyControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/MapControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/MapControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/OrbitControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/OrthographicTrackballControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/OrthographicTrackballControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/PointerLockControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/PointerLockControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/TrackballControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/TrackballControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/controls/TransformControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/controls/TransformControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/crossfade/gui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/crossfade/gui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/crossfade/scenes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/crossfade/scenes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/crossfade/transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/crossfade/transition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/curves/NURBSCurve.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/curves/NURBSCurve.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/curves/NURBSSurface.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/curves/NURBSSurface.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/curves/NURBSUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/curves/NURBSUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/effects/AnaglyphEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/effects/AnaglyphEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/effects/AsciiEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/effects/AsciiEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/effects/OutlineEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/effects/OutlineEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/effects/ParallaxBarrierEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/effects/ParallaxBarrierEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/effects/PeppersGhostEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/effects/PeppersGhostEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/effects/StereoEffect.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/effects/StereoEffect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/ColladaExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/ColladaExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/GLTFExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/GLTFExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/MMDExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/MMDExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/OBJExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/OBJExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/PLYExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/PLYExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/STLExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/STLExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/exporters/TypedGeometryExporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/exporters/TypedGeometryExporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/BoxLineGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/BoxLineGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/ConvexGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/ConvexGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/DecalGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/DecalGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/LightningStrike.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/LightningStrike.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/TeapotBufferGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/TeapotBufferGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/hilbert2D.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/hilbert2D.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/geometries/hilbert3D.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/geometries/hilbert3D.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/interactive/SelectionBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/interactive/SelectionBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/interactive/SelectionHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/interactive/SelectionHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/jquery-1.7.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/jquery-1.7.2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lights/RectAreaLightUniformsLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lights/RectAreaLightUniformsLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/Line2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/Line2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/LineGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/LineGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/LineMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/LineMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/LineSegments2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/LineSegments2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/LineSegmentsGeometry.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/LineSegmentsGeometry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/Wireframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/Wireframe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/lines/WireframeGeometry2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/lines/WireframeGeometry2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/3MFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/3MFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/AMFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/AMFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/AWDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/AWDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/AssimpJSONLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/AssimpJSONLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/AssimpLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/AssimpLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/BVHLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/BVHLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/BabylonLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/BabylonLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ColladaLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/ColladaLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/DDSLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/DDSLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/DRACOLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/DRACOLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/EXRLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/EXRLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/EquirectangularToCubeGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/EquirectangularToCubeGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/FBXLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/FBXLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/GCodeLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/GCodeLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/GLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/GLTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/HDRCubeTextureLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/HDRCubeTextureLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/KMZLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/KMZLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/KTXLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/KTXLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/LDrawLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/LDrawLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/LWOLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/LWOLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/LoaderSupport.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/LoaderSupport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/MD2Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/MD2Loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/MMDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/MMDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/MTLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/MTLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/NRRDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/NRRDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/NodeMaterialLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/NodeMaterialLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/OBJLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/OBJLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/OBJLoader2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/OBJLoader2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/PCDLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/PCDLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/PDBLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/PDBLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/PLYLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/PLYLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/PRWMLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/PRWMLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/PVRLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/PVRLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/PlayCanvasLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/PlayCanvasLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/RGBELoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/RGBELoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/STLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/STLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/SVGLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/SVGLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/TDSLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/TDSLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/TGALoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/TGALoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/TTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/TTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/VRMLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/VRMLLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/VRMLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/VRMLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/VTKLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/VTKLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/XLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/XLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/CTMLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/CTMLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/CTMWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/CTMWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/ctm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/ctm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/license/OpenCTM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/license/OpenCTM.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/license/js-lzma.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/license/js-lzma.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/license/js-openctm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/license/js-openctm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/ctm/lzma.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/ctm/lzma.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/deprecated/LegacyGLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/deprecated/LegacyGLTFLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/deprecated/LegacyJSONLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/deprecated/LegacyJSONLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/SEA3D.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/SEA3D.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/SEA3DDeflate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/SEA3DDeflate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/SEA3DDraco.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/SEA3DDraco.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/SEA3DLZMA.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/SEA3DLZMA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/SEA3DLegacy.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/SEA3DLegacy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/SEA3DLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/SEA3DLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/o3dgc/SEA3DGC.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/o3dgc/SEA3DGC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/physics/SEA3DAmmo.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/physics/SEA3DAmmo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/physics/SEA3DAmmoLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/physics/SEA3DAmmoLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/loaders/sea3d/physics/SEA3DRigidBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/loaders/sea3d/physics/SEA3DRigidBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/math/ColorConverter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/math/ColorConverter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/math/Lut.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/math/Lut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/modifiers/ExplodeModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/modifiers/ExplodeModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/modifiers/SimplifyModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/modifiers/SimplifyModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/modifiers/SubdivisionModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/modifiers/SubdivisionModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/modifiers/TessellateModifier.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/modifiers/TessellateModifier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/myFucTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/myFucTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/Nodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/Nodes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/THREE.Nodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/THREE.Nodes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/CameraNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/CameraNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/ColorsNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/ColorsNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/LightNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/LightNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/NormalNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/NormalNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/PositionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/PositionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/ReflectNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/ReflectNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/ResolutionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/ResolutionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/ScreenUVNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/ScreenUVNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/accessors/UVNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/accessors/UVNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/bsdfs/BlinnExponentToRoughnessNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/bsdfs/BlinnExponentToRoughnessNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/bsdfs/BlinnShininessExponentNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/bsdfs/BlinnShininessExponentNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/bsdfs/RoughnessToBlinnExponentNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/bsdfs/RoughnessToBlinnExponentNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/AttributeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/AttributeNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/ConstNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/ConstNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/ExpressionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/ExpressionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/FunctionCallNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/FunctionCallNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/FunctionNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/FunctionNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/InputNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/InputNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/NodeBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/NodeBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/NodeFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/NodeFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/NodeLib.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/NodeLib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/NodeUniform.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/NodeUniform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/NodeUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/NodeUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/StructNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/StructNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/TempNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/TempNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/core/VarNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/core/VarNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/effects/BlurNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/effects/BlurNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/effects/ColorAdjustmentNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/effects/ColorAdjustmentNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/effects/LuminanceNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/effects/LuminanceNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/BoolNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/BoolNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/ColorNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/ColorNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/CubeTextureNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/CubeTextureNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/FloatNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/FloatNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/IntNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/IntNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/Matrix3Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/Matrix3Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/Matrix4Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/Matrix4Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/PropertyNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/PropertyNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/RTTNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/RTTNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/ReflectorNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/ReflectorNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/ScreenNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/ScreenNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/TextureNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/TextureNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/Vector2Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/Vector2Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/Vector3Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/Vector3Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/inputs/Vector4Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/inputs/Vector4Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/MeshStandardNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/MeshStandardNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/NodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/NodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/PhongNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/PhongNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/SpriteNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/SpriteNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/StandardNodeMaterial.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/StandardNodeMaterial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/nodes/MeshStandardNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/nodes/MeshStandardNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/nodes/PhongNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/nodes/PhongNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/nodes/RawNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/nodes/RawNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/nodes/SpriteNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/nodes/SpriteNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/materials/nodes/StandardNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/materials/nodes/StandardNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/math/CondNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/math/CondNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/math/Math1Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/math/Math1Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/math/Math2Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/math/Math2Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/math/Math3Node.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/math/Math3Node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/math/OperatorNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/math/OperatorNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/misc/BumpMapNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/misc/BumpMapNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/misc/NormalMapNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/misc/NormalMapNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/misc/TextureCubeNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/misc/TextureCubeNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/misc/TextureCubeUVNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/misc/TextureCubeUVNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/postprocessing/NodePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/postprocessing/NodePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/postprocessing/NodePostProcessing.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/postprocessing/NodePostProcessing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/procedural/CheckerNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/procedural/CheckerNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/procedural/NoiseNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/procedural/NoiseNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/BypassNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/BypassNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/ColorSpaceNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/ColorSpaceNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/JoinNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/JoinNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/MaxMIPLevelNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/MaxMIPLevelNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/SwitchNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/SwitchNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/TimerNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/TimerNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/UVTransformNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/UVTransformNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/nodes/utils/VelocityNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/nodes/utils/VelocityNode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Fire.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Fire.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Lensflare.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Lensflare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/LightningStorm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/LightningStorm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Reflector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Reflector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/ReflectorRTT.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/ReflectorRTT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Refractor.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Refractor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/ShadowMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/ShadowMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Sky.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Sky.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Water.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Water.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/objects/Water2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/objects/Water2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/offscreen/jank.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/offscreen/jank.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/offscreen/offscreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/offscreen/offscreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/offscreen/scene.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/offscreen/scene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/pmrem/PMREMCubeUVPacker.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/pmrem/PMREMCubeUVPacker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/pmrem/PMREMGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/pmrem/PMREMGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/AdaptiveToneMappingPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/AdaptiveToneMappingPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/AfterimagePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/AfterimagePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/BloomPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/BloomPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/BokehPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/BokehPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/ClearPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/ClearPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/CubeTexturePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/CubeTexturePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/DotScreenPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/DotScreenPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/EffectComposer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/EffectComposer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/FilmPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/FilmPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/GlitchPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/GlitchPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/HalftonePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/HalftonePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/MaskPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/MaskPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/OutlinePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/OutlinePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/RenderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/RenderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/SAOPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/SAOPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/SMAAPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/SMAAPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/SSAARenderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/SSAARenderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/SSAOPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/SSAOPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/SavePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/SavePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/ShaderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/ShaderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/TAARenderPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/TAARenderPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/TexturePass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/TexturePass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/postprocessing/UnrealBloomPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/postprocessing/UnrealBloomPass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/CSS2DRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/CSS2DRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/CSS3DRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/CSS3DRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/Projector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/Projector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/RaytracingRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/RaytracingRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/RaytracingWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/RaytracingWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/SVGRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/SVGRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/SoftwareRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/SoftwareRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/renderers/WebGLDeferredRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/renderers/WebGLDeferredRenderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/AfterimageShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/AfterimageShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/BasicShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/BasicShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/BleachBypassShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/BleachBypassShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/BlendShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/BlendShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/BokehShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/BokehShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/BokehShader2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/BokehShader2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/BrightnessContrastShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/BrightnessContrastShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/ColorCorrectionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/ColorCorrectionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/ColorifyShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/ColorifyShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/ConvolutionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/ConvolutionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/CopyShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/CopyShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/DOFMipMapShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/DOFMipMapShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/DepthLimitedBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/DepthLimitedBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/DigitalGlitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/DigitalGlitch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/DotScreenShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/DotScreenShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/FXAAShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/FXAAShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/FilmShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/FilmShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/FocusShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/FocusShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/FreiChenShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/FreiChenShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/FresnelShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/FresnelShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/GammaCorrectionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/GammaCorrectionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/HalftoneShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/HalftoneShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/HorizontalBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/HorizontalBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/HorizontalTiltShiftShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/HorizontalTiltShiftShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/HueSaturationShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/HueSaturationShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/KaleidoShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/KaleidoShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/LuminosityHighPassShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/LuminosityHighPassShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/LuminosityShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/LuminosityShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/MirrorShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/MirrorShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/NormalMapShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/NormalMapShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/OceanShaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/OceanShaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/ParallaxShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/ParallaxShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/PixelShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/PixelShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/RGBShiftShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/RGBShiftShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/SAOShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/SAOShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/SMAAShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/SMAAShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/SSAOShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/SSAOShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/SepiaShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/SepiaShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/SobelOperatorShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/SobelOperatorShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/TechnicolorShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/TechnicolorShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/ToneMapShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/ToneMapShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/TriangleBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/TriangleBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/UnpackDepthRGBAShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/UnpackDepthRGBAShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/VerticalBlurShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/VerticalBlurShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/VerticalTiltShiftShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/VerticalTiltShiftShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/VignetteShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/VignetteShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/VolumeShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/VolumeShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/shaders/WaterRefractionShader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/shaders/WaterRefractionShader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/three.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/js/three.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/BufferGeometryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/BufferGeometryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/GeometryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/GeometryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/MathUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/MathUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/SceneUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/SceneUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/ShadowMapViewer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/ShadowMapViewer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/SkeletonUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/SkeletonUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/TypedArrayUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/TypedArrayUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/utils/UVsDebug.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/utils/UVsDebug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/vr/PaintViveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/vr/PaintViveController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/vr/ViveController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/vr/ViveController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/vr/WebVR.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/vr/WebVR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/vr/deprecated/DaydreamController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/vr/deprecated/DaydreamController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/js/vr/deprecated/GearVRController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/editor/js/vr/deprecated/GearVRController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/myFnc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/myFnc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/myJS/microFnc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/myJS/newFnc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/myJS/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/myJS/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/outline.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/outline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/part0.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/part0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/pointDistance.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/pointDistance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/shadow.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/shadow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mycode/平移.html" beforeDir="false" afterPath="$PROJECT_DIR$/Mycode/myTest/平移.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,65 +895,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mycode/creatBox.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="158" column="34" lean-forward="true" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
-              <folding>
-                <element signature="e#1205#1266#0" />
-                <element signature="e#1315#1662#0" />
-                <element signature="e#1700#1742#0" />
-                <element signature="e#1783#1972#0" />
-                <element signature="e#2336#2745#0" />
-                <element signature="e#2787#2843#0" />
-                <element signature="e#2900#2980#0" />
-                <element signature="e#3024#3215#0" />
-                <element signature="e#3254#3367#0" />
-                <element signature="e#3409#3855#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Mycode/myJS/newFnc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="52" column="64" lean-forward="true" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-              <folding>
-                <element signature="e#204#821#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mycode/myJS/microFnc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="n#!!block;n#getMouse2DPosition#0" />
-                <element signature="n#!!block;n#getMouse3DPosition#0" />
-                <element signature="n#!!block;n#addPoint#0" />
-                <element signature="n#!!block;n#deletePoint#0" />
-                <element signature="n#!!block;n#searchVertices#0" />
-                <element signature="n#!!block;n#getChangeSize#0" />
-                <element signature="n#!!block;n#getInterset#0" />
-                <element signature="n#!!block;n#addSphere#0" />
-                <element signature="n#!!block;n#deleteSphere#0" />
-                <element signature="n#!!block;n#getMySphere#0" />
-                <element signature="n#!!block;n#drawLine#0" />
-                <element signature="n#!!block;n#deleteLine#0" />
-                <element signature="n#!!block;n#extrudeShape#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,35 +938,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="mycode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mycode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mycode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mycode" type="462c0819:PsiDirectoryNode" />
-              <item name="Mycode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mycode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mycode" type="462c0819:PsiDirectoryNode" />
-              <item name="Mycode" type="462c0819:PsiDirectoryNode" />
-              <item name="myJS" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mycode/creatBox.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Mycode" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
@@ -195,6 +1003,7 @@
       <workItem from="1557585229790" duration="1220000" />
       <workItem from="1557586604768" duration="10811000" />
       <workItem from="1557616747741" duration="7040000" />
+      <workItem from="1557810121077" duration="1890000" />
     </task>
     <task id="LOCAL-00001" summary="8:03">
       <created>1555546001328</created>
@@ -221,13 +1030,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55805000" />
+    <option name="totallyTimeSpent" value="57695000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24894217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -265,122 +1073,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4646">
-          <caret line="213" column="38" selection-start-line="213" selection-start-column="38" selection-end-line="213" selection-end-column="38" />
-          <folding>
-            <element signature="n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/outline.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/js/three.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4321">
-          <caret line="30981" column="8" selection-start-line="30981" selection-start-column="8" selection-end-line="30981" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/pointDistance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="357" column="18" selection-start-line="357" selection-start-column="18" selection-end-line="357" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#8757#10178#0" />
-            <element signature="e#10224#10399#0" />
-            <element signature="e#10448#10771#0" />
-            <element signature="e#10811#11115#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/js/OrbitControls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11871">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/myJS/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="74" lean-forward="true" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/shadow.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-          <folding>
-            <element signature="e#2098#2475#0" />
-            <element signature="e#2515#2911#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/creatBox.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="158" column="34" lean-forward="true" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
-          <folding>
-            <element signature="e#1205#1266#0" />
-            <element signature="e#1315#1662#0" />
-            <element signature="e#1700#1742#0" />
-            <element signature="e#1783#1972#0" />
-            <element signature="e#2336#2745#0" />
-            <element signature="e#2787#2843#0" />
-            <element signature="e#2900#2980#0" />
-            <element signature="e#3024#3215#0" />
-            <element signature="e#3254#3367#0" />
-            <element signature="e#3409#3855#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/myJS/microFnc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="n#!!block;n#getMouse2DPosition#0" />
-            <element signature="n#!!block;n#getMouse3DPosition#0" />
-            <element signature="n#!!block;n#addPoint#0" />
-            <element signature="n#!!block;n#deletePoint#0" />
-            <element signature="n#!!block;n#searchVertices#0" />
-            <element signature="n#!!block;n#getChangeSize#0" />
-            <element signature="n#!!block;n#getInterset#0" />
-            <element signature="n#!!block;n#addSphere#0" />
-            <element signature="n#!!block;n#deleteSphere#0" />
-            <element signature="n#!!block;n#getMySphere#0" />
-            <element signature="n#!!block;n#drawLine#0" />
-            <element signature="n#!!block;n#deleteLine#0" />
-            <element signature="n#!!block;n#extrudeShape#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mycode/myJS/newFnc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="52" column="64" lean-forward="true" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-          <folding>
-            <element signature="e#204#821#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Mycode/demo.html" />
+    <entry file="file://$PROJECT_DIR$/Mycode/outline.html" />
+    <entry file="file://$PROJECT_DIR$/Mycode/js/three.js" />
+    <entry file="file://$PROJECT_DIR$/Mycode/pointDistance.html" />
+    <entry file="file://$PROJECT_DIR$/Mycode/js/OrbitControls.js" />
+    <entry file="file://$PROJECT_DIR$/Mycode/myJS/test.html" />
+    <entry file="file://$PROJECT_DIR$/Mycode/shadow.html" />
+    <entry file="file://$PROJECT_DIR$/Mycode/creatBox.html" />
+    <entry file="file://$PROJECT_DIR$/Mycode/myJS/microFnc.js" />
+    <entry file="file://$PROJECT_DIR$/Mycode/myJS/newFnc.js" />
   </component>
 </project>
